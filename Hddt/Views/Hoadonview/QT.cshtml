@@ -1,0 +1,659 @@
+﻿@model DAIHOI.Models.HOADONMAU
+@{
+    ViewBag.Title = "Hóa đơn";
+    Layout = null;
+}
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>VAT</title>
+    <style type="text/css" rel="stylesheet">
+        * html,
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Time new roman';
+            font-size: 14px;
+            background-color: rgba(255, 255, 255, 0);
+        }
+
+        .pagecurrent {
+            border: #074a8e solid thin;
+        }
+
+        #main {
+            margin: 0 auto;
+        }
+
+        .VATTEMP {
+            background-color: rgba(255, 255, 255, 0);
+            ;
+            color: #000;
+            font: 78%/1.4em 'Time new roman',Helvetica,sans-serif !important;
+            margin: 0px auto;
+            padding: 5px 0;
+            width: 769px;
+            font-size: 14px;
+        }
+
+            .VATTEMP .header-main,
+            .content {
+                width: 790px;
+            }
+
+            .VATTEMP #logo {
+                float: left;
+                width: 110px;
+                height: 160px;
+                background: url('data:image/png;base64,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') no-repeat;
+                margin: 10px;
+                background-repeat: no-repeat;
+                background-size: 100%;
+                background-position: center center;
+            }
+
+            .VATTEMP .header {
+                float: left;
+                width: 100%;
+            }
+
+            .VATTEMP .header-content {
+                float: left;
+                text-align: center;
+                width: 400px;
+            }
+
+            .VATTEMP .header h2 {
+                font-size: 1em;
+            }
+
+            .VATTEMP .header h2,
+            .header p {
+                margin: 0;
+            }
+
+            .VATTEMP .header p.name-upcase {
+                font-size: 14px;
+                text-transform: uppercase;
+            }
+
+            .VATTEMP .header-note {
+                float: right;
+                font-size: 14px;
+                margin-top: 13px;
+                padding-left: 20px;
+            }
+
+            .VATTEMP .header .number {
+                color: #000;
+                font-family: 'Time new roman';
+                font-size: 14px;
+                margin-left: 3px;
+            }
+
+            .VATTEMP .statistics table tr th.h1:first-child, table tr.noline td:first-child {
+                border-left: 0px !important;
+            }
+
+            .VATTEMP .statistics table tr th.h1:last-child, table tr.noline td:last-child {
+                border-right: 0px !important;
+            }
+
+        .clearfix:after {
+            clear: both;
+            content: ".";
+            display: block;
+            height: 1px;
+            overflow: hidden;
+            visibility: hidden;
+        }
+
+        .clearfix {
+            clear: both;
+        }
+
+        .VATTEMP .cusname {
+            width: 100%;
+            margin-bottom: 5px;
+        }
+
+            .VATTEMP .cusname td, .comname td {
+                padding: 0px 0px 5px 6px;
+            }
+
+        tfoot .noline td {
+            padding-left: 5px !important;
+        }
+
+        .VATTEMP .input-code {
+            border: 1px solid #000;
+            color: #000;
+            float: left;
+            font-weight: normal;
+            text-align: center;
+            width: 18px;
+            height: 14px;
+        }
+
+        .header-note p i {
+            font-size: 13px;
+        }
+
+        .VATTEMP .dongcuoi tr:last-child {
+            border-bottom: rgb(7, 74, 142) solid thin !important;
+        }
+
+        .VATTEMP div label.fl-l,
+        div label {
+            margin-right: 5px;
+            margin-top: 0px;
+        }
+
+        .VATTEMP .input-name,
+        .input-date {
+            border: 0;
+            border-bottom: 1px dotted #000;
+        }
+
+        .VATTEMP .statistics {
+            clear: both;
+            margin-right: 0;
+            padding-top: 2px;
+        }
+
+        .nenhd {
+            position: relative;
+        }
+
+        .nenhd_bg {
+            background: url('data:image/png;base64,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') no-repeat;
+            top: 298px;
+            left: 0;
+            /* right: 0; */
+            background-size: 28%;
+            width: 100%;
+            background-repeat: no-repeat;
+            height: 340px;
+            margin: 0 auto;
+            background-position: center center;
+            position: absolute;
+            /* z-index: -1; */
+            opacity: 0.15;
+        }
+
+        .VATTEMP .pagecurrent {
+        }
+
+        .dulieu {
+            color: #000;
+            text-align: right;
+        }
+
+        .VATTEMP .statistics table {
+            background-position: bottom;
+            border: 0 none;
+            font-size: 14px;
+            margin: 0;
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            table-layout: fixed;
+        }
+
+        table {
+            border-collapse: collapse;
+            font-family: 'Time new roman';
+            font-size: 14px;
+        }
+
+        .VATTEMP .statistics table th.h1 i {
+            font-size: 13px;
+        }
+
+        .VATTEMP .statistics table th.h1 {
+            font-size: 15px;
+            text-transform: none;
+            color: rgb(7, 74, 142) !important;
+            color: #000;
+            padding: 2px;
+            font-weight: normal;
+            border-right: 1px solid rgb(7, 74, 142);
+            border-left: 1px solid rgb(7, 74, 142);
+            border-top: 1px solid rgb(7, 74, 142);
+            background-color: rgba(255, 255, 255, 0);
+        }
+
+        .VATTEMP .statistics table th.h2 {
+            font-size: 14px;
+            text-transform: none;
+            color: #000;
+            font-weight: normal;
+            border-bottom: #000 solid thin;
+            border-right: 1px solid rgb(7, 74, 142);
+            border-left: 1px solid rgb(7, 74, 142);
+            border-top: 1px solid #rgb(7, 74, 142);
+            background-color: rgba(255, 255, 255, 0);
+        }
+
+        .VATTEMP .statistics table td.stt {
+            text-align: center;
+        }
+
+        .VATTEMP .statistics table td.stt2 {
+            text-align: center;
+            color: #000;
+        }
+
+        .VATTEMP .statistics table .back td {
+            color: #000;
+            font-family: 'Time new roman';
+            font-size: 15px;
+        }
+
+        .VATTEMP .statistics table .noline td {
+            border-bottom: none;
+            border-right: 1px solid rgb(7, 74, 142);
+            border-left: 1px solid rgb(7, 74, 142);
+            border-top: none;
+        }
+
+            .VATTEMP .statistics table .noline td:first-child {
+            }
+
+        .date_invoice i {
+            font-size: 13px;
+        }
+
+        .VATTEMP .statistics table td {
+            border-bottom: none;
+            border-right: none;
+            border-left: none;
+            padding: 2px;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        .VATTEMP .statistics tr td.back-bold {
+            font-size: 14px;
+            border-bottom: none;
+            color: #000;
+        }
+
+        .VATTEMP .statistics table .back-bold {
+            padding-right: 5px;
+            text-align: right;
+        }
+
+        .VATTEMP .statistics tr td.back-bold2 {
+            font-size: 14px;
+            border-bottom: none;
+            color: #000;
+        }
+
+        p.input-txt {
+            color: #000;
+            line-height: 16px;
+            text-align: left;
+            border-bottom: 1px dotted rgba(0, 0, 0, 0.5);
+            font-family: 'Time new roman';
+        }
+
+        .clsCol p {
+            padding-top: 4px;
+            font-size: 14px;
+        }
+
+        .col-title {
+            width: 1%;
+            white-space: nowrap;
+        }
+
+            .col-title p i {
+                font-size: 13px;
+            }
+
+            .col-title p {
+                color: rgb(7, 74, 142) !important;
+            }
+
+        .clsCol {
+            display: table-cell;
+        }
+
+        .clsTable {
+            width: 100%;
+        }
+
+        .clsTable {
+            clear: both;
+        }
+
+        .clsCol {
+            display: table-cell;
+        }
+
+        p {
+            margin: 0px 0 0px 0;
+        }
+
+        .VATTEMP .statistics table .back-bold2 {
+            padding-left: 5px;
+            text-align: left;
+        }
+
+        .VATTEMP .statistics tr.bg-pink td {
+            font-size: 14px;
+            text-align: right;
+            color: #000;
+            background: none repeat scroll 0 0 #fedccc;
+        }
+
+        .VATTEMP .payment,
+        .date {
+            margin: 0px 0;
+            text-align: center;
+            width: 35%;
+        }
+
+        .VATTEMP .payment {
+            float: left;
+        }
+
+            .VATTEMP .payment p,
+            .date p {
+                margin: 0;
+            }
+
+        .VATTEMP .date {
+            float: right;
+            height: 120px;
+        }
+
+        .VATTEMP .input-date {
+            width: 40px;
+        }
+
+        .VATTEMP .input-name,
+        .back-bold,
+        .input-date {
+            color: #000;
+            font-family: 'Time new roman';
+            font-size: 14px;
+        }
+
+        .footer_invoice .clsCol p {
+            font-size: 14px;
+        }
+
+        .fl-l {
+            float: left;
+            font-family: 'Time new roman';
+            font-size: 14px;
+        }
+
+        .comname .col-txt p {
+            color: rgb(7, 74, 142) !important;
+        }
+
+        .bgimg {
+            border: 1px solid #000;
+            cursor: pointer;
+            width: 250px;
+            height: 60px;
+        }
+
+            .bgimg p {
+                color: #EB363A;
+                padding-left: 10px;
+                text-align: left;
+            }
+
+        .bold {
+            font-weight: bold !important;
+        }
+
+        p {
+            font-family: 'Time new roman';
+            font-size: 14px;
+        }
+
+        .VATTEMP .header .number {
+            color: #333;
+            font-family: "Times New Roman",Times,serif;
+            font-size: 150%;
+        }
+
+        .item {
+            color: #000;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="printView" style="background-color: rgba(255, 255, 255, 0);;  margin-top: -3px;    width: 790px;&#xD;&#xA;    margin: auto;">
+        <div class="VATTEMP" style="background-color: rgba(255, 255, 255, 0);">
+            <div id="SolutionVNPT" style="margin-bottom:5px;margin-top:0px;font-family: 'Time New Roman';font-size:9px;border-bottom:1px dashed rgb(7, 74, 142); text-align: center;background-color: rgba(255, 255, 255, 0);;">
+                <label style="font-family: 'Time New Roman';font-size:13px;color: rgb(7, 74, 142);">
+                    Đơn vị cung cấp giải pháp hóa đơn điện tử: Tổng công ty dịch vụ viễn thông - VNPT Vinaphone, MST:0106869738, Điện thoại:18001260
+                </label>
+            </div><div id="quantitypages" style="padding-left:0px;">
+                <div class="pagecurrent" id="1">
+                    <table width="100%">
+                        <tr>
+                            <td style="width:24%;text-align: center"><div id="logo" /></td>
+                            <td style="vertical-align: top;">
+                                <table cellpadding="0" cellspacing="0" border="0" style="float: left; width:350px">
+                                    <tbody>
+                                        <tr>
+                                            <td style="text-align: center;padding-left: 0%;">
+                                                <p class="name-upcase" style="font-weight: bold;color:rgb(7, 74, 142);    line-height: 23px; margin-top: 10px; margin-bottom: 0px;;font-size:24px; text-transform: uppercase;">HÓA ĐƠN GIÁ TRỊ GIA TĂNG <br /><i style="font-size:19px; font-weight:normal">(VAT INVOICE)</i></p><p style=" font-size 15px;margin-top 5px; color:rgb(7, 74, 142) !important " class="date_invoice">
+                                                    Ngày <i /><label style="color:#000"></label>
+                                                    tháng <i /><label style="color:#000"></label>
+                                                    năm <i /><label style="color:#000"></label>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table><table border="0" style="width: 229px;">
+                                    <tbody>
+                                        <tr>
+                                            <td class="header">
+                                                <div class="header-note">
+                                                    <p style="font-size:15px;    color: rgb(7, 74, 142) !important;">
+                                                        Mẫu số <i>(Form)</i>:
+                                                        <b>01GTKT0/001</b>
+                                                    </p><p style="font-size:15px;margin-top: 5px;width: 100%;    color: rgb(7, 74, 142)  !important;">
+                                                        Ký hiệu <i>(Serial)</i>:
+                                                        <b>XX/XXX</b>
+                                                    </p><p style="margin-top:0px;font-size:15px;      line-height: 30px;  color: rgb(7, 74, 142)  !important;">
+                                                        Số <i>(No)</i>:
+                                                        <b style="margin-top:0px;font-size:16px;"><span class="number" style="color:red !important">XXXXXXX</span></b>
+                                                    </p>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </table><table width="100%" style="margin-left: 0px;margin-bottom:6px;&#xD;&#xA;    border-bottom: rgb(7, 74, 142) solid thin;" class="comname">
+                        <tbody>
+                            <tr>
+                                <td colspan="3">
+                                    <div class="clsTable">
+                                        <div class="clsCol col-title" style="width:205px"><p style="font-family: 'Time new roman';">Đơn vị bán hàng <i>(Company name)</i></p></div><div class="clsCol col-txt">
+                                            <p class="">
+                                                :
+                                                <b style="font-weight:bold; font-size:16px;">@Model.thongtin.tencn</b>
+                                            </p>
+                                        </div>
+                                    </div><div class="clsTable">
+                                        <div class="clsCol col-title" style="width:205px"><p style="font-family: 'Time new roman';">Mã số thuế <i>(Tax code)</i></p></div><div class="clsCol col-txt">
+                                            <p class="">
+                                                :
+                                                <b>@Model.thongtin.mst</b>
+                                            </p>
+                                        </div>
+                                    </div><div class="clsTable">
+                                        <div class="clsCol col-title" style="width:205px"><p style="font-family: 'Time new roman';"> Địa chỉ <i>(Address)</i></p></div><div class="clsCol col-txt">
+                                            <p class="">
+                                                :
+                                                @Model.thongtin.diachi
+                                            </p>
+                                        </div>
+                                    </div><div class="clsTable">
+                                        <div class="clsCol col-title" style="width:205px"><p style="font-family: 'Time new roman';">Điện thoại <i>(Tel)</i></p></div><div class="clsCol col-txt">
+                                            <p class="">
+                                                :
+                                                @Model.thongtin.dienthoai
+                                            </p>
+                                        </div>
+                                    </div><div class="clsTable">
+                                        <div class="clsCol col-title" style="width:205px"><p style="font-family: 'Time new roman';">Số tài khoản <i>(Bank Account)</i></p></div><div class="clsCol col-txt">
+                                            <p class="">
+                                                :
+                                                @Model.thongtin.taikhoannh
+                                            </p>
+                                        </div>
+                                    </div><div class="clsTable">
+                                        <div class="clsCol col-title" style="width:205px"><p style="font-family: 'Time new roman';">Ngân hàng<i>(Bank)</i></p></div><div class="clsCol col-txt">
+                                            <p class="">
+                                                :
+                                                @Model.thongtin.tennh
+                                            </p>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table><table style="margin-top: 5px;   " class="cusname"><tr><td><div class="clsTable"><div class="clsCol col-title"><p style="font-family: 'Time new roman';">Họ tên người mua hàng <i>(Customer's name)</i>:</p></div><div class="clsCol col-txt"><p class="input-txt" style="">@Model.Invoice.Buyer</p></div></div><div class="clsTable"><div class="clsCol col-title"><p style="font-family: 'Time new roman';">Tên đơn vị <i>(Company name)</i>: </p></div><div class="clsCol col-txt"><p class="input-txt" style="">@Model.Invoice.CusName</p></div></div><div class="clsTable"><div class="clsCol col-title"><p style="font-family: 'Time new roman';">Mã số thuế <i>(Tax code)</i>:</p></div><div class="clsCol col-txt"><p class="input-txt" style="">@Model.Invoice.CusTaxCode</p></div></div><div class="clsTable"><div class="clsCol col-title"><p style="font-family: 'Time new roman';">Địa chỉ <i>(Address)</i>: </p></div><div class="clsCol col-txt"><p class="input-txt" style="">@Model.Invoice.CusAddress</p></div></div><div class="clsTable"><div class="clsCol col-title"><p style="font-family: 'Time new roman';">Hình thức thanh toán <i>(Payment method)</i>:</p></div><div class="clsCol col-txt"><p class="input-txt" style="">@Model.Invoice.PaymentMethod</p></div></div><div class="clsTable"><div class="clsCol col-title"><p style="font-family: 'Time new roman';">Số tài khoản <i>(Bank Account)</i>: </p></div><div class="clsCol col-txt"><p class="input-txt" style="">@Model.Invoice.CusBankNo</p></div></div><div class="clsTable"><div class="clsCol col-title"><p style="font-family: 'Time new roman';">Ngân hàng <i>(Bank)</i>: </p></div><div class="clsCol col-txt"><p class="input-txt" style="">@Model.Invoice.CusBankName</p></div></div></td></tr></table><div class="statistics">
+                        <div class="nenhd">
+                            <table width="100%" class="dongcuoi" cellpadding="0" cellspacing="0" border="1" style="border-bottom: 0px solid">
+                                <tr style="border-bottom: #36426F 1px solid" height="23px">
+                                    <th width="30px" class="h1 bold;" style="text-align:center;">
+                                        STT
+                                        <br /><i>(No.)</i>
+                                    </th>
+                                    <th width="210px" class="h1 bold;" style="text-align:center;">
+                                        Tên hàng hóa, dịch vụ
+                                        <br /><i>(Product, services )</i>
+                                    </th>
+                                    <th width="50px" class="h1 bold; " style="text-align:center;">
+                                        Mã hàng <br /><i>(Code)</i>
+                                    </th>
+                                    <th width="55px" class="h1 bold;" style="text-align:center;">
+                                        Đơn vị tính <br /><i>(Unit)</i>
+                                    </th>
+                                    <th width="65px" class="h1 bold; " style="text-align:center;">
+                                        Số lượng<br /><i>(Quantity)</i>
+                                    </th>
+                                    <th width="80px" class="h1 bold; " style="text-align:center;">
+                                        Đơn giá<br /><i>(Unit price)</i>
+                                    </th>
+                                    <th width="105px" class="h1 bold; " style="text-align:center;">
+                                        Thành tiền<br /><i>(Amount)</i>
+                                    </th>
+                                    <th width="30px" class="h1 bold; " style="text-align:center;">
+                                        CK <br /><i>(%)</i>
+                                    </th>
+                                </tr>
+                                <tr style="border-bottom: #36426F 1px solid"><th class="h1">0</th><th class="h1">1</th><th class="h1">2</th><th class="h1">3</th><th class="h1">4</th><th class="h1">5</th><th class="h1">6 = 4 x 5</th><th class="h1">7</th></tr>
+                                @{   int count = 1;
+                                    foreach (var i in Model.Invoice.Products.Product)
+                                    {
+                                        <tr class="noline back" style="border-bottom:#36426F dotted 1px ">
+                                            <td class="stt" height="23px" style="text-align:center;">@count</td>
+                                            <td class="back-bold2" height="23px" style="white-space: pre-wrap;">@Html.Raw(i.ProdName)</td>
+                                            <td class="back-bold2" height="23px" style="text-align: center;">@Html.Raw(i.Code)</td>
+                                            <td class="back-bold2" height="23px" style="text-align: center; white-space: pre-wrap;">@Html.Raw(i.ProdUnit)</td>
+                                            <td class="back-bold" height="23px" style="text-align: right;">@i.ProdQuantity.ToString("N0", ViewBag.CurrentNumberFormat)</td>
+                                            <td class="back-bold" height="23px">@i.ProdPrice.ToString("#,##0.####", ViewBag.CurrentNumberFormat)</td>
+                                            <td class="back-bold" height="23px">@i.Total.ToString("N0", ViewBag.CurrentNumberFormat)</td>
+                                            <td class="back-bold" height="23px">@i.DiscountAmount.ToString("0.##", ViewBag.CurrentNumberFormat)</td>
+                                        </tr>
+                                        count = count + 1;
+                                    }
+                                    if (Model.Invoice.Products.Product.Last().Extra2 != "" && Model.Invoice.Products.Product.Last().Extra2 != null)
+                                    {
+                                        <tr class="noline back" style="border-top:#000 solid 1px "><td style="border-bottom:none" height="23px" width="24px"></td><td colspan="6">@Model.Invoice.Products.Product.Last().Extra2</td><td style="border-bottom:none" height="23px" width="125px"></td></tr>
+                                    }
+                                }
+                                @for (int i = 9; i > (9 - Model.Invoice.Products.Product.Count); i--)
+                                {
+                                    <tr class="noline back" style="border-top:#000 solid 1px "><td style="border-bottom:none" height="23px" width="24px"></td><td style="border-bottom:none" height="23px" width="120px"></td><td style="border-bottom:none" height="23px" width="41px"></td><td style="border-bottom:none" height="23px" width="45px"></td><td style="border-bottom:none" height="23px" width="79px"></td><td style="border-bottom:none" height="23px" width="125px"></td><td style="border-bottom:none" height="23px" width="79px"></td><td style="border-bottom:none" height="23px" width="125px"></td></tr>
+                                }
+                                <tfoot>
+                                    <tr class="noline back" style="border-top: 1px solid #36426F; border-bottom: 0px;"><td class="back-bold" colspan="7" height="20px" width="136px" style="padding-right: 3px;border-right:none;text-align:left;   color: rgb(7, 74, 142) !important;"><div class="clsTable"><div class="clsCol col-title"><p style="font-family: 'Time new roman';"> Cộng tiền hàng <i>(Total amount)</i>:</p></div><div class="clsCol col-txt"><p class="dulieu">@Model.Invoice.Total.ToString("N0", ViewBag.CurrentNumberFormat)</p></div></div></td><td /></tr>
+                                    <tr class="noline back" style="border-top: 1px solid #36426F; border-bottom: 0px;"><td class="back-bold" colspan="7" height="20px" width="136px" style="padding-right: 3px;border-right:none;text-align:left;   color: rgb(7, 74, 142) !important;"><div class="clsTable"><div class="clsCol col-title"><p style="font-family: 'Time new roman';"> Chiết khấu <i>(Discount)</i>:</p></div><div class="clsCol col-txt"><p class="dulieu">@Model.Invoice.DiscountAmount.ToString("N0", ViewBag.CurrentNumberFormat)</p></div></div></td><td /></tr>
+                                    <tr class="noline back" style="border-top: #36426F solid thin; border-bottom:0px">
+                                        <td class="back-bold" colspan="7" height="20px" width="136px" style="border-right:none;text-align:left;">
+                                            <div class="clsTable">
+                                                <div class="clsCol col-title">
+                                                    <p style="font-family: 'Time new roman';">
+                                                        Thuế suất GTGT <i>(VAT rate)</i> :
+                                                    </p>
+                                                </div><div class="clsCol col-txt" style="width:10%">
+                                                    <p class="input-txt dulieu" style="text-align:right; border-bottom: 0px;">
+                                                        @Model.Invoice.VATRate
+                                                        %
+                                                    </p>
+                                                </div><div class="clsCol col-title">
+                                                    <p style="font-family: 'Time new roman'; padding-left: 121px;">
+                                                        Tiền thuế GTGT <i>(VAT amount)</i>:
+                                                    </p>
+                                                </div><div class="clsCol col-txt"><p class="dulieu">@Model.Invoice.VATAmount.ToString("N0", ViewBag.CurrentNumberFormat)</p></div>
+                                            </div>
+                                        </td>
+                                        <td />
+                                    </tr>
+                                    <tr class="noline back" style="border-top: #36426F solid thin; border-bottom: 0px; "><td class="back-bold" colspan="7" height="20px" style="padding-right: 3px;  text-align:right; color: rgb(7, 74, 142) !important;"><div class="clsTable"><div class="clsCol col-title"><p style="font-family: 'Time new roman';"> Tổng cộng tiền thanh toán <i>(Total Payment amount)</i>:</p></div><div class="clsCol col-txt"><p class="dulieu">@Model.Invoice.Amount.ToString("N0", ViewBag.CurrentNumberFormat)</p></div></div></td><td /></tr>
+                                    <tr class="noline back" style="border-top: #36426F solid thin; border-bottom: #36426F solid thin; "><td class="back-bold" colspan="8" height="20px" style="padding-right: 3px;  text-align:right; color: rgb(7, 74, 142) !important;"><div class="clsTable"><div class="clsCol col-title"><p style="font-family: 'Time new roman';">Số tiền viết bằng chữ <i>(Amount in words)</i>:</p></div><div class="clsCol col-txt"><p class="input-txt" style="border-bottom: 0px; ">@Model.Invoice.AmountInWords</p></div></div></td></tr>
+                                </tfoot>
+                            </table><div class="nenhd_bg" style="margin-top: -252px; margin-left: 25px"></div>
+                        </div>
+                    </div><div class="statistics">
+                        <table width="790px" cellspacing="0" cellpadding="0" border="0">
+                            <tr>
+                                <td style="padding-bottom: 0;">
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                                        <tr style="vertical-align:top;">
+                                                            <td width="25%" align="center">
+                                                                <p style="color:rgb(7, 74, 142);" class="bold">Người mua hàng <i>(Buyer)</i></p><i style="color:rgb(7, 74, 142);">(Ký, ghi rõ họ tên)</i><br /><i style="color :rgb(7, 74, 142); margin-bottom:5px;">
+                                                                    (Sign &amp; full name)
+                                                                </i>
+                                                                @if (Model.Invoice.KindOfService == 1)
+                                                                {
+                                                                    <div style="margin:auto;border: 1px solid #000000; width:200px; margin-top:10px;">
+                                                                        <p style="color:red!important; text-align:center; padding-top:20px;padding-bottom:20px;">
+                                                                            BÁN HÀNG QUA ĐIỆN THOẠI
+                                                                        </p>
+                                                                    </div>
+                                                                }
+                                                            </td>
+                                                            <td width="35%" align="center"><div class="payment fl-l convert" style="margin-top:0px;width: 100% !important;float: left;" /></td>
+                                                            <td width="40%" align="center" style="vertical-align: top; padding-top:0px;">
+                                                                <p style="color:rgb(7, 74, 142);" class="bold">Người bán hàng <i>(Seller)</i></p><i style="color:rgb(7, 74, 142);">(Ký, đóng dấu và ghi rõ họ tên)</i><br /><i style="color:rgb(7, 74, 142);">
+                                                                    (Sign, stamp,&amp; full name)
+                                                                </i>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

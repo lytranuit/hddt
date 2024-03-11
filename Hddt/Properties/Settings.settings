@@ -1,0 +1,66 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="DAIHOI.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="DAIHOI_pypharm_business_BusinessService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://4401084734-c-tt78admin.vnpt-invoice.com.vn/businessService.asmx</Value>
+    </Setting>
+    <Setting Name="DAIHOI_pypharm_extmientrung_ExtMienTrungService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://4401084734-c-tt78admin.vnpt-invoice.com.vn/ExtMienTrungService.asmx</Value>
+    </Setting>
+    <Setting Name="DAIHOI_pypharm_portal_PortalService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://4401084734-c-tt78admin.vnpt-invoice.com.vn/portalService.asmx</Value>
+    </Setting>
+    <Setting Name="DAIHOI_pypharm_publish_PublishService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://4401084734-c-tt78admin.vnpt-invoice.com.vn/publishService.asmx</Value>
+    </Setting>
+    <Setting Name="DAIHOI_pypharmhcm_business_BusinessService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://pypharmhcm-tt78admin.vnpt-invoice.com.vn/businessService.asmx</Value>
+    </Setting>
+    <Setting Name="DAIHOI_pypharmhcm_extmientrung_ExtMienTrungService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://pypharmhcm-tt78admin.vnpt-invoice.com.vn/ExtMienTrungService.asmx</Value>
+    </Setting>
+    <Setting Name="DAIHOI_pypharmhcm_portal_PortalService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://pypharmhcm-tt78admin.vnpt-invoice.com.vn/portalService.asmx</Value>
+    </Setting>
+    <Setting Name="DAIHOI_pypharmhcm_publish_PublishService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://pypharmhcm-tt78admin.vnpt-invoice.com.vn/publishService.asmx</Value>
+    </Setting>
+    <Setting Name="DAIHOI_pypharmtest_business_BusinessService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://pypharrm-tt78admindemo.vnpt-invoice.com.vn/businessService.asmx</Value>
+    </Setting>
+    <Setting Name="DAIHOI_pypharmtest_extmientrung_ExtMienTrungService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://pypharrm-tt78admindemo.vnpt-invoice.com.vn/ExtMienTrungService.asmx</Value>
+    </Setting>
+    <Setting Name="DAIHOI_pypharmtest_portal_PortalService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://pypharrm-tt78admindemo.vnpt-invoice.com.vn/portalService.asmx</Value>
+    </Setting>
+    <Setting Name="DAIHOI_pypharmtest_publish_PublishService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://pypharrm-tt78admindemo.vnpt-invoice.com.vn/publishService.asmx</Value>
+    </Setting>
+    <Setting Name="DAIHOI_quangtri_business_BusinessService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://3200042637-tt78admin.vnpt-invoice.com.vn/businessService.asmx</Value>
+    </Setting>
+    <Setting Name="DAIHOI_quangtri_extmientrung_ExtMienTrungService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://3200042637-tt78admin.vnpt-invoice.com.vn/ExtMienTrungService.asmx</Value>
+    </Setting>
+    <Setting Name="DAIHOI_quangtri_portal_PortalService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://3200042637-tt78admin.vnpt-invoice.com.vn/portalService.asmx</Value>
+    </Setting>
+    <Setting Name="DAIHOI_quangtri_publish_PublishService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://3200042637-tt78admin.vnpt-invoice.com.vn/publishService.asmx</Value>
+    </Setting>
+    <Setting Name="DAIHOI_asta_business_BusinessService" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://bqlc-tt78admindemo.vnpt-invoice.com.vn/businessService.asmx</Value>
+    </Setting>
+    <Setting Name="DAIHOI_asta_extmientrung_ExtMienTrungService" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://bqlc-tt78admindemo.vnpt-invoice.com.vn/ExtMienTrungService.asmx</Value>
+    </Setting>
+    <Setting Name="DAIHOI_asta_portal_PortalService" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://bqlc-tt78admindemo.vnpt-invoice.com.vn/portalService.asmx</Value>
+    </Setting>
+    <Setting Name="DAIHOI_asta_publish_PublishService" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://bqlc-tt78admindemo.vnpt-invoice.com.vn/publishService.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

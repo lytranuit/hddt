@@ -1,0 +1,438 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="alertbaucu" xml:space="preserve">
+    <value>The number of shares voted exceeded the number of shares</value>
+  </data>
+  <data name="alertbaucu1" xml:space="preserve">
+    <value>The results of Vote for member of the Board of Directors have been successfully saved</value>
+  </data>
+  <data name="alertbaucuhtml" xml:space="preserve">
+    <value>Please change.</value>
+  </data>
+  <data name="alertbaucuhtml1" xml:space="preserve">
+    <value>Select continue to move to the results Printing page</value>
+  </data>
+  <data name="alertbieuquyet1" xml:space="preserve">
+    <value>You have not commented on the voting content No.</value>
+  </data>
+  <data name="alertbieuquyet2" xml:space="preserve">
+    <value>Voting results were saved successfully</value>
+  </data>
+  <data name="alertbieuquyet3" xml:space="preserve">
+    <value>Are you sure you want to submit this vote ?</value>
+  </data>
+  <data name="alertbieuquyet4" xml:space="preserve">
+    <value>Are you sure you choose this vote ?</value>
+  </data>
+  <data name="alertbieuquyethtml2" xml:space="preserve">
+    <value>Choose continue to Vote for member of Board of Directors</value>
+  </data>
+  <data name="alertbieuquyethtml3" xml:space="preserve">
+    <value>All voting results cannot be changed !</value>
+  </data>
+  <data name="alertbieuquyethtml4" xml:space="preserve">
+    <value>The selected votes cannot be changed</value>
+  </data>
+  <data name="alertcheckemail" xml:space="preserve">
+    <value>Please check, a new password that has been sent to your email</value>
+  </data>
+  <data name="alertcheckinternet" xml:space="preserve">
+    <value>Please check your internet connection</value>
+  </data>
+  <data name="alertchuanhapmacd" xml:space="preserve">
+    <value>Please enter your email</value>
+  </data>
+  <data name="alertdiendaydu" xml:space="preserve">
+    <value>Please enter your username and password.</value>
+  </data>
+  <data name="alertdoimatkhau" xml:space="preserve">
+    <value>Please change your password on the first login</value>
+  </data>
+  <data name="alertdoimatkhau1" xml:space="preserve">
+    <value>The password is not strong enough to meet the system requirements</value>
+  </data>
+  <data name="alerthotro" xml:space="preserve">
+    <value>Please contact us for assistance</value>
+  </data>
+  <data name="alerthotrothanhcong" xml:space="preserve">
+    <value>Success</value>
+  </data>
+  <data name="alerthotrothanhconghtml" xml:space="preserve">
+    <value>Thank you for responding</value>
+  </data>
+  <data name="alertketquahtml" xml:space="preserve">
+    <value>Select continue to download results</value>
+  </data>
+  <data name="alertkhongchinhxac" xml:space="preserve">
+    <value>Sorry, your password was incorrect. Please double-check your password.</value>
+  </data>
+  <data name="alertmacd" xml:space="preserve">
+    <value>The email you entered does not exist, please try again</value>
+  </data>
+  <data name="alertmatkhauhtml" xml:space="preserve">
+    <value>Please select continue to confirm the information</value>
+  </data>
+  <data name="alertmatkhauthanhcong" xml:space="preserve">
+    <value>Success! Your Password has been changed!</value>
+  </data>
+  <data name="alertquenmatkhau" xml:space="preserve">
+    <value>Enter your email and the system will send a new password to the email you have registered</value>
+  </data>
+  <data name="alerttailaitrang" xml:space="preserve">
+    <value>Are you sure to reload the page?</value>
+  </data>
+  <data name="alerttailaitranghtml" xml:space="preserve">
+    <value>All votes will be refreshed !</value>
+  </data>
+  <data name="alertthongtin1" xml:space="preserve">
+    <value>Are you sure to confirm the information?</value>
+  </data>
+  <data name="alertthongtinhtml1" xml:space="preserve">
+    <value>Confirmed information cannot be changed</value>
+  </data>
+  <data name="alertthulai" xml:space="preserve">
+    <value>Please try again</value>
+  </data>
+  <data name="alerttieude" xml:space="preserve">
+    <value>Please enter a title</value>
+  </data>
+  <data name="alertxacnhan" xml:space="preserve">
+    <value>Confirmation of  information is successful</value>
+  </data>
+  <data name="alertxacnhanbtn" xml:space="preserve">
+    <value>Start voting</value>
+  </data>
+  <data name="alertxacnhanhtml" xml:space="preserve">
+    <value>Please select &lt;strong&gt;Start voting&lt;/strong&gt; to continue.</value>
+  </data>
+  <data name="bauhdqt" xml:space="preserve">
+    <value>Electing card</value>
+  </data>
+  <data name="bieuquyet" xml:space="preserve">
+    <value>Voting card</value>
+  </data>
+  <data name="btnguimatkhau" xml:space="preserve">
+    <value>Send new password to email</value>
+  </data>
+  <data name="entermatkhaumoi" xml:space="preserve">
+    <value>Enter new password ...</value>
+  </data>
+  <data name="kqbauhdqt" xml:space="preserve">
+    <value>RESULTS OF Electing Board of Directors</value>
+  </data>
+  <data name="kqbieuquyet" xml:space="preserve">
+    <value>RESULTS OF VOTING</value>
+  </data>
+  <data name="lbbauhdqt" xml:space="preserve">
+    <value>Electing member of BOD</value>
+  </data>
+  <data name="lbbieuquyetdaihoi" xml:space="preserve">
+    <value>Voting for Meeting Agenda</value>
+  </data>
+  <data name="lbbieuquyetnghiquyet" xml:space="preserve">
+    <value>Vote for the Minutes &amp; Resolution</value>
+  </data>
+  <data name="lbbieuquyettotrinh" xml:space="preserve">
+    <value>Vote for statements</value>
+  </data>
+  <data name="lbchacchan" xml:space="preserve">
+    <value>Yes, sure</value>
+  </data>
+  <data name="lbchaomung" xml:space="preserve">
+    <value>Welcome to The Extraordinary General Meeting of Shareholders in 2020 of </value>
+  </data>
+  <data name="lbchucvu" xml:space="preserve">
+    <value>Position</value>
+  </data>
+  <data name="lbcmnd" xml:space="preserve">
+    <value>ID card</value>
+  </data>
+  <data name="lbcophieu" xml:space="preserve">
+    <value>Shares</value>
+  </data>
+  <data name="lbcophieuconlai" xml:space="preserve">
+    <value>Number of shares remaining</value>
+  </data>
+  <data name="lbcophieudabau" xml:space="preserve">
+    <value>Number of shares voted</value>
+  </data>
+  <data name="lbdaidien" xml:space="preserve">
+    <value>Represent</value>
+  </data>
+  <data name="lbdangnhap" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="lbdangxuat" xml:space="preserve">
+    <value>Logout</value>
+  </data>
+  <data name="lbdienthoai" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="lbdoimatkhau" xml:space="preserve">
+    <value>Change password</value>
+  </data>
+  <data name="lbdownload" xml:space="preserve">
+    <value>Download</value>
+  </data>
+  <data name="lbgiay" xml:space="preserve">
+    <value>SEC</value>
+  </data>
+  <data name="lbgio" xml:space="preserve">
+    <value>HOUR</value>
+  </data>
+  <data name="lbhethong" xml:space="preserve">
+    <value>System</value>
+  </data>
+  <data name="lbhethongbophieu" xml:space="preserve">
+    <value>ONLINE VOTING SYSTEM</value>
+  </data>
+  <data name="lbhoantat" xml:space="preserve">
+    <value>Complete</value>
+  </data>
+  <data name="lbhoatdong" xml:space="preserve">
+    <value>. Please come back in a few minutes</value>
+  </data>
+  <data name="lbhoatdong0" xml:space="preserve">
+    <value>The extraordinary general meeting of shareholders will begin at 13:30 December 7th, 2020</value>
+  </data>
+  <data name="lbhoten" xml:space="preserve">
+    <value>Full name</value>
+  </data>
+  <data name="lbhuy" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="lbinketqua" xml:space="preserve">
+    <value>Print voting card</value>
+  </data>
+  <data name="lbkhongchinhxac" xml:space="preserve">
+    <value>Incorrect information</value>
+  </data>
+  <data name="lbkhongthanhcong" xml:space="preserve">
+    <value>Unsuccessful</value>
+  </data>
+  <data name="lblienhehotro" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="lbmatkhau" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="lbmatkhaumoi" xml:space="preserve">
+    <value>New password</value>
+  </data>
+  <data name="lbngay" xml:space="preserve">
+    <value>DATE</value>
+  </data>
+  <data name="lbngaycap" xml:space="preserve">
+    <value>issued on</value>
+  </data>
+  <data name="lbnhapmacodong" xml:space="preserve">
+    <value>Enter your email ...</value>
+  </data>
+  <data name="lbnoicap" xml:space="preserve">
+    <value>by</value>
+  </data>
+  <data name="lbnoidung" xml:space="preserve">
+    <value>Content</value>
+  </data>
+  <data name="lbphanhoi" xml:space="preserve">
+    <value>FEEDBACK</value>
+  </data>
+  <data name="lbphieubieuquyet" xml:space="preserve">
+    <value>Votes</value>
+  </data>
+  <data name="lbphut" xml:space="preserve">
+    <value>MIN</value>
+  </data>
+  <data name="lbquenmatkhau" xml:space="preserve">
+    <value>Forgot your password ?</value>
+  </data>
+  <data name="lbsapdienra" xml:space="preserve">
+    <value>Upcoming</value>
+  </data>
+  <data name="lbslcophieu" xml:space="preserve">
+    <value>Number of shares</value>
+  </data>
+  <data name="lbslphieubau" xml:space="preserve">
+    <value>Number of Votes</value>
+  </data>
+  <data name="lbslphieubieuquyet" xml:space="preserve">
+    <value>the total number of vote</value>
+  </data>
+  <data name="lbsocmnd" xml:space="preserve">
+    <value>ID card No.</value>
+  </data>
+  <data name="lbtaikhoan" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="lbtailai" xml:space="preserve">
+    <value>Reload</value>
+  </data>
+  <data name="lbtailieu" xml:space="preserve">
+    <value>Documents</value>
+  </data>
+  <data name="lbtencodong" xml:space="preserve">
+    <value>Shareholder’s name</value>
+  </data>
+  <data name="lbthongbao" xml:space="preserve">
+    <value>Notice</value>
+  </data>
+  <data name="lbthongtin" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="lbthongtincodong" xml:space="preserve">
+    <value>Shareholder Information</value>
+  </data>
+  <data name="lbtieptuc" xml:space="preserve">
+    <value>Continue</value>
+  </data>
+  <data name="lbtieude" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="lbtilesohuu" xml:space="preserve">
+    <value>Proportional ownership (%)</value>
+  </data>
+  <data name="lbvande" xml:space="preserve">
+    <value>Please enter the issue for assistance</value>
+  </data>
+  <data name="lbxacnhanthongtin" xml:space="preserve">
+    <value>Confirm information</value>
+  </data>
+  <data name="luuy" xml:space="preserve">
+    <value>NOTE: The total number of voting shares must be less than or equal to the number of shares owned.</value>
+  </data>
+  <data name="placehodernhaplai" xml:space="preserve">
+    <value>Whoops, these don't match</value>
+  </data>
+  <data name="reentermatkhaumoi" xml:space="preserve">
+    <value>Re-type new password ...</value>
+  </data>
+  <data name="yeucau" xml:space="preserve">
+    <value>Requirements</value>
+  </data>
+  <data name="yeucau6kytu" xml:space="preserve">
+    <value>At least 6 characters</value>
+  </data>
+  <data name="yeucauinhoa" xml:space="preserve">
+    <value>At least 1 uppercase character (A-Z)</value>
+  </data>
+  <data name="yeucauso" xml:space="preserve">
+    <value>At least 1 digit (0-9)</value>
+  </data>
+</root>

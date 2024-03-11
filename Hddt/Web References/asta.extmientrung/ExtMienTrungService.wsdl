@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="AdjustInvoiceAction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Account" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ACpass" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlInvData" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pass" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fkey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AttachFile" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="convert" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="pattern" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="serial" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AdjustInvoiceActionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AdjustInvoiceActionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDanhMucSanPham">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="json" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDanhMucSanPhamResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateDanhMucSanPhamResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AdjustAssignedNoNewPatternKido">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Account" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ACpass" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlInvData" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="invno" type="s:double" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pass" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fkey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AttachFile" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="convert" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="pattern" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="serial" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AdjustAssignedNoNewPatternKidoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AdjustAssignedNoNewPatternKidoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCurrentNo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Pattern" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="serial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userPass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCurrentNoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getCurrentNoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportAndPublishInvLotte">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Account" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ACpass" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlInvData" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="newamount" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pattern" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="serial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fkeyold" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="convert" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportAndPublishInvLotteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ImportAndPublishInvLotteResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getInvViewNoPay">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pattern" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="serial" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="InvNo" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userPass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getInvViewNoPayResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getInvViewNoPayResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getInvViewNoPayJson">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pattern" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="serial" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="InvNo" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userPass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getInvViewNoPayJsonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getInvViewNoPayJsonResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getInvViewFkeyNoPay">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fkey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userPass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getInvViewFkeyNoPayResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getInvViewFkeyNoPayResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listInvByDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="toDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userPass" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pattern" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="serial" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listInvByDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listInvByDateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listPatternSerialByCom">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pass" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="comid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listPatternSerialByComResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listPatternSerialByComResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchInv">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Extra10" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cusCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pattern" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="serial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="toDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fromNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="page" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageSize" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userPass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchInvResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchInvResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AdjustInvoiceActionSoapIn">
+    <wsdl:part name="parameters" element="tns:AdjustInvoiceAction" />
+  </wsdl:message>
+  <wsdl:message name="AdjustInvoiceActionSoapOut">
+    <wsdl:part name="parameters" element="tns:AdjustInvoiceActionResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDanhMucSanPhamSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateDanhMucSanPham" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDanhMucSanPhamSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateDanhMucSanPhamResponse" />
+  </wsdl:message>
+  <wsdl:message name="AdjustAssignedNoNewPatternKidoSoapIn">
+    <wsdl:part name="parameters" element="tns:AdjustAssignedNoNewPatternKido" />
+  </wsdl:message>
+  <wsdl:message name="AdjustAssignedNoNewPatternKidoSoapOut">
+    <wsdl:part name="parameters" element="tns:AdjustAssignedNoNewPatternKidoResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCurrentNoSoapIn">
+    <wsdl:part name="parameters" element="tns:getCurrentNo" />
+  </wsdl:message>
+  <wsdl:message name="getCurrentNoSoapOut">
+    <wsdl:part name="parameters" element="tns:getCurrentNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ImportAndPublishInvLotteSoapIn">
+    <wsdl:part name="parameters" element="tns:ImportAndPublishInvLotte" />
+  </wsdl:message>
+  <wsdl:message name="ImportAndPublishInvLotteSoapOut">
+    <wsdl:part name="parameters" element="tns:ImportAndPublishInvLotteResponse" />
+  </wsdl:message>
+  <wsdl:message name="getInvViewNoPaySoapIn">
+    <wsdl:part name="parameters" element="tns:getInvViewNoPay" />
+  </wsdl:message>
+  <wsdl:message name="getInvViewNoPaySoapOut">
+    <wsdl:part name="parameters" element="tns:getInvViewNoPayResponse" />
+  </wsdl:message>
+  <wsdl:message name="getInvViewNoPayJsonSoapIn">
+    <wsdl:part name="parameters" element="tns:getInvViewNoPayJson" />
+  </wsdl:message>
+  <wsdl:message name="getInvViewNoPayJsonSoapOut">
+    <wsdl:part name="parameters" element="tns:getInvViewNoPayJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="getInvViewFkeyNoPaySoapIn">
+    <wsdl:part name="parameters" element="tns:getInvViewFkeyNoPay" />
+  </wsdl:message>
+  <wsdl:message name="getInvViewFkeyNoPaySoapOut">
+    <wsdl:part name="parameters" element="tns:getInvViewFkeyNoPayResponse" />
+  </wsdl:message>
+  <wsdl:message name="listInvByDateSoapIn">
+    <wsdl:part name="parameters" element="tns:listInvByDate" />
+  </wsdl:message>
+  <wsdl:message name="listInvByDateSoapOut">
+    <wsdl:part name="parameters" element="tns:listInvByDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="listPatternSerialByComSoapIn">
+    <wsdl:part name="parameters" element="tns:listPatternSerialByCom" />
+  </wsdl:message>
+  <wsdl:message name="listPatternSerialByComSoapOut">
+    <wsdl:part name="parameters" element="tns:listPatternSerialByComResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchInvSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchInv" />
+  </wsdl:message>
+  <wsdl:message name="SearchInvSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchInvResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ExtMienTrungServiceSoap">
+    <wsdl:operation name="AdjustInvoiceAction">
+      <wsdl:input message="tns:AdjustInvoiceActionSoapIn" />
+      <wsdl:output message="tns:AdjustInvoiceActionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDanhMucSanPham">
+      <wsdl:input message="tns:UpdateDanhMucSanPhamSoapIn" />
+      <wsdl:output message="tns:UpdateDanhMucSanPhamSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AdjustAssignedNoNewPatternKido">
+      <wsdl:input message="tns:AdjustAssignedNoNewPatternKidoSoapIn" />
+      <wsdl:output message="tns:AdjustAssignedNoNewPatternKidoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCurrentNo">
+      <wsdl:input message="tns:getCurrentNoSoapIn" />
+      <wsdl:output message="tns:getCurrentNoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportAndPublishInvLotte">
+      <wsdl:input message="tns:ImportAndPublishInvLotteSoapIn" />
+      <wsdl:output message="tns:ImportAndPublishInvLotteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getInvViewNoPay">
+      <wsdl:input message="tns:getInvViewNoPaySoapIn" />
+      <wsdl:output message="tns:getInvViewNoPaySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getInvViewNoPayJson">
+      <wsdl:input message="tns:getInvViewNoPayJsonSoapIn" />
+      <wsdl:output message="tns:getInvViewNoPayJsonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getInvViewFkeyNoPay">
+      <wsdl:input message="tns:getInvViewFkeyNoPaySoapIn" />
+      <wsdl:output message="tns:getInvViewFkeyNoPaySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listInvByDate">
+      <wsdl:input message="tns:listInvByDateSoapIn" />
+      <wsdl:output message="tns:listInvByDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listPatternSerialByCom">
+      <wsdl:input message="tns:listPatternSerialByComSoapIn" />
+      <wsdl:output message="tns:listPatternSerialByComSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchInv">
+      <wsdl:input message="tns:SearchInvSoapIn" />
+      <wsdl:output message="tns:SearchInvSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ExtMienTrungServiceSoap" type="tns:ExtMienTrungServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AdjustInvoiceAction">
+      <soap:operation soapAction="http://tempuri.org/AdjustInvoiceAction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDanhMucSanPham">
+      <soap:operation soapAction="http://tempuri.org/UpdateDanhMucSanPham" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AdjustAssignedNoNewPatternKido">
+      <soap:operation soapAction="http://tempuri.org/AdjustAssignedNoNewPatternKido" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCurrentNo">
+      <soap:operation soapAction="http://tempuri.org/getCurrentNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportAndPublishInvLotte">
+      <soap:operation soapAction="http://tempuri.org/ImportAndPublishInvLotte" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInvViewNoPay">
+      <soap:operation soapAction="http://tempuri.org/getInvViewNoPay" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInvViewNoPayJson">
+      <soap:operation soapAction="http://tempuri.org/getInvViewNoPayJson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInvViewFkeyNoPay">
+      <soap:operation soapAction="http://tempuri.org/getInvViewFkeyNoPay" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listInvByDate">
+      <soap:operation soapAction="http://tempuri.org/listInvByDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listPatternSerialByCom">
+      <soap:operation soapAction="http://tempuri.org/listPatternSerialByCom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchInv">
+      <soap:operation soapAction="http://tempuri.org/SearchInv" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ExtMienTrungServiceSoap12" type="tns:ExtMienTrungServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AdjustInvoiceAction">
+      <soap12:operation soapAction="http://tempuri.org/AdjustInvoiceAction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDanhMucSanPham">
+      <soap12:operation soapAction="http://tempuri.org/UpdateDanhMucSanPham" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AdjustAssignedNoNewPatternKido">
+      <soap12:operation soapAction="http://tempuri.org/AdjustAssignedNoNewPatternKido" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCurrentNo">
+      <soap12:operation soapAction="http://tempuri.org/getCurrentNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportAndPublishInvLotte">
+      <soap12:operation soapAction="http://tempuri.org/ImportAndPublishInvLotte" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInvViewNoPay">
+      <soap12:operation soapAction="http://tempuri.org/getInvViewNoPay" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInvViewNoPayJson">
+      <soap12:operation soapAction="http://tempuri.org/getInvViewNoPayJson" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInvViewFkeyNoPay">
+      <soap12:operation soapAction="http://tempuri.org/getInvViewFkeyNoPay" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listInvByDate">
+      <soap12:operation soapAction="http://tempuri.org/listInvByDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listPatternSerialByCom">
+      <soap12:operation soapAction="http://tempuri.org/listPatternSerialByCom" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchInv">
+      <soap12:operation soapAction="http://tempuri.org/SearchInv" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ExtMienTrungService">
+    <wsdl:port name="ExtMienTrungServiceSoap" binding="tns:ExtMienTrungServiceSoap">
+      <soap:address location="https://bqlc-tt78admindemo.vnpt-invoice.com.vn/ExtMienTrungService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ExtMienTrungServiceSoap12" binding="tns:ExtMienTrungServiceSoap12">
+      <soap12:address location="https://bqlc-tt78admindemo.vnpt-invoice.com.vn/ExtMienTrungService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

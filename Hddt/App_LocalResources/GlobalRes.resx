@@ -1,0 +1,438 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="alertbaucu" xml:space="preserve">
+    <value>Số lượng cổ phiếu bầu đã lớn hơn số lượng cổ phiếu hiện có</value>
+  </data>
+  <data name="alertbaucu1" xml:space="preserve">
+    <value>Kết quả bầu Hội Đồng Quản Trị đã được lưu thành công</value>
+  </data>
+  <data name="alertbaucuhtml" xml:space="preserve">
+    <value>Vui lòng thay đổi .</value>
+  </data>
+  <data name="alertbaucuhtml1" xml:space="preserve">
+    <value>Chọn tiếp tục để chuyển sang trang In kết quả</value>
+  </data>
+  <data name="alertbieuquyet1" xml:space="preserve">
+    <value>Bạn chưa đưa ra ý kiến cho nội dung biểu quyết số</value>
+  </data>
+  <data name="alertbieuquyet2" xml:space="preserve">
+    <value>Kết quả biểu quyết đã được lưu thành công</value>
+  </data>
+  <data name="alertbieuquyet3" xml:space="preserve">
+    <value>Bạn chắc chắn muốn nộp phiếu này ?</value>
+  </data>
+  <data name="alertbieuquyet4" xml:space="preserve">
+    <value>Bạn có chắc chắn chọn biểu quyết này ?</value>
+  </data>
+  <data name="alertbieuquyethtml2" xml:space="preserve">
+    <value>Chọn tiếp tục để bầu hội đồng quản trị</value>
+  </data>
+  <data name="alertbieuquyethtml3" xml:space="preserve">
+    <value>Tất cả các kết quả đã lưu sẽ không thể thay đổi !</value>
+  </data>
+  <data name="alertbieuquyethtml4" xml:space="preserve">
+    <value>Các biểu quyết đã chọn sẽ không thể thay đổi </value>
+  </data>
+  <data name="alertcheckemail" xml:space="preserve">
+    <value>Vui lòng kiểm tra, mật khẩu mới đã được gửi tới email</value>
+  </data>
+  <data name="alertcheckinternet" xml:space="preserve">
+    <value>Vui lòng kiểm tra lại kết nối Internet</value>
+  </data>
+  <data name="alertchuanhapmacd" xml:space="preserve">
+    <value>Bạn chưa nhập email</value>
+  </data>
+  <data name="alertdiendaydu" xml:space="preserve">
+    <value>Vui lòng nhập tài khoản và mật khẩu của bạn!</value>
+  </data>
+  <data name="alertdoimatkhau" xml:space="preserve">
+    <value>Vui lòng đổi mật khẩu của bạn trong lần đăng nhập đầu tiên</value>
+  </data>
+  <data name="alertdoimatkhau1" xml:space="preserve">
+    <value>Mật khẩu chưa đủ mạnh để đáp ứng yêu cầu của hệ thống</value>
+  </data>
+  <data name="alerthotro" xml:space="preserve">
+    <value>Vui lòng liên hệ để được hỗ trợ</value>
+  </data>
+  <data name="alerthotrothanhcong" xml:space="preserve">
+    <value>Thành công</value>
+  </data>
+  <data name="alerthotrothanhconghtml" xml:space="preserve">
+    <value>Cảm ơn bạn đã phản hồi</value>
+  </data>
+  <data name="alertketquahtml" xml:space="preserve">
+    <value>Chọn tiếp tục để tải về kết quả</value>
+  </data>
+  <data name="alertkhongchinhxac" xml:space="preserve">
+    <value>Xin lỗi, mật khẩu của bạn không chính xác. Vui lòng kiểm tra lại mật khẩu của bạn.</value>
+  </data>
+  <data name="alertmacd" xml:space="preserve">
+    <value>Email bạn nhập không tồn tại, vui lòng thử lại</value>
+  </data>
+  <data name="alertmatkhauhtml" xml:space="preserve">
+    <value>Vui lòng chọn tiếp tục để xác nhận thông tin</value>
+  </data>
+  <data name="alertmatkhauthanhcong" xml:space="preserve">
+    <value>Thành công! Mật khẩu đã được thay đổi!</value>
+  </data>
+  <data name="alertquenmatkhau" xml:space="preserve">
+    <value>Nhập email  và hệ thống sẽ gửi mật khẩu mới tới Email mà bạn đã đăng ký</value>
+  </data>
+  <data name="alerttailaitrang" xml:space="preserve">
+    <value>Bạn có chắc chắn muốn tải lại trang ?</value>
+  </data>
+  <data name="alerttailaitranghtml" xml:space="preserve">
+    <value>Tất cả các phiếu bầu sẽ được làm mới !</value>
+  </data>
+  <data name="alertthongtin1" xml:space="preserve">
+    <value>Bạn chắc chắn xác nhận thông tin ?</value>
+  </data>
+  <data name="alertthongtinhtml1" xml:space="preserve">
+    <value>Thông tin đã xác nhận sẽ không thể thay đổi</value>
+  </data>
+  <data name="alertthulai" xml:space="preserve">
+    <value>Vui lòng thử lại</value>
+  </data>
+  <data name="alerttieude" xml:space="preserve">
+    <value>Vui lòng nhập tiêu đề</value>
+  </data>
+  <data name="alertxacnhan" xml:space="preserve">
+    <value>Xác nhận thông tin thành công</value>
+  </data>
+  <data name="alertxacnhanbtn" xml:space="preserve">
+    <value>Bắt đầu biểu quyết</value>
+  </data>
+  <data name="alertxacnhanhtml" xml:space="preserve">
+    <value>Vui lòng chọn &lt;strong&gt;Bắt đầu biểu quyết&lt;/strong&gt; để tiếp tục.</value>
+  </data>
+  <data name="bauhdqt" xml:space="preserve">
+    <value>PHIẾU BẦU HỘI ĐỒNG QUẢN TRỊ</value>
+  </data>
+  <data name="bieuquyet" xml:space="preserve">
+    <value>PHIẾU BIỂU QUYẾT</value>
+  </data>
+  <data name="btnguimatkhau" xml:space="preserve">
+    <value>Gửi mật khẩu mới đến email</value>
+  </data>
+  <data name="entermatkhaumoi" xml:space="preserve">
+    <value>Nhập mật khẩu mới ...</value>
+  </data>
+  <data name="kqbauhdqt" xml:space="preserve">
+    <value>KẾT QUẢ BẦU HỘI ĐỒNG QUẢN TRỊ</value>
+  </data>
+  <data name="kqbieuquyet" xml:space="preserve">
+    <value>KẾT QUẢ BIỂU QUYẾT</value>
+  </data>
+  <data name="lbbauhdqt" xml:space="preserve">
+    <value>Bầu Hội Đồng Quản Trị</value>
+  </data>
+  <data name="lbbieuquyetdaihoi" xml:space="preserve">
+    <value>Biểu quyết chương trình đại hội</value>
+  </data>
+  <data name="lbbieuquyetnghiquyet" xml:space="preserve">
+    <value>Biểu quyết biên bản, nghị quyết</value>
+  </data>
+  <data name="lbbieuquyettotrinh" xml:space="preserve">
+    <value>Biểu quyết các tờ trình</value>
+  </data>
+  <data name="lbchacchan" xml:space="preserve">
+    <value>Chắc chắn</value>
+  </data>
+  <data name="lbchaomung" xml:space="preserve">
+    <value>Chào mừng đến với đại hội đồng cổ đông bất thường năm 2020 của </value>
+  </data>
+  <data name="lbchucvu" xml:space="preserve">
+    <value>Chức vụ</value>
+  </data>
+  <data name="lbcmnd" xml:space="preserve">
+    <value>CMND</value>
+  </data>
+  <data name="lbcophieu" xml:space="preserve">
+    <value>Cổ phiếu</value>
+  </data>
+  <data name="lbcophieuconlai" xml:space="preserve">
+    <value>Số lượng phiếu còn lại</value>
+  </data>
+  <data name="lbcophieudabau" xml:space="preserve">
+    <value>Số lượng phiếu đã bầu</value>
+  </data>
+  <data name="lbdaidien" xml:space="preserve">
+    <value>Đại diện</value>
+  </data>
+  <data name="lbdangnhap" xml:space="preserve">
+    <value>Đăng nhập</value>
+  </data>
+  <data name="lbdangxuat" xml:space="preserve">
+    <value>Đăng xuất</value>
+  </data>
+  <data name="lbdienthoai" xml:space="preserve">
+    <value>Điện thoại</value>
+  </data>
+  <data name="lbdoimatkhau" xml:space="preserve">
+    <value>Đổi mật khẩu</value>
+  </data>
+  <data name="lbdownload" xml:space="preserve">
+    <value>Tải xuống</value>
+  </data>
+  <data name="lbgiay" xml:space="preserve">
+    <value>GIÂY</value>
+  </data>
+  <data name="lbgio" xml:space="preserve">
+    <value>GIỜ</value>
+  </data>
+  <data name="lbhethong" xml:space="preserve">
+    <value>Hệ thống</value>
+  </data>
+  <data name="lbhethongbophieu" xml:space="preserve">
+    <value>HỆ THỐNG BỎ PHIẾU TRỰC TUYẾN</value>
+  </data>
+  <data name="lbhoantat" xml:space="preserve">
+    <value>Hoàn tất</value>
+  </data>
+  <data name="lbhoatdong" xml:space="preserve">
+    <value>. Vui lòng quay lại sau</value>
+  </data>
+  <data name="lbhoatdong0" xml:space="preserve">
+    <value>Đại hội đồng cổ đông thường niên sẽ bắt đầu vào lúc 9:30 sáng 28-04-2020</value>
+  </data>
+  <data name="lbhoten" xml:space="preserve">
+    <value>Họ và tên</value>
+  </data>
+  <data name="lbhuy" xml:space="preserve">
+    <value>Hủy</value>
+  </data>
+  <data name="lbinketqua" xml:space="preserve">
+    <value>In phiếu biểu quyết</value>
+  </data>
+  <data name="lbkhongchinhxac" xml:space="preserve">
+    <value>Thông tin không chính xác</value>
+  </data>
+  <data name="lbkhongthanhcong" xml:space="preserve">
+    <value>Không thành công</value>
+  </data>
+  <data name="lblienhehotro" xml:space="preserve">
+    <value>Liên hệ</value>
+  </data>
+  <data name="lbmatkhau" xml:space="preserve">
+    <value>Mật khẩu</value>
+  </data>
+  <data name="lbmatkhaumoi" xml:space="preserve">
+    <value>Mật khẩu mới</value>
+  </data>
+  <data name="lbngay" xml:space="preserve">
+    <value>NGÀY</value>
+  </data>
+  <data name="lbngaycap" xml:space="preserve">
+    <value>ngày cấp</value>
+  </data>
+  <data name="lbnhapmacodong" xml:space="preserve">
+    <value>Nhập email của bạn ...</value>
+  </data>
+  <data name="lbnoicap" xml:space="preserve">
+    <value>nơi cấp</value>
+  </data>
+  <data name="lbnoidung" xml:space="preserve">
+    <value>Nội dung</value>
+  </data>
+  <data name="lbphanhoi" xml:space="preserve">
+    <value>PHẢN HỒI</value>
+  </data>
+  <data name="lbphieubieuquyet" xml:space="preserve">
+    <value>Phiếu bầu</value>
+  </data>
+  <data name="lbphut" xml:space="preserve">
+    <value>PHÚT</value>
+  </data>
+  <data name="lbquenmatkhau" xml:space="preserve">
+    <value>Quên mật khẩu ?</value>
+  </data>
+  <data name="lbsapdienra" xml:space="preserve">
+    <value>Sắp diễn ra</value>
+  </data>
+  <data name="lbslcophieu" xml:space="preserve">
+    <value>Số lượng cổ phiếu</value>
+  </data>
+  <data name="lbslphieubau" xml:space="preserve">
+    <value>Số lượng phiếu bầu</value>
+  </data>
+  <data name="lbslphieubieuquyet" xml:space="preserve">
+    <value>Tổng số phiếu bầu</value>
+  </data>
+  <data name="lbsocmnd" xml:space="preserve">
+    <value>CMND số</value>
+  </data>
+  <data name="lbtaikhoan" xml:space="preserve">
+    <value>Tài khoản</value>
+  </data>
+  <data name="lbtailai" xml:space="preserve">
+    <value>Tải lại </value>
+  </data>
+  <data name="lbtailieu" xml:space="preserve">
+    <value>Tài liệu</value>
+  </data>
+  <data name="lbtencodong" xml:space="preserve">
+    <value>Tên cổ đông</value>
+  </data>
+  <data name="lbthongbao" xml:space="preserve">
+    <value>Thông báo</value>
+  </data>
+  <data name="lbthongtin" xml:space="preserve">
+    <value>Thông tin</value>
+  </data>
+  <data name="lbthongtincodong" xml:space="preserve">
+    <value>Thông tin cổ đông</value>
+  </data>
+  <data name="lbtieptuc" xml:space="preserve">
+    <value>Tiếp tục</value>
+  </data>
+  <data name="lbtieude" xml:space="preserve">
+    <value>Tiêu đề</value>
+  </data>
+  <data name="lbtilesohuu" xml:space="preserve">
+    <value>Tỉ lệ sở hữu (%)</value>
+  </data>
+  <data name="lbvande" xml:space="preserve">
+    <value>Vui lòng nhập vấn đề để được hỗ trợ</value>
+  </data>
+  <data name="lbxacnhanthongtin" xml:space="preserve">
+    <value>Xác nhận thông tin</value>
+  </data>
+  <data name="luuy" xml:space="preserve">
+    <value>LƯU Ý : Tổng số lượng cổ phiếu bầu phải nhỏ hơn hoặc bằng số lượng cổ phiếu đang sở hữu.</value>
+  </data>
+  <data name="placehodernhaplai" xml:space="preserve">
+    <value>Rấc tiếc, nhập lại không chính xác</value>
+  </data>
+  <data name="reentermatkhaumoi" xml:space="preserve">
+    <value>Nhập lại mật khẩu mới ...</value>
+  </data>
+  <data name="yeucau" xml:space="preserve">
+    <value>Yêu cầu</value>
+  </data>
+  <data name="yeucau6kytu" xml:space="preserve">
+    <value>Ít nhất 6 ký tự</value>
+  </data>
+  <data name="yeucauinhoa" xml:space="preserve">
+    <value>Ít nhất 1 chữ in hoa (A-Z)</value>
+  </data>
+  <data name="yeucauso" xml:space="preserve">
+    <value>Ít nhất 1 số (0-9)</value>
+  </data>
+</root>

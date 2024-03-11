@@ -1,0 +1,84 @@
+﻿@using DAIHOI.App_LocalResources
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="Title" content="Trang Gate.pymepharco.com">
+    <meta name="description" content="Thương hiệu PYMEPHARCO đã tạo được thế vững chắc và có uy tín trên thị trường trong và ngoài nước. Phát huy những thành quả đã đạt được, công ty đang hoạch định những bước đi cần thiết, phát triển thương hiệu PYMEPHARCO cũng như hướng tới việc cung cấp những sản phẩm có chất lượng cao và xuất khẩu ra thị trường quốc tế">
+    <meta name="keywords" content="gateway.pymepharco.com">
+    <meta http-equiv="content-language" content="vi" />
+    <meta name="theme-color" content="#f2546b">
+    <meta name="author" content="PYMEPHARCO">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="shortcut icon" href="~/Content/Main/plugins/images/logopmp1.png" />
+    <title>PYMEPHARCO - Đăng nhập</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="~/Content/LayoutPro/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/LayoutPro/css/mdb.css?version=2" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="~/Content/MDB/css/style.css" rel="stylesheet">
+    @*<link href="~/Content/w3.css" rel="stylesheet">*@
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+    <link href="~/Content/LoginCss.css?version=3" rel="stylesheet">
+    @RenderSection("styles", required: false)
+</head>
+<body class="creative-lp">
+   
+    <header class="logo-center" style="border-bottom:7px solid #2FA95E">
+        <div class="container">
+            <div class="logo" style="margin-top:12px;margin-bottom:12px;">
+                <a href="https://pymepharco.com">
+                    <img alt="logo2" src="~/Content/Main/plugins/images/logover2.png" />
+                </a>
+                <div class="float-right pt-3 pb-3">
+                    @if (ViewBag.flag == "vi")
+                    {
+                        @Url.LangSwitcher("Englist", ViewContext.RouteData, "en")
+                    }
+                    else
+                    {
+                        @Url.LangSwitcher("Englist", ViewContext.RouteData, "vi")
+                    }
+                </div>
+
+
+            </div>
+        </div>
+    </header>
+    @RenderBody()
+    <footer style="border-top:7px solid #2FA95E; margin-top:20px;">
+        <div class="container" style="height:62px;">
+            <img alt="logo" style="float:left" src="~/Content/Main/plugins/images/logonew.png" />
+            <img alt="logo1" style="float:right" src="~/Content/Main/plugins/images/mark.png" />
+            <p style="padding-top:21px;">Copyright ©@DateTime.Now.Year <b style="color:#2FA95E">PYMEPHARCO</b>. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <!-- Start your project here-->
+    <!-- /Start your project here-->
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+ 
+    <!-- Bootstrap tooltips -->
+    <script src="~/Scripts/jquery-confirm.min.js?version=1"></script>
+    <script type="text/javascript" src="~/Content/MDB/js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="~/Content/MDB/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="~/Content/MDB/js/mdb.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/md5.min.js"></script>
+    @*<script src="~/Scripts/JavaScript.js"></script>*@
+    <script type="text/javascript" language="javascript">
+        //Check if the top location is same as the current location
+        if (top.location.hostname != self.location.hostname) {
+            //If not then set the top to you current
+            top.location.href = self.location.href;
+        }
+    </script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>
