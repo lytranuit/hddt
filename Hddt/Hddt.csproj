@@ -198,7 +198,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-	<Compile Include="Web References\asta.business\Reference.cs">
+    <Compile Include="Web References\asta.business\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
@@ -1493,25 +1493,25 @@
     <Content Include="Views\Hoadonview\PHIEUXUAT.cshtml" />
     <Content Include="Views\Hoadonview\ASTA.cshtml" />
     <None Include="Web References\asta.business\businessService.wsdl" />
-    <Content Include="Web References\asta.business\Reference.map">
+    <None Include="Web References\asta.business\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
-    </Content>
+    </None>
     <None Include="Web References\asta.extmientrung\ExtMienTrungService.wsdl" />
-    <Content Include="Web References\asta.extmientrung\Reference.map">
+    <None Include="Web References\asta.extmientrung\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
-    </Content>
+    </None>
     <None Include="Web References\asta.portal\portalService.wsdl" />
-    <Content Include="Web References\asta.portal\Reference.map">
+    <None Include="Web References\asta.portal\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
-    </Content>
+    </None>
     <None Include="Web References\asta.publish\publishService.wsdl" />
-    <Content Include="Web References\asta.publish\Reference.map">
+    <None Include="Web References\asta.publish\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
-    </Content>
+    </None>
     <None Include="Web References\pypharm.business\businessService.wsdl" />
     <Content Include="Web References\pypharm.business\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>

@@ -185,6 +185,7 @@ namespace DAIHOI.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
         [global::System.Configuration.DefaultSettingValueAttribute("https://bqlc-tt78admindemo.vnpt-invoice.com.vn/businessService.asmx")]
         public string DAIHOI_asta_business_BusinessService {
             get {
@@ -194,6 +195,7 @@ namespace DAIHOI.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
         [global::System.Configuration.DefaultSettingValueAttribute("https://bqlc-tt78admindemo.vnpt-invoice.com.vn/ExtMienTrungService.asmx")]
         public string DAIHOI_asta_extmientrung_ExtMienTrungService {
             get {
@@ -203,6 +205,7 @@ namespace DAIHOI.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
         [global::System.Configuration.DefaultSettingValueAttribute("https://bqlc-tt78admindemo.vnpt-invoice.com.vn/portalService.asmx")]
         public string DAIHOI_asta_portal_PortalService {
             get {
@@ -212,6 +215,7 @@ namespace DAIHOI.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
         [global::System.Configuration.DefaultSettingValueAttribute("https://bqlc-tt78admindemo.vnpt-invoice.com.vn/publishService.asmx")]
         public string DAIHOI_asta_publish_PublishService {
             get {

@@ -227,7 +227,7 @@ namespace DAIHOI.asta.publish {
         
         /// <remarks/>
         public PublishService() {
-            this.Url = global::DAIHOI.Properties.Settings.Default.DAIHOI_pypharm_publish_PublishService;
+            this.Url = global::DAIHOI.Properties.Settings.Default.DAIHOI_asta_publish_PublishService;
             if ((this.IsLocalFileSystemWebService(this.Url) == true)) {
                 this.UseDefaultCredentials = true;
                 this.useDefaultCredentialsSetExplicitly = false;

@@ -139,7 +139,7 @@ namespace DAIHOI.asta.portal {
         
         /// <remarks/>
         public PortalService() {
-            this.Url = global::DAIHOI.Properties.Settings.Default.DAIHOI_pypharm_portal_PortalService;
+            this.Url = global::DAIHOI.Properties.Settings.Default.DAIHOI_asta_portal_PortalService;
             if ((this.IsLocalFileSystemWebService(this.Url) == true)) {
                 this.UseDefaultCredentials = true;
                 this.useDefaultCredentialsSetExplicitly = false;

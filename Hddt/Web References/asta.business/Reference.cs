@@ -219,7 +219,7 @@ namespace DAIHOI.asta.business {
         
         /// <remarks/>
         public BusinessService() {
-            this.Url = global::DAIHOI.Properties.Settings.Default.DAIHOI_pypharm_business_BusinessService;
+            this.Url = global::DAIHOI.Properties.Settings.Default.DAIHOI_asta_business_BusinessService;
             if ((this.IsLocalFileSystemWebService(this.Url) == true)) {
                 this.UseDefaultCredentials = true;
                 this.useDefaultCredentialsSetExplicitly = false;
