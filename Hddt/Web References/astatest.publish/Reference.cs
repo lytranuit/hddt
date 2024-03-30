@@ -13,7 +13,7 @@
 // 
 #pragma warning disable 1591
 
-namespace DAIHOI.asta.publish {
+namespace DAIHOI.astatest.publish {
     using System.Diagnostics;
     using System;
     using System.Xml.Serialization;
@@ -229,7 +229,7 @@ namespace DAIHOI.asta.publish {
         
         /// <remarks/>
         public PublishService() {
-            this.Url = global::DAIHOI.Properties.Settings.Default.DAIHOI_asta_publish_PublishService;
+            this.Url = global::DAIHOI.Properties.Settings.Default.DAIHOI_astatest_publish_PublishService;
             if ((this.IsLocalFileSystemWebService(this.Url) == true)) {
                 this.UseDefaultCredentials = true;
                 this.useDefaultCredentialsSetExplicitly = false;

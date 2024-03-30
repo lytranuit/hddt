@@ -13,7 +13,7 @@
 // 
 #pragma warning disable 1591
 
-namespace DAIHOI.asta.extmientrung {
+namespace DAIHOI.astatest.extmientrung {
     using System.Diagnostics;
     using System;
     using System.Xml.Serialization;

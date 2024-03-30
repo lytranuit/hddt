@@ -186,7 +186,7 @@ namespace DAIHOI.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://bqlc-tt78admindemo.vnpt-invoice.com.vn/businessService.asmx")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://4401062392-tt78admin.vnpt-invoice.com.vn/businessService.asmx")]
         public string DAIHOI_asta_business_BusinessService {
             get {
                 return ((string)(this["DAIHOI_asta_business_BusinessService"]));
@@ -206,7 +206,7 @@ namespace DAIHOI.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://bqlc-tt78admindemo.vnpt-invoice.com.vn/portalService.asmx")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://4401062392-tt78admin.vnpt-invoice.com.vn/portalService.asmx")]
         public string DAIHOI_asta_portal_PortalService {
             get {
                 return ((string)(this["DAIHOI_asta_portal_PortalService"]));
@@ -216,10 +216,50 @@ namespace DAIHOI.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://bqlc-tt78admindemo.vnpt-invoice.com.vn/publishService.asmx")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://4401062392-tt78admin.vnpt-invoice.com.vn/publishService.asmx")]
         public string DAIHOI_asta_publish_PublishService {
             get {
                 return ((string)(this["DAIHOI_asta_publish_PublishService"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://bqlc-tt78admindemo.vnpt-invoice.com.vn/publishService.asmx")]
+        public string DAIHOI_astatest_publish_PublishService {
+            get {
+                return ((string)(this["DAIHOI_astatest_publish_PublishService"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://bqlc-tt78admindemo.vnpt-invoice.com.vn/portalService.asmx")]
+        public string DAIHOI_astatest_portal_PortalService {
+            get {
+                return ((string)(this["DAIHOI_astatest_portal_PortalService"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://bqlc-tt78admindemo.vnpt-invoice.com.vn/ExtMienTrungService.asmx")]
+        public string DAIHOI_astatest_extmientrung_ExtMienTrungService {
+            get {
+                return ((string)(this["DAIHOI_astatest_extmientrung_ExtMienTrungService"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://bqlc-tt78admindemo.vnpt-invoice.com.vn/businessService.asmx")]
+        public string DAIHOI_astatest_business_BusinessService {
+            get {
+                return ((string)(this["DAIHOI_astatest_business_BusinessService"]));
             }
         }
     }

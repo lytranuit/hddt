@@ -4501,10 +4501,10 @@
   </wsdl:binding>
   <wsdl:service name="BusinessService">
     <wsdl:port name="BusinessServiceSoap" binding="tns:BusinessServiceSoap">
-      <soap:address location="https://4401062392-tt78admin.vnpt-invoice.com.vn/businessService.asmx" />
+      <soap:address location="https://bqlc-tt78admindemo.vnpt-invoice.com.vn/businessService.asmx" />
     </wsdl:port>
     <wsdl:port name="BusinessServiceSoap12" binding="tns:BusinessServiceSoap12">
-      <soap12:address location="https://4401062392-tt78admin.vnpt-invoice.com.vn/businessService.asmx" />
+      <soap12:address location="https://bqlc-tt78admindemo.vnpt-invoice.com.vn/businessService.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

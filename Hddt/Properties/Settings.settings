@@ -51,16 +51,28 @@
       <Value Profile="(Default)">https://3200042637-tt78admin.vnpt-invoice.com.vn/publishService.asmx</Value>
     </Setting>
     <Setting Name="DAIHOI_asta_business_BusinessService" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">https://bqlc-tt78admindemo.vnpt-invoice.com.vn/businessService.asmx</Value>
+      <Value Profile="(Default)">https://4401062392-tt78admin.vnpt-invoice.com.vn/businessService.asmx</Value>
     </Setting>
     <Setting Name="DAIHOI_asta_extmientrung_ExtMienTrungService" Type="(Web Service URL)" Scope="Application">
       <Value Profile="(Default)">https://bqlc-tt78admindemo.vnpt-invoice.com.vn/ExtMienTrungService.asmx</Value>
     </Setting>
     <Setting Name="DAIHOI_asta_portal_PortalService" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">https://bqlc-tt78admindemo.vnpt-invoice.com.vn/portalService.asmx</Value>
+      <Value Profile="(Default)">https://4401062392-tt78admin.vnpt-invoice.com.vn/portalService.asmx</Value>
     </Setting>
     <Setting Name="DAIHOI_asta_publish_PublishService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://4401062392-tt78admin.vnpt-invoice.com.vn/publishService.asmx</Value>
+    </Setting>
+    <Setting Name="DAIHOI_astatest_publish_PublishService" Type="(Web Service URL)" Scope="Application">
       <Value Profile="(Default)">https://bqlc-tt78admindemo.vnpt-invoice.com.vn/publishService.asmx</Value>
+    </Setting>
+    <Setting Name="DAIHOI_astatest_portal_PortalService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://bqlc-tt78admindemo.vnpt-invoice.com.vn/portalService.asmx</Value>
+    </Setting>
+    <Setting Name="DAIHOI_astatest_extmientrung_ExtMienTrungService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://bqlc-tt78admindemo.vnpt-invoice.com.vn/ExtMienTrungService.asmx</Value>
+    </Setting>
+    <Setting Name="DAIHOI_astatest_business_BusinessService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://bqlc-tt78admindemo.vnpt-invoice.com.vn/businessService.asmx</Value>
     </Setting>
   </Settings>
 </SettingsFile>

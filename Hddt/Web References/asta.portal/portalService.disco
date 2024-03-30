@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <discovery xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.xmlsoap.org/disco/">
-  <contractRef ref="https://bqlc-tt78admindemo.vnpt-invoice.com.vn/portalService.asmx?wsdl" docRef="https://bqlc-tt78admindemo.vnpt-invoice.com.vn/portalService.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
-  <soap address="https://bqlc-tt78admindemo.vnpt-invoice.com.vn/portalService.asmx" xmlns:q1="http://tempuri.org/" binding="q1:PortalServiceSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
-  <soap address="https://bqlc-tt78admindemo.vnpt-invoice.com.vn/portalService.asmx" xmlns:q2="http://tempuri.org/" binding="q2:PortalServiceSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <contractRef ref="https://4401062392-tt78admin.vnpt-invoice.com.vn/portalService.asmx?wsdl" docRef="https://4401062392-tt78admin.vnpt-invoice.com.vn/portalService.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="https://4401062392-tt78admin.vnpt-invoice.com.vn/portalService.asmx" xmlns:q1="http://tempuri.org/" binding="q1:PortalServiceSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="https://4401062392-tt78admin.vnpt-invoice.com.vn/portalService.asmx" xmlns:q2="http://tempuri.org/" binding="q2:PortalServiceSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
 </discovery>

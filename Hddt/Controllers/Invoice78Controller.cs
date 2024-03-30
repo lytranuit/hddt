@@ -31,6 +31,11 @@ namespace DAIHOI.Controllers
         asta.portal.PortalService portalasta = new asta.portal.PortalService();
         asta.business.BusinessService businessasta = new asta.business.BusinessService();
         asta.extmientrung.ExtMienTrungService extasta = new asta.extmientrung.ExtMienTrungService();
+        //Astatest
+        astatest.publish.PublishService publishastatest = new astatest.publish.PublishService();
+        astatest.portal.PortalService portalastatest = new astatest.portal.PortalService();
+        astatest.business.BusinessService businessastatest = new astatest.business.BusinessService();
+        astatest.extmientrung.ExtMienTrungService extastatest = new astatest.extmientrung.ExtMienTrungService();
         //PYPHARM
         pypharm.publish.PublishService publishpypharm = new pypharm.publish.PublishService();
         pypharm.portal.PortalService portalpypharm = new pypharm.portal.PortalService();
@@ -72,6 +77,10 @@ namespace DAIHOI.Controllers
             else if (macn == "ASTA")
             {
                 result = publishasta.UpdateCus(xml, tv.accservice, tv.passservice, 0);
+            }
+            else if (macn == "ASTA_TEST")
+            {
+                result = publishastatest.UpdateCus(xml, tv.accservice, tv.passservice, 0);
             }
             else if (macn == "SGP")
             {
@@ -116,6 +125,10 @@ namespace DAIHOI.Controllers
             else if (macn == "ASTA")
             {
                 result = publishasta.UpdateCus(xml, tv.accservice, tv.passservice, 0);
+            }
+            else if (macn == "ASTA_TEST")
+            {
+                result = publishastatest.UpdateCus(xml, tv.accservice, tv.passservice, 0);
             }
             else if (macn == "SGP")
             {
@@ -172,6 +185,10 @@ namespace DAIHOI.Controllers
                 else if (macn == "ASTA")
                 {
                     result = publishasta.ImportAndPublishInv(tv.accadmin, tv.passadmin, xml, tv.accservice, tv.passservice, InvoicesPattern.pattern, InvoicesPattern.serial, 0);
+                }
+                else if (macn == "ASTA_TEST")
+                {
+                    result = publishastatest.ImportAndPublishInv(tv.accadmin, tv.passadmin, xml, tv.accservice, tv.passservice, InvoicesPattern.pattern, InvoicesPattern.serial, 0);
                 }
                 else if (macn == "SGP")
                 {
@@ -264,6 +281,10 @@ namespace DAIHOI.Controllers
             {
                 result = publishasta.SendAgainEmailServ(tv.accadmin, tv.passadmin, tv.accservice, tv.passservice, xml, InvoicesPattern.pattern, InvoicesPattern.serial);
             }
+            else if (macn == "ASTA_TEST")
+            {
+                result = publishastatest.SendAgainEmailServ(tv.accadmin, tv.passadmin, tv.accservice, tv.passservice, xml, InvoicesPattern.pattern, InvoicesPattern.serial);
+            }
             else if (macn == "SGP")
             {
                 result = publishpypharmhcm.SendAgainEmailServ(tv.accadmin, tv.passadmin, tv.accservice, tv.passservice, xml, InvoicesPattern.pattern, InvoicesPattern.serial);
@@ -344,6 +365,10 @@ namespace DAIHOI.Controllers
                 {
                     result = publishasta.ImportInv(xml, tv.accservice, tv.passservice, 0);
                 }
+                else if (macn == "ASTA_TEST")
+                {
+                    result = publishastatest.ImportInv(xml, tv.accservice, tv.passservice, 0);
+                }
                 else if (macn == "SGP")
                 {
                     result = publishpypharmhcm.ImportInv(xml, tv.accservice, tv.passservice, 0);
@@ -415,6 +440,10 @@ namespace DAIHOI.Controllers
             {
                 result = publishasta.SendInvNoticeErrors(tv.accadmin, tv.passadmin, xml, tv.accservice, tv.passservice, DLTBao.DSHDon.HDon.KHMSHDon, 0);
             }
+            else if (macn == "ASTA_TEST")
+            {
+                result = publishastatest.SendInvNoticeErrors(tv.accadmin, tv.passadmin, xml, tv.accservice, tv.passservice, DLTBao.DSHDon.HDon.KHMSHDon, 0);
+            }
             else if (macn == "SGP")
             {
                 result = publishpypharmhcm.SendInvNoticeErrors(tv.accadmin, tv.passadmin, xml, tv.accservice, tv.passservice, DLTBao.DSHDon.HDon.KHMSHDon, 0);
@@ -478,6 +507,10 @@ namespace DAIHOI.Controllers
             {
                 result = businessasta.cancelInvNoPay(tv.accadmin, tv.passadmin, fkey, tv.accservice, tv.passservice);
             }
+            else if (macn == "ASTA_TEST")
+            {
+                result = businessastatest.cancelInvNoPay(tv.accadmin, tv.passadmin, fkey, tv.accservice, tv.passservice);
+            }
             else if (macn == "SGP")
             {
                 result = businesspypharmhcm.cancelInvNoPay(tv.accadmin, tv.passadmin, fkey, tv.accservice, tv.passservice);
@@ -520,6 +553,10 @@ namespace DAIHOI.Controllers
             else if (macn == "ASTA")
             {
                 result = portalasta.downloadInvPDFFkeyNoPay(fkey, tv.accservice, tv.passservice);
+            }
+            else if (macn == "ASTA_TEST")
+            {
+                result = portalastatest.downloadInvPDFFkeyNoPay(fkey, tv.accservice, tv.passservice);
             }
             else if (macn == "SGP")
             {
@@ -573,6 +610,10 @@ namespace DAIHOI.Controllers
             else if (macn == "ASTA")
             {
                 result = businessasta.ReplaceInvoiceAction(tv.accadmin, tv.passadmin, xml, tv.accservice, tv.passservice, ReplaceInvPattern.fkey, "", 0, ReplaceInvPattern.pattern, ReplaceInvPattern.serial);
+            }
+            else if (macn == "ASTA_TEST")
+            {
+                result = businessastatest.ReplaceInvoiceAction(tv.accadmin, tv.passadmin, xml, tv.accservice, tv.passservice, ReplaceInvPattern.fkey, "", 0, ReplaceInvPattern.pattern, ReplaceInvPattern.serial);
             }
             else if (macn == "SGP")
             {
@@ -659,6 +700,10 @@ namespace DAIHOI.Controllers
             {
                 result = businessasta.AdjustInvoiceAction(tv.accadmin, tv.passadmin, xml, tv.accservice, tv.passservice, AdjustInvPattern.fkey, "", 0, AdjustInvPattern.pattern, AdjustInvPattern.serial);
             }
+            else if (macn == "ASTA_TEST")
+            {
+                result = businessastatest.AdjustInvoiceAction(tv.accadmin, tv.passadmin, xml, tv.accservice, tv.passservice, AdjustInvPattern.fkey, "", 0, AdjustInvPattern.pattern, AdjustInvPattern.serial);
+            }
             else if (macn == "SGP")
             {
                 result = businesspypharmhcm.AdjustInvoiceAction(tv.accadmin, tv.passadmin, xml, tv.accservice, tv.passservice, AdjustInvPattern.fkey, "", 0, AdjustInvPattern.pattern, AdjustInvPattern.serial);
@@ -742,6 +787,10 @@ namespace DAIHOI.Controllers
             {
                 result = extasta.SearchInv(ModelSearch.extra10, ModelSearch.cuscode, ModelSearch.pattern, ModelSearch.serial, ModelSearch.fromdate, ModelSearch.todate, ModelSearch.fromno, ModelSearch.tono, ModelSearch.page, ModelSearch.pagesize, tv.accservice, tv.passservice);
             }
+            else if (macn == "ASTA_TEST")
+            {
+                result = extastatest.SearchInv(ModelSearch.extra10, ModelSearch.cuscode, ModelSearch.pattern, ModelSearch.serial, ModelSearch.fromdate, ModelSearch.todate, ModelSearch.fromno, ModelSearch.tono, ModelSearch.page, ModelSearch.pagesize, tv.accservice, tv.passservice);
+            }
             else if (macn == "SGP")
             {
                 result = extpypharmhcm.SearchInv(ModelSearch.extra10, ModelSearch.cuscode, ModelSearch.pattern, ModelSearch.serial, ModelSearch.fromdate, ModelSearch.todate, ModelSearch.fromno, ModelSearch.tono, ModelSearch.page, ModelSearch.pagesize, tv.accservice, tv.passservice);
@@ -781,6 +830,10 @@ namespace DAIHOI.Controllers
             else if (macn == "ASTA")
             {
                 result = portalasta.listInvFromNoToNo(ModelFromNotoNo.fromno, ModelFromNotoNo.tono, ModelFromNotoNo.pattern, ModelFromNotoNo.serial, tv.accservice, tv.passservice);
+            }
+            else if (macn == "ASTA_TEST")
+            {
+                result = portalastatest.listInvFromNoToNo(ModelFromNotoNo.fromno, ModelFromNotoNo.tono, ModelFromNotoNo.pattern, ModelFromNotoNo.serial, tv.accservice, tv.passservice);
             }
             else if (macn == "SGP")
             {
@@ -838,6 +891,10 @@ namespace DAIHOI.Controllers
             {
                 result = portalasta.listInvByCus(ModelByCus.cuscode, ModelByCus.fromdate, ModelByCus.todate, tv.accservice, tv.passservice);
             }
+            else if (macn == "ASTA_TEST")
+            {
+                result = portalastatest.listInvByCus(ModelByCus.cuscode, ModelByCus.fromdate, ModelByCus.todate, tv.accservice, tv.passservice);
+            }
             else if (macn == "SGP")
             {
                 result = portalpypharmhcm.listInvByCus(ModelByCus.cuscode, ModelByCus.fromdate, ModelByCus.todate, tv.accservice, tv.passservice);
@@ -893,6 +950,10 @@ namespace DAIHOI.Controllers
             {
                 result = portalasta.getInvViewFkeyNoPay(fkey, tv.accservice, tv.passservice);
             }
+            else if (macn == "ASTA_TEST")
+            {
+                result = portalastatest.getInvViewFkeyNoPay(fkey, tv.accservice, tv.passservice);
+            }
             else if (macn == "SGP")
             {
                 result = portalpypharmhcm.getInvViewFkeyNoPay(fkey, tv.accservice, tv.passservice);
@@ -931,6 +992,10 @@ namespace DAIHOI.Controllers
             else if (macn == "ASTA")
             {
                 result = portalasta.downloadInvFkeyNoPay(fkey, tv.accservice, tv.passservice);
+            }
+            else if (macn == "ASTA_TEST")
+            {
+                result = portalastatest.downloadInvFkeyNoPay(fkey, tv.accservice, tv.passservice);
             }
             else if (macn == "SGP")
             {
@@ -1002,6 +1067,10 @@ namespace DAIHOI.Controllers
             {
                 result = portalasta.downloadInvNoPay(converttokentostring(token), tv.accservice, tv.passservice);
             }
+            else if (macn == "ASTA_TEST")
+            {
+                result = portalastatest.downloadInvNoPay(converttokentostring(token), tv.accservice, tv.passservice);
+            }
             else if (macn == "SGP")
             {
                 result = portalpypharmhcm.downloadInvNoPay(converttokentostring(token), tv.accservice, tv.passservice);
@@ -1066,6 +1135,10 @@ namespace DAIHOI.Controllers
             {
                 result = portalasta.convertForStoreFkey(x.fkey, tv.accservice, tv.passservice);
             }
+            else if (macn == "ASTA_TEST")
+            {
+                result = portalastatest.convertForStoreFkey(x.fkey, tv.accservice, tv.passservice);
+            }
             else if (macn == "SGP")
             {
                 result = portalpypharmhcm.convertForStoreFkey(x.fkey, tv.accservice, tv.passservice);
@@ -1112,6 +1185,10 @@ namespace DAIHOI.Controllers
             {
                 result = portalasta.convertForStoreFkey(fkey, tv.accservice, tv.passservice);
             }
+            else if (macn == "ASTA_TEST")
+            {
+                result = portalastatest.convertForStoreFkey(fkey, tv.accservice, tv.passservice);
+            }
             else if (macn == "SGP")
             {
                 result = portalpypharmhcm.convertForStoreFkey(fkey, tv.accservice, tv.passservice);
@@ -1151,6 +1228,10 @@ namespace DAIHOI.Controllers
             {
                 result = portalasta.downloadInvFkeyNoPay(fkey, tv.accservice, tv.passservice);
             }
+            else if (macn == "ASTA_TEST")
+            {
+                result = portalastatest.downloadInvFkeyNoPay(fkey, tv.accservice, tv.passservice);
+            }
             else if (macn == "SGP")
             {
                 result = portalpypharmhcm.downloadInvFkeyNoPay(fkey, tv.accservice, tv.passservice);
@@ -1188,6 +1269,10 @@ namespace DAIHOI.Controllers
             else if (macn == "ASTA")
             {
                 result = publishasta.GetMCCQThueByInvTokens(tv.accadmin, tv.passadmin, tv.accservice, tv.passservice, converttokentostring(token));
+            }
+            else if (macn == "ASTA_TEST")
+            {
+                result = publishastatest.GetMCCQThueByInvTokens(tv.accadmin, tv.passadmin, tv.accservice, tv.passservice, converttokentostring(token));
             }
             else if (macn == "SGP")
             {
@@ -1254,6 +1339,10 @@ namespace DAIHOI.Controllers
             else if (macn == "ASTA")
             {
                 result = publishasta.GetMCCQThueByFkeys(tv.accadmin, tv.passadmin, tv.accservice, tv.passservice, fkeys.pattern, fkeys.fkey);
+            }
+            else if (macn == "ASTA_TEST")
+            {
+                result = publishastatest.GetMCCQThueByFkeys(tv.accadmin, tv.passadmin, tv.accservice, tv.passservice, fkeys.pattern, fkeys.fkey);
             }
             else if (macn == "SGP")
             {
@@ -1322,6 +1411,10 @@ namespace DAIHOI.Controllers
             {
                 result = portalasta.downloadInvFkeyNoPay(fkey, tv.accservice, tv.passservice);
             }
+            else if (macn == "ASTA_TEST")
+            {
+                result = portalastatest.downloadInvFkeyNoPay(fkey, tv.accservice, tv.passservice);
+            }
             else if (macn == "SGP")
             {
                 result = portalpypharmhcm.downloadInvFkeyNoPay(fkey, tv.accservice, tv.passservice);
@@ -1362,6 +1455,10 @@ namespace DAIHOI.Controllers
             {
                 result = portalasta.downloadInvNoPay(converttokentostring(token), tv.accservice, tv.passservice);
             }
+            else if (macn == "ASTA_TEST")
+            {
+                result = portalastatest.downloadInvNoPay(converttokentostring(token), tv.accservice, tv.passservice);
+            }
             else if (macn == "SGP")
             {
                 result = portalpypharmhcm.downloadInvNoPay(converttokentostring(token), tv.accservice, tv.passservice);
@@ -1401,6 +1498,10 @@ namespace DAIHOI.Controllers
             else if (macn == "ASTA")
             {
                 result = portalasta.getInvViewFkeyNoPay(x.fkey, tv.accservice, tv.passservice);
+            }
+            else if (macn == "ASTA_TEST")
+            {
+                result = portalastatest.getInvViewFkeyNoPay(x.fkey, tv.accservice, tv.passservice);
             }
             else if (macn == "SGP")
             {

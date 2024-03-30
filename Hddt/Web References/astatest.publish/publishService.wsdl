@@ -4622,10 +4622,10 @@
   </wsdl:binding>
   <wsdl:service name="PublishService">
     <wsdl:port name="PublishServiceSoap" binding="tns:PublishServiceSoap">
-      <soap:address location="https://4401062392-tt78admin.vnpt-invoice.com.vn/publishService.asmx" />
+      <soap:address location="https://bqlc-tt78admindemo.vnpt-invoice.com.vn/publishService.asmx" />
     </wsdl:port>
     <wsdl:port name="PublishServiceSoap12" binding="tns:PublishServiceSoap12">
-      <soap12:address location="https://4401062392-tt78admin.vnpt-invoice.com.vn/publishService.asmx" />
+      <soap12:address location="https://bqlc-tt78admindemo.vnpt-invoice.com.vn/publishService.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>
