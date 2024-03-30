@@ -218,6 +218,26 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
+    <Compile Include="Web References\astatest.business\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\astatest.extmientrung\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\astatest.portal\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\astatest.publish\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
     <Compile Include="Web References\pypharm.business\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1492,6 +1512,7 @@
     <Content Include="Views\Hoadonview\PYP.cshtml" />
     <Content Include="Views\Hoadonview\PHIEUXUAT.cshtml" />
     <Content Include="Views\Hoadonview\ASTA.cshtml" />
+    <Content Include="Views\Hoadonview\ASTA - Copy.cshtml" />
     <None Include="Web References\asta.business\businessService.wsdl" />
     <None Include="Web References\asta.business\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
@@ -1512,7 +1533,31 @@
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Web References\astatest.business\businessService.wsdl" />
+    <Content Include="Web References\astatest.business\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <None Include="Web References\astatest.extmientrung\ExtMienTrungService.wsdl" />
+    <None Include="Web References\astatest.business\businessService.disco" />
+    <Content Include="Web References\astatest.extmientrung\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <None Include="Web References\astatest.portal\portalService.wsdl" />
+    <None Include="Web References\astatest.extmientrung\ExtMienTrungService.disco" />
+    <Content Include="Web References\astatest.portal\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <None Include="Web References\astatest.publish\publishService.wsdl" />
+    <None Include="Web References\astatest.portal\portalService.disco" />
+    <Content Include="Web References\astatest.publish\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
     <None Include="Web References\pypharm.business\businessService.wsdl" />
+    <None Include="Web References\astatest.publish\publishService.disco" />
     <Content Include="Web References\pypharm.business\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -1672,10 +1717,10 @@
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>DAIHOI_asta_business_BusinessService</CachedSettingsPropName>
     </WebReferenceUrl>
-    <WebReferenceUrl Include="https://4401062392-tt78admin.vnpt-invoice.com.vn/ExtMienTrungService.asmx">
+    <WebReferenceUrl Include="https://bqlc-tt78admindemo.vnpt-invoice.com.vn/ExtMienTrungService.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\asta.extmientrung\</RelPath>
-      <UpdateFromURL>https://4401062392-tt78admin.vnpt-invoice.com.vn/ExtMienTrungService.asmx</UpdateFromURL>
+      <UpdateFromURL>https://bqlc-tt78admindemo.vnpt-invoice.com.vn/ExtMienTrungService.asmx</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
@@ -1748,6 +1793,50 @@
       </CachedDynamicPropName>
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>DAIHOI_pypharm_publish_PublishService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://bqlc-tt78admindemo.vnpt-invoice.com.vn/businessService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\astatest.business\</RelPath>
+      <UpdateFromURL>https://bqlc-tt78admindemo.vnpt-invoice.com.vn/businessService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>DAIHOI_astatest_business_BusinessService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://bqlc-tt78admindemo.vnpt-invoice.com.vn/ExtMienTrungService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\astatest.extmientrung\</RelPath>
+      <UpdateFromURL>https://bqlc-tt78admindemo.vnpt-invoice.com.vn/ExtMienTrungService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>DAIHOI_astatest_extmientrung_ExtMienTrungService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://bqlc-tt78admindemo.vnpt-invoice.com.vn/portalService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\astatest.portal\</RelPath>
+      <UpdateFromURL>https://bqlc-tt78admindemo.vnpt-invoice.com.vn/portalService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>DAIHOI_astatest_portal_PortalService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://bqlc-tt78admindemo.vnpt-invoice.com.vn/publishService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\astatest.publish\</RelPath>
+      <UpdateFromURL>https://bqlc-tt78admindemo.vnpt-invoice.com.vn/publishService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>DAIHOI_astatest_publish_PublishService</CachedSettingsPropName>
     </WebReferenceUrl>
     <WebReferenceUrl Include="https://pypharrm-tt78admindemo.vnpt-invoice.com.vn/businessService.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
