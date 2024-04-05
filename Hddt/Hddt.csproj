@@ -1717,10 +1717,10 @@
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>DAIHOI_asta_business_BusinessService</CachedSettingsPropName>
     </WebReferenceUrl>
-    <WebReferenceUrl Include="https://bqlc-tt78admindemo.vnpt-invoice.com.vn/ExtMienTrungService.asmx">
+    <WebReferenceUrl Include="https://4401062392-tt78admin.vnpt-invoice.com.vn/ExtMienTrungService.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\asta.extmientrung\</RelPath>
-      <UpdateFromURL>https://bqlc-tt78admindemo.vnpt-invoice.com.vn/ExtMienTrungService.asmx</UpdateFromURL>
+      <UpdateFromURL>https://4401062392-tt78admin.vnpt-invoice.com.vn/ExtMienTrungService.asmx</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>

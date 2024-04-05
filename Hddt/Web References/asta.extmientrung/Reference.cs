@@ -55,7 +55,7 @@ namespace DAIHOI.asta.extmientrung {
         
         /// <remarks/>
         public ExtMienTrungService() {
-            this.Url = global::DAIHOI.Properties.Settings.Default.DAIHOI_astatest_extmientrung_ExtMienTrungService;
+            this.Url = global::DAIHOI.Properties.Settings.Default.DAIHOI_asta_extmientrung_ExtMienTrungService;
             if ((this.IsLocalFileSystemWebService(this.Url) == true)) {
                 this.UseDefaultCredentials = true;
                 this.useDefaultCredentialsSetExplicitly = false;

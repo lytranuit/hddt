@@ -537,10 +537,10 @@
   </wsdl:binding>
   <wsdl:service name="ExtMienTrungService">
     <wsdl:port name="ExtMienTrungServiceSoap" binding="tns:ExtMienTrungServiceSoap">
-      <soap:address location="https://bqlc-tt78admindemo.vnpt-invoice.com.vn/ExtMienTrungService.asmx" />
+      <soap:address location="https://4401062392-tt78admin.vnpt-invoice.com.vn/ExtMienTrungService.asmx" />
     </wsdl:port>
     <wsdl:port name="ExtMienTrungServiceSoap12" binding="tns:ExtMienTrungServiceSoap12">
-      <soap12:address location="https://bqlc-tt78admindemo.vnpt-invoice.com.vn/ExtMienTrungService.asmx" />
+      <soap12:address location="https://4401062392-tt78admin.vnpt-invoice.com.vn/ExtMienTrungService.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

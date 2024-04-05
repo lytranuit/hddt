@@ -54,7 +54,7 @@
       <Value Profile="(Default)">https://4401062392-tt78admin.vnpt-invoice.com.vn/businessService.asmx</Value>
     </Setting>
     <Setting Name="DAIHOI_asta_extmientrung_ExtMienTrungService" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">https://bqlc-tt78admindemo.vnpt-invoice.com.vn/ExtMienTrungService.asmx</Value>
+      <Value Profile="(Default)">https://4401062392-tt78admin.vnpt-invoice.com.vn/ExtMienTrungService.asmx</Value>
     </Setting>
     <Setting Name="DAIHOI_asta_portal_PortalService" Type="(Web Service URL)" Scope="Application">
       <Value Profile="(Default)">https://4401062392-tt78admin.vnpt-invoice.com.vn/portalService.asmx</Value>
