@@ -32,6 +32,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -238,6 +239,26 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
+    <Compile Include="Web References\nghinhphong.business\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\nghinhphong.extmientrung\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\nghinhphong.portal\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\nghinhphong.publish\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
     <Compile Include="Web References\pypharm.business\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -333,6 +354,7 @@
     <Content Include="Content\LayoutPro\img\architecture.jpg" />
     <Content Include="Content\LayoutPro\img\svg\arrow_left.svg" />
     <Content Include="Content\LayoutPro\img\svg\arrow_right.svg" />
+    <Content Include="Content\LayoutPro\img\nghinhphong.jpg" />
     <Content Include="Content\LayoutPro\js\bootstrap.min.js" />
     <Content Include="Content\LayoutPro\js\jquery-3.2.1.min.js" />
     <Content Include="Content\LayoutPro\js\mdb.min.js" />
@@ -1512,7 +1534,7 @@
     <Content Include="Views\Hoadonview\PYP.cshtml" />
     <Content Include="Views\Hoadonview\PHIEUXUAT.cshtml" />
     <Content Include="Views\Hoadonview\ASTA.cshtml" />
-    <Content Include="Views\Hoadonview\ASTA - Copy.cshtml" />
+    <Content Include="Views\Hoadonview\NP.cshtml" />
     <None Include="Web References\asta.business\businessService.wsdl" />
     <None Include="Web References\asta.business\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
@@ -1556,8 +1578,32 @@
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </Content>
+    <None Include="Web References\nghinhphong.business\businessService.wsdl" />
+    <Content Include="Web References\nghinhphong.business\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <None Include="Web References\nghinhphong.extmientrung\ExtMienTrungService.wsdl" />
+    <Content Include="Web References\nghinhphong.extmientrung\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <None Include="Web References\nghinhphong.portal\portalService.wsdl" />
+    <Content Include="Web References\nghinhphong.portal\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <None Include="Web References\nghinhphong.publish\publishService.wsdl" />
+    <Content Include="Web References\nghinhphong.publish\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
     <None Include="Web References\pypharm.business\businessService.wsdl" />
     <None Include="Web References\astatest.publish\publishService.disco" />
+    <None Include="Web References\nghinhphong.business\businessService.disco" />
+    <None Include="Web References\nghinhphong.extmientrung\ExtMienTrungService.disco" />
+    <None Include="Web References\nghinhphong.portal\portalService.disco" />
+    <None Include="Web References\nghinhphong.publish\publishService.disco" />
     <Content Include="Web References\pypharm.business\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -1793,6 +1839,50 @@
       </CachedDynamicPropName>
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>DAIHOI_pypharm_publish_PublishService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://4401111868-tt78cadmin.vnpt-invoice.com.vn/businessService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\nghinhphong.business\</RelPath>
+      <UpdateFromURL>https://4401111868-tt78cadmin.vnpt-invoice.com.vn/businessService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>DAIHOI_nghinhphong_business_BusinessService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://4401111868-tt78cadmin.vnpt-invoice.com.vn/ExtMienTrungService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\nghinhphong.extmientrung\</RelPath>
+      <UpdateFromURL>https://4401111868-tt78cadmin.vnpt-invoice.com.vn/ExtMienTrungService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>DAIHOI_nghinhphong_extmientrung_ExtMienTrungService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://4401111868-tt78cadmin.vnpt-invoice.com.vn/portalService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\nghinhphong.portal\</RelPath>
+      <UpdateFromURL>https://4401111868-tt78cadmin.vnpt-invoice.com.vn/portalService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>DAIHOI_nghinhphong_portal_PortalService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://4401111868-tt78cadmin.vnpt-invoice.com.vn/publishService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\nghinhphong.publish\</RelPath>
+      <UpdateFromURL>https://4401111868-tt78cadmin.vnpt-invoice.com.vn/publishService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>DAIHOI_nghinhphong_publish_PublishService</CachedSettingsPropName>
     </WebReferenceUrl>
     <WebReferenceUrl Include="https://bqlc-tt78admindemo.vnpt-invoice.com.vn/businessService.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>

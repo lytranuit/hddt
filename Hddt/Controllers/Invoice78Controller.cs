@@ -11,6 +11,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Web.Http;
 using System.Web.Services.Protocols;
+using System.Web.UI.WebControls;
 using System.Xml;
 using System.Xml.Serialization;
 
@@ -57,10 +58,116 @@ namespace DAIHOI.Controllers
         pypharmtest.portal.PortalService portalpypharmtest = new pypharmtest.portal.PortalService();
         pypharmtest.business.BusinessService businesspypharmtest = new pypharmtest.business.BusinessService();
         pypharmtest.extmientrung.ExtMienTrungService extpypharmtest = new pypharmtest.extmientrung.ExtMienTrungService();
+        //nghinhphong
+        nghinhphong.publish.PublishService publishnghinhphong = new nghinhphong.publish.PublishService();
+        nghinhphong.portal.PortalService portalnghinhphong = new nghinhphong.portal.PortalService();
+        nghinhphong.business.BusinessService businessnghinhphong = new nghinhphong.business.BusinessService();
+        nghinhphong.extmientrung.ExtMienTrungService extnghinhphong = new nghinhphong.extmientrung.ExtMienTrungService();
 
         public Invoice78Controller()
         {
 
+        }
+        private dynamic GetClass(string macn_type)
+        {
+            switch (macn_type)
+            {
+                case "ASTA_publish":
+                    return publishasta;
+                    break;
+                case "ASTA_portal":
+                    return portalasta;
+                    break;
+                case "ASTA_business":
+                    return businessasta;
+                    break;
+                case "ASTA_extmientrung":
+                    return extasta;
+                    break;
+
+                case "ASTA_TEST_publish":
+                    return publishastatest;
+                    break;
+                case "ASTA_TEST_portal":
+                    return portalastatest;
+                    break;
+                case "ASTA_TEST_business":
+                    return businessastatest;
+                    break;
+                case "ASTA_TEST_extmientrung":
+                    return extastatest;
+                    break;
+
+                case "PYP_publish":
+                    return publishpypharm;
+                    break;
+                case "PYP_portal":
+                    return portalpypharm;
+                    break;
+                case "PYP_business":
+                    return businesspypharm;
+                    break;
+                case "PYP_extmientrung":
+                    return extpypharm;
+                    break;
+
+                case "SGP_publish":
+                    return publishpypharmhcm;
+                    break;
+                case "SGP_portal":
+                    return portalpypharmhcm;
+                    break;
+                case "SGP_business":
+                    return businesspypharmhcm;
+                    break;
+                case "SGP_extmientrung":
+                    return extpypharmhcm;
+                    break;
+
+                case "QT_publish":
+                    return publishquangtri;
+                    break;
+                case "QT_portal":
+                    return portalquangtri;
+                    break;
+                case "QT_business":
+                    return businessquangtri;
+                    break;
+                case "QT_extmientrung":
+                    return extquangtri;
+                    break;
+
+                case "PYP_TEST_publish":
+                    return publishpypharmtest;
+                    break;
+                case "PYP_TEST_portal":
+                    return portalpypharmtest;
+                    break;
+                case "PYP_TEST_business":
+                    return businesspypharmtest;
+                    break;
+                case "PYP_TEST_extmientrung":
+                    return extpypharmtest;
+                    break;
+
+                case "NP_publish":
+                    return publishnghinhphong;
+                    break;
+                case "NP_portal":
+                    return portalnghinhphong;
+                    break;
+                case "NP_business":
+                    return businessnghinhphong;
+                    break;
+                case "NP_extmientrung":
+                    return extnghinhphong;
+                    break;
+                default:
+                    return publishpypharmtest;
+                    break;
+
+            }
+            return publishpypharmtest;
         }
         [HttpPost]
         public ResultAPI capnhatkhachhang([FromBody] Customer Customer, string macn)
@@ -70,30 +177,8 @@ namespace DAIHOI.Controllers
             var tv = data.TBL_DANHMUCTAIKHOAN.SingleOrDefault(n => n.macn == macn);
             int? result = null;
 
-            if (macn == "PYP")
-            {
-                result = publishpypharm.UpdateCus(xml, tv.accservice, tv.passservice, 0);
-            }
-            else if (macn == "ASTA")
-            {
-                result = publishasta.UpdateCus(xml, tv.accservice, tv.passservice, 0);
-            }
-            else if (macn == "ASTA_TEST")
-            {
-                result = publishastatest.UpdateCus(xml, tv.accservice, tv.passservice, 0);
-            }
-            else if (macn == "SGP")
-            {
-                result = publishpypharmhcm.UpdateCus(xml, tv.accservice, tv.passservice, 0);
-            }
-            else if (macn == "QT")
-            {
-                result = publishquangtri.UpdateCus(xml, tv.accservice, tv.passservice, 0);
-            }
-            else if (macn == "PYP_TEST")
-            {
-                result = publishpypharmtest.UpdateCus(xml, tv.accservice, tv.passservice, 0);
-            }
+            var str = $"{macn}_publish";
+            result = GetClass(str).UpdateCus(xml, tv.accservice, tv.passservice, 0);
             if (result == -1)
             {
                 return new ResultAPI { Message = "Tài khoản đăng nhập sai hoặc không có quyền thêm khách hàng", Status = 0 };
@@ -118,30 +203,9 @@ namespace DAIHOI.Controllers
             var xml = ToXml(Customers); // Your xml
             var tv = data.TBL_DANHMUCTAIKHOAN.SingleOrDefault(n => n.macn == macn);
             int? result = null;
-            if (macn == "PYP")
-            {
-                result = publishpypharm.UpdateCus(xml, tv.accservice, tv.passservice, 0);
-            }
-            else if (macn == "ASTA")
-            {
-                result = publishasta.UpdateCus(xml, tv.accservice, tv.passservice, 0);
-            }
-            else if (macn == "ASTA_TEST")
-            {
-                result = publishastatest.UpdateCus(xml, tv.accservice, tv.passservice, 0);
-            }
-            else if (macn == "SGP")
-            {
-                result = publishpypharmhcm.UpdateCus(xml, tv.accservice, tv.passservice, 0);
-            }
-            else if (macn == "QT")
-            {
-                result = publishquangtri.UpdateCus(xml, tv.accservice, tv.passservice, 0);
-            }
-            else if (macn == "PYP_TEST")
-            {
-                result = publishpypharmtest.UpdateCus(xml, tv.accservice, tv.passservice, 0);
-            }
+            var str = $"{macn}_publish";
+            result = GetClass(str).UpdateCus(xml, tv.accservice, tv.passservice, 0);
+
             if (result == -1)
             {
                 return new ResultAPI { Message = "Tài khoản đăng nhập sai hoặc không có quyền thêm khách hàng", Status = 0 };
@@ -178,30 +242,8 @@ namespace DAIHOI.Controllers
                 var xml = ToXml(DSHDon); // Your xml
                 var tv = data.TBL_DANHMUCTAIKHOAN.SingleOrDefault(n => n.macn == macn);
                 string result = null;
-                if (macn == "PYP")
-                {
-                    result = publishpypharm.ImportAndPublishInv(tv.accadmin, tv.passadmin, xml, tv.accservice, tv.passservice, InvoicesPattern.pattern, InvoicesPattern.serial, 0);
-                }
-                else if (macn == "ASTA")
-                {
-                    result = publishasta.ImportAndPublishInv(tv.accadmin, tv.passadmin, xml, tv.accservice, tv.passservice, InvoicesPattern.pattern, InvoicesPattern.serial, 0);
-                }
-                else if (macn == "ASTA_TEST")
-                {
-                    result = publishastatest.ImportAndPublishInv(tv.accadmin, tv.passadmin, xml, tv.accservice, tv.passservice, InvoicesPattern.pattern, InvoicesPattern.serial, 0);
-                }
-                else if (macn == "SGP")
-                {
-                    result = publishpypharmhcm.ImportAndPublishInv(tv.accadmin, tv.passadmin, xml, tv.accservice, tv.passservice, InvoicesPattern.pattern, InvoicesPattern.serial, 0);
-                }
-                else if (macn == "QT")
-                {
-                    result = publishquangtri.ImportAndPublishInv(tv.accadmin, tv.passadmin, xml, tv.accservice, tv.passservice, InvoicesPattern.pattern, InvoicesPattern.serial, 0);
-                }
-                else if (macn == "PYP_TEST")
-                {
-                    result = publishpypharmtest.ImportAndPublishInv(tv.accadmin, tv.passadmin, xml, tv.accservice, tv.passservice, InvoicesPattern.pattern, InvoicesPattern.serial, 0);
-                }
+                var str = $"{macn}_publish";
+                result = GetClass(str).ImportAndPublishInv(tv.accadmin, tv.passadmin, xml, tv.accservice, tv.passservice, InvoicesPattern.pattern, InvoicesPattern.serial, 0);
                 try
                 {
                     data.DTA_LICHSUPHATHANH.Add(new DTA_LICHSUPHATHANH() { macn = macn, fkey = InvoicesPattern.Inv.key, result = result, sohddt = String.Format("{0:00000000}", Int32.Parse(result.Split('_').Last())) });
@@ -273,30 +315,10 @@ namespace DAIHOI.Controllers
             var xml = ToXml(x); // Your xml
             var tv = data.TBL_DANHMUCTAIKHOAN.SingleOrDefault(n => n.macn == macn);
             string result = null;
-            if (macn == "PYP")
-            {
-                result = publishpypharm.SendAgainEmailServ(tv.accadmin, tv.passadmin, tv.accservice, tv.passservice, xml, InvoicesPattern.pattern, InvoicesPattern.serial);
-            }
-            else if (macn == "ASTA")
-            {
-                result = publishasta.SendAgainEmailServ(tv.accadmin, tv.passadmin, tv.accservice, tv.passservice, xml, InvoicesPattern.pattern, InvoicesPattern.serial);
-            }
-            else if (macn == "ASTA_TEST")
-            {
-                result = publishastatest.SendAgainEmailServ(tv.accadmin, tv.passadmin, tv.accservice, tv.passservice, xml, InvoicesPattern.pattern, InvoicesPattern.serial);
-            }
-            else if (macn == "SGP")
-            {
-                result = publishpypharmhcm.SendAgainEmailServ(tv.accadmin, tv.passadmin, tv.accservice, tv.passservice, xml, InvoicesPattern.pattern, InvoicesPattern.serial);
-            }
-            else if (macn == "QT")
-            {
-                result = publishquangtri.SendAgainEmailServ(tv.accadmin, tv.passadmin, tv.accservice, tv.passservice, xml, InvoicesPattern.pattern, InvoicesPattern.serial);
-            }
-            else if (macn == "PYP_TEST")
-            {
-                result = publishpypharmtest.SendAgainEmailServ(tv.accadmin, tv.passadmin, tv.accservice, tv.passservice, xml, InvoicesPattern.pattern, InvoicesPattern.serial);
-            }
+
+            var str = $"{macn}_publish";
+            result = GetClass(str).SendAgainEmailServ(tv.accadmin, tv.passadmin, tv.accservice, tv.passservice, xml, InvoicesPattern.pattern, InvoicesPattern.serial);
+
             if (result == "ERR:1")
             {
                 return new ResultAPI { Message = "Tài khoản đăng nhập sai hoặc không có quyền thêm khách hàng", Status = 0 };
@@ -357,30 +379,9 @@ namespace DAIHOI.Controllers
                 var tv = data.TBL_DANHMUCTAIKHOAN.SingleOrDefault(n => n.macn == macn);
 
                 string result = null;
-                if (macn == "PYP")
-                {
-                    result = publishpypharm.ImportInv(xml, tv.accservice, tv.passservice, 0);
-                }
-                else if (macn == "ASTA")
-                {
-                    result = publishasta.ImportInv(xml, tv.accservice, tv.passservice, 0);
-                }
-                else if (macn == "ASTA_TEST")
-                {
-                    result = publishastatest.ImportInv(xml, tv.accservice, tv.passservice, 0);
-                }
-                else if (macn == "SGP")
-                {
-                    result = publishpypharmhcm.ImportInv(xml, tv.accservice, tv.passservice, 0);
-                }
-                else if (macn == "QT")
-                {
-                    result = publishquangtri.ImportInv(xml, tv.accservice, tv.passservice, 0);
-                }
-                else if (macn == "PYP_TEST")
-                {
-                    result = publishpypharmtest.ImportInv(xml, tv.accservice, tv.passservice, 0);
-                }
+                var str = $"{macn}_publish";
+                result = GetClass(str).ImportInv(xml, tv.accservice, tv.passservice, 0);
+
                 if (result == "ERR:1")
                 {
                     return new ResultAPI { Message = "Tài khoản đăng nhập sai hoặc không có quyền thêm khách hàng", Status = 0 };
@@ -432,30 +433,9 @@ namespace DAIHOI.Controllers
             var xml = ToXml(DLTBao); // Your xml
             var tv = data.TBL_DANHMUCTAIKHOAN.SingleOrDefault(n => n.macn == macn);
             string result = null;
-            if (macn == "PYP")
-            {
-                result = publishpypharm.SendInvNoticeErrors(tv.accadmin, tv.passadmin, xml, tv.accservice, tv.passservice, DLTBao.DSHDon.HDon.KHMSHDon, 0);
-            }
-            else if (macn == "ASTA")
-            {
-                result = publishasta.SendInvNoticeErrors(tv.accadmin, tv.passadmin, xml, tv.accservice, tv.passservice, DLTBao.DSHDon.HDon.KHMSHDon, 0);
-            }
-            else if (macn == "ASTA_TEST")
-            {
-                result = publishastatest.SendInvNoticeErrors(tv.accadmin, tv.passadmin, xml, tv.accservice, tv.passservice, DLTBao.DSHDon.HDon.KHMSHDon, 0);
-            }
-            else if (macn == "SGP")
-            {
-                result = publishpypharmhcm.SendInvNoticeErrors(tv.accadmin, tv.passadmin, xml, tv.accservice, tv.passservice, DLTBao.DSHDon.HDon.KHMSHDon, 0);
-            }
-            else if (macn == "QT")
-            {
-                result = publishquangtri.SendInvNoticeErrors(tv.accadmin, tv.passadmin, xml, tv.accservice, tv.passservice, DLTBao.DSHDon.HDon.KHMSHDon, 0);
-            }
-            else if (macn == "PYP_TEST")
-            {
-                result = publishpypharmtest.SendInvNoticeErrors(tv.accadmin, tv.passadmin, xml, tv.accservice, tv.passservice, DLTBao.DSHDon.HDon.KHMSHDon, 0);
-            }
+            var str = $"{macn}_publish";
+            result = GetClass(str).SendInvNoticeErrors(tv.accadmin, tv.passadmin, xml, tv.accservice, tv.passservice, DLTBao.DSHDon.HDon.KHMSHDon, 0);
+
             if (result == "ERR:1")
             {
                 return new ResultAPI { Message = "Tài khoản đăng nhập sai hoặc không có quyền thêm khách hàng", Status = 0 };
@@ -499,30 +479,10 @@ namespace DAIHOI.Controllers
         {
             var tv = data.TBL_DANHMUCTAIKHOAN.SingleOrDefault(n => n.macn == macn);
             string result = null;
-            if (macn == "PYP")
-            {
-                result = businesspypharm.cancelInvNoPay(tv.accadmin, tv.passadmin, fkey, tv.accservice, tv.passservice);
-            }
-            else if (macn == "ASTA")
-            {
-                result = businessasta.cancelInvNoPay(tv.accadmin, tv.passadmin, fkey, tv.accservice, tv.passservice);
-            }
-            else if (macn == "ASTA_TEST")
-            {
-                result = businessastatest.cancelInvNoPay(tv.accadmin, tv.passadmin, fkey, tv.accservice, tv.passservice);
-            }
-            else if (macn == "SGP")
-            {
-                result = businesspypharmhcm.cancelInvNoPay(tv.accadmin, tv.passadmin, fkey, tv.accservice, tv.passservice);
-            }
-            else if (macn == "QT")
-            {
-                result = businessquangtri.cancelInvNoPay(tv.accadmin, tv.passadmin, fkey, tv.accservice, tv.passservice);
-            }
-            else if (macn == "PYP_TEST")
-            {
-                result = businesspypharmtest.cancelInvNoPay(tv.accadmin, tv.passadmin, fkey, tv.accservice, tv.passservice);
-            }
+            var str = $"{macn}_business";
+            result = GetClass(str).cancelInvNoPay(tv.accadmin, tv.passadmin, fkey, tv.accservice, tv.passservice);
+
+
             if (result == "ERR:1")
             {
                 return new ResultAPI { Message = "Tài khoản đăng nhập sai", Status = 0 };
@@ -546,30 +506,9 @@ namespace DAIHOI.Controllers
         {
             var tv = data.TBL_DANHMUCTAIKHOAN.SingleOrDefault(n => n.macn == macn);
             var result = "";
-            if (macn == "PYP")
-            {
-                result = portalpypharm.downloadInvPDFFkeyNoPay(fkey, tv.accservice, tv.passservice);
-            }
-            else if (macn == "ASTA")
-            {
-                result = portalasta.downloadInvPDFFkeyNoPay(fkey, tv.accservice, tv.passservice);
-            }
-            else if (macn == "ASTA_TEST")
-            {
-                result = portalastatest.downloadInvPDFFkeyNoPay(fkey, tv.accservice, tv.passservice);
-            }
-            else if (macn == "SGP")
-            {
-                result = portalpypharmhcm.downloadInvPDFFkeyNoPay(fkey, tv.accservice, tv.passservice);
-            }
-            else if (macn == "QT")
-            {
-                result = portalquangtri.downloadInvPDFFkeyNoPay(fkey, tv.accservice, tv.passservice);
-            }
-            else if (macn == "PYP_TEST")
-            {
-                result = portalpypharmtest.downloadInvPDFFkeyNoPay(fkey, tv.accservice, tv.passservice);
-            }
+            var str = $"{macn}_portal";
+            result = GetClass(str).downloadInvPDFFkeyNoPay(fkey, tv.accservice, tv.passservice);
+
             if (result == "ERR:1")
             {
                 return new ResultAPI { Message = "Tài khoản đăng nhập sai", Status = 0 };
@@ -603,30 +542,10 @@ namespace DAIHOI.Controllers
             }
             var xml = ToXml(ReplaceInvPattern.ReplaceInv); // Your xml
             var result = "";
-            if (macn == "PYP")
-            {
-                result = businesspypharm.ReplaceInvoiceAction(tv.accadmin, tv.passadmin, xml, tv.accservice, tv.passservice, ReplaceInvPattern.fkey, "", 0, ReplaceInvPattern.pattern, ReplaceInvPattern.serial);
-            }
-            else if (macn == "ASTA")
-            {
-                result = businessasta.ReplaceInvoiceAction(tv.accadmin, tv.passadmin, xml, tv.accservice, tv.passservice, ReplaceInvPattern.fkey, "", 0, ReplaceInvPattern.pattern, ReplaceInvPattern.serial);
-            }
-            else if (macn == "ASTA_TEST")
-            {
-                result = businessastatest.ReplaceInvoiceAction(tv.accadmin, tv.passadmin, xml, tv.accservice, tv.passservice, ReplaceInvPattern.fkey, "", 0, ReplaceInvPattern.pattern, ReplaceInvPattern.serial);
-            }
-            else if (macn == "SGP")
-            {
-                result = businesspypharmhcm.ReplaceInvoiceAction(tv.accadmin, tv.passadmin, xml, tv.accservice, tv.passservice, ReplaceInvPattern.fkey, "", 0, ReplaceInvPattern.pattern, ReplaceInvPattern.serial);
-            }
-            else if (macn == "QT")
-            {
-                result = businessquangtri.ReplaceInvoiceAction(tv.accadmin, tv.passadmin, xml, tv.accservice, tv.passservice, ReplaceInvPattern.fkey, "", 0, ReplaceInvPattern.pattern, ReplaceInvPattern.serial);
-            }
-            else if (macn == "PYP_TEST")
-            {
-                result = businesspypharmtest.ReplaceInvoiceAction(tv.accadmin, tv.passadmin, xml, tv.accservice, tv.passservice, ReplaceInvPattern.fkey, "", 0, ReplaceInvPattern.pattern, ReplaceInvPattern.serial);
-            }
+            var str = $"{macn}_business";
+            result = GetClass(str).ReplaceInvoiceAction(tv.accadmin, tv.passadmin, xml, tv.accservice, tv.passservice, ReplaceInvPattern.fkey, "", 0, ReplaceInvPattern.pattern, ReplaceInvPattern.serial);
+
+
             if (result == "ERR:1")
             {
                 return new ResultAPI { Message = result + "Tài khoản đăng nhập sai hoặc không có quyền thêm khách hàng", Status = 0 };
@@ -692,30 +611,10 @@ namespace DAIHOI.Controllers
             }
             var xml = ToXml(AdjustInvPattern.AdjustInv); // Your xml
             var result = "";
-            if (macn == "PYP")
-            {
-                result = businesspypharm.AdjustInvoiceAction(tv.accadmin, tv.passadmin, xml, tv.accservice, tv.passservice, AdjustInvPattern.fkey, "", 0, AdjustInvPattern.pattern, AdjustInvPattern.serial);
-            }
-            else if (macn == "ASTA")
-            {
-                result = businessasta.AdjustInvoiceAction(tv.accadmin, tv.passadmin, xml, tv.accservice, tv.passservice, AdjustInvPattern.fkey, "", 0, AdjustInvPattern.pattern, AdjustInvPattern.serial);
-            }
-            else if (macn == "ASTA_TEST")
-            {
-                result = businessastatest.AdjustInvoiceAction(tv.accadmin, tv.passadmin, xml, tv.accservice, tv.passservice, AdjustInvPattern.fkey, "", 0, AdjustInvPattern.pattern, AdjustInvPattern.serial);
-            }
-            else if (macn == "SGP")
-            {
-                result = businesspypharmhcm.AdjustInvoiceAction(tv.accadmin, tv.passadmin, xml, tv.accservice, tv.passservice, AdjustInvPattern.fkey, "", 0, AdjustInvPattern.pattern, AdjustInvPattern.serial);
-            }
-            else if (macn == "QT")
-            {
-                result = businessquangtri.AdjustInvoiceAction(tv.accadmin, tv.passadmin, xml, tv.accservice, tv.passservice, AdjustInvPattern.fkey, "", 0, AdjustInvPattern.pattern, AdjustInvPattern.serial);
-            }
-            else if (macn == "PYP_TEST")
-            {
-                result = businesspypharmtest.AdjustInvoiceAction(tv.accadmin, tv.passadmin, xml, tv.accservice, tv.passservice, AdjustInvPattern.fkey, "", 0, AdjustInvPattern.pattern, AdjustInvPattern.serial);
-            }
+            var str = $"{macn}_business";
+            result = GetClass(str).AdjustInvoiceAction(tv.accadmin, tv.passadmin, xml, tv.accservice, tv.passservice, AdjustInvPattern.fkey, "", 0, AdjustInvPattern.pattern, AdjustInvPattern.serial);
+
+
             if (result == "ERR:1")
             {
                 return new ResultAPI { Message = result + "Tài khoản đăng nhập sai hoặc không có quyền thêm khách hàng", Status = 0 };
@@ -779,30 +678,9 @@ namespace DAIHOI.Controllers
                 }
             }
             string result = null;
-            if (macn == "PYP")
-            {
-                result = extpypharm.SearchInv(ModelSearch.extra10, ModelSearch.cuscode, ModelSearch.pattern, ModelSearch.serial, ModelSearch.fromdate, ModelSearch.todate, ModelSearch.fromno, ModelSearch.tono, ModelSearch.page, ModelSearch.pagesize, tv.accservice, tv.passservice);
-            }
-            else if (macn == "ASTA")
-            {
-                result = extasta.SearchInv(ModelSearch.extra10, ModelSearch.cuscode, ModelSearch.pattern, ModelSearch.serial, ModelSearch.fromdate, ModelSearch.todate, ModelSearch.fromno, ModelSearch.tono, ModelSearch.page, ModelSearch.pagesize, tv.accservice, tv.passservice);
-            }
-            else if (macn == "ASTA_TEST")
-            {
-                result = extastatest.SearchInv(ModelSearch.extra10, ModelSearch.cuscode, ModelSearch.pattern, ModelSearch.serial, ModelSearch.fromdate, ModelSearch.todate, ModelSearch.fromno, ModelSearch.tono, ModelSearch.page, ModelSearch.pagesize, tv.accservice, tv.passservice);
-            }
-            else if (macn == "SGP")
-            {
-                result = extpypharmhcm.SearchInv(ModelSearch.extra10, ModelSearch.cuscode, ModelSearch.pattern, ModelSearch.serial, ModelSearch.fromdate, ModelSearch.todate, ModelSearch.fromno, ModelSearch.tono, ModelSearch.page, ModelSearch.pagesize, tv.accservice, tv.passservice);
-            }
-            else if (macn == "QT")
-            {
-                result = extquangtri.SearchInv(ModelSearch.extra10, ModelSearch.cuscode, ModelSearch.pattern, ModelSearch.serial, ModelSearch.fromdate, ModelSearch.todate, ModelSearch.fromno, ModelSearch.tono, ModelSearch.page, ModelSearch.pagesize, tv.accservice, tv.passservice);
-            }
-            else if (macn == "PYP_TEST")
-            {
-                result = extpypharmtest.SearchInv(ModelSearch.extra10, ModelSearch.cuscode, ModelSearch.pattern, ModelSearch.serial, ModelSearch.fromdate, ModelSearch.todate, ModelSearch.fromno, ModelSearch.tono, ModelSearch.page, ModelSearch.pagesize, tv.accservice, tv.passservice);
-            }
+            var str = $"{macn}_extmientrung";
+            result = GetClass(str).SearchInv(ModelSearch.extra10, ModelSearch.cuscode, ModelSearch.pattern, ModelSearch.serial, ModelSearch.fromdate, ModelSearch.todate, ModelSearch.fromno, ModelSearch.tono, ModelSearch.page, ModelSearch.pagesize, tv.accservice, tv.passservice);
+
             if (result == "ERR:1")
             {
                 return new Data() { };
@@ -823,30 +701,9 @@ namespace DAIHOI.Controllers
         {
             var tv = data.TBL_DANHMUCTAIKHOAN.SingleOrDefault(n => n.macn == macn);
             string result = null;
-            if (macn == "PYP")
-            {
-                result = portalpypharm.listInvFromNoToNo(ModelFromNotoNo.fromno, ModelFromNotoNo.tono, ModelFromNotoNo.pattern, ModelFromNotoNo.serial, tv.accservice, tv.passservice);
-            }
-            else if (macn == "ASTA")
-            {
-                result = portalasta.listInvFromNoToNo(ModelFromNotoNo.fromno, ModelFromNotoNo.tono, ModelFromNotoNo.pattern, ModelFromNotoNo.serial, tv.accservice, tv.passservice);
-            }
-            else if (macn == "ASTA_TEST")
-            {
-                result = portalastatest.listInvFromNoToNo(ModelFromNotoNo.fromno, ModelFromNotoNo.tono, ModelFromNotoNo.pattern, ModelFromNotoNo.serial, tv.accservice, tv.passservice);
-            }
-            else if (macn == "SGP")
-            {
-                result = portalpypharmhcm.listInvFromNoToNo(ModelFromNotoNo.fromno, ModelFromNotoNo.tono, ModelFromNotoNo.pattern, ModelFromNotoNo.serial, tv.accservice, tv.passservice);
-            }
-            else if (macn == "QT")
-            {
-                result = portalquangtri.listInvFromNoToNo(ModelFromNotoNo.fromno, ModelFromNotoNo.tono, ModelFromNotoNo.pattern, ModelFromNotoNo.serial, tv.accservice, tv.passservice);
-            }
-            else if (macn == "PYP_TEST")
-            {
-                result = portalpypharmtest.listInvFromNoToNo(ModelFromNotoNo.fromno, ModelFromNotoNo.tono, ModelFromNotoNo.pattern, ModelFromNotoNo.serial, tv.accservice, tv.passservice);
-            }
+            var str = $"{macn}_portal";
+            result = GetClass(str).listInvFromNoToNo(ModelFromNotoNo.fromno, ModelFromNotoNo.tono, ModelFromNotoNo.pattern, ModelFromNotoNo.serial, tv.accservice, tv.passservice);
+
             if (result == "ERR:1")
             {
                 return new Data() { };
@@ -883,30 +740,10 @@ namespace DAIHOI.Controllers
                 }
             }
             string result = null;
-            if (macn == "PYP")
-            {
-                result = portalpypharm.listInvByCus(ModelByCus.cuscode, ModelByCus.fromdate, ModelByCus.todate, tv.accservice, tv.passservice);
-            }
-            else if (macn == "ASTA")
-            {
-                result = portalasta.listInvByCus(ModelByCus.cuscode, ModelByCus.fromdate, ModelByCus.todate, tv.accservice, tv.passservice);
-            }
-            else if (macn == "ASTA_TEST")
-            {
-                result = portalastatest.listInvByCus(ModelByCus.cuscode, ModelByCus.fromdate, ModelByCus.todate, tv.accservice, tv.passservice);
-            }
-            else if (macn == "SGP")
-            {
-                result = portalpypharmhcm.listInvByCus(ModelByCus.cuscode, ModelByCus.fromdate, ModelByCus.todate, tv.accservice, tv.passservice);
-            }
-            else if (macn == "QT")
-            {
-                result = portalquangtri.listInvByCus(ModelByCus.cuscode, ModelByCus.fromdate, ModelByCus.todate, tv.accservice, tv.passservice);
-            }
-            else if (macn == "PYP_TEST")
-            {
-                result = portalpypharmtest.listInvByCus(ModelByCus.cuscode, ModelByCus.fromdate, ModelByCus.todate, tv.accservice, tv.passservice);
-            }
+            var str = $"{macn}_portal";
+            result = GetClass(str).listInvByCus(ModelByCus.cuscode, ModelByCus.fromdate, ModelByCus.todate, tv.accservice, tv.passservice);
+
+
             if (result == "ERR:1")
             {
                 return new Data() { };
@@ -942,30 +779,10 @@ namespace DAIHOI.Controllers
         {
             var tv = data.TBL_DANHMUCTAIKHOAN.SingleOrDefault(n => n.macn == macn);
             var result = "";
-            if (macn == "PYP")
-            {
-                result = portalpypharm.getInvViewFkeyNoPay(fkey, tv.accservice, tv.passservice);
-            }
-            else if (macn == "ASTA")
-            {
-                result = portalasta.getInvViewFkeyNoPay(fkey, tv.accservice, tv.passservice);
-            }
-            else if (macn == "ASTA_TEST")
-            {
-                result = portalastatest.getInvViewFkeyNoPay(fkey, tv.accservice, tv.passservice);
-            }
-            else if (macn == "SGP")
-            {
-                result = portalpypharmhcm.getInvViewFkeyNoPay(fkey, tv.accservice, tv.passservice);
-            }
-            else if (macn == "QT")
-            {
-                result = portalquangtri.getInvViewFkeyNoPay(fkey, tv.accservice, tv.passservice);
-            }
-            else if (macn == "PYP_TEST")
-            {
-                result = portalpypharmtest.getInvViewFkeyNoPay(fkey, tv.accservice, tv.passservice);
-            }
+            var str = $"{macn}_portal";
+            result = GetClass(str).getInvViewFkeyNoPay(fkey, tv.accservice, tv.passservice);
+
+
             if (result == "ERR:1")
             {
                 return new ResultAPI { Message = "Tài khoản đăng nhập sai", Status = 0 };
@@ -985,30 +802,10 @@ namespace DAIHOI.Controllers
         {
             var tv = data.TBL_DANHMUCTAIKHOAN.SingleOrDefault(n => n.macn == macn);
             var result = "";
-            if (macn == "PYP")
-            {
-                result = portalpypharm.downloadInvFkeyNoPay(fkey, tv.accservice, tv.passservice);
-            }
-            else if (macn == "ASTA")
-            {
-                result = portalasta.downloadInvFkeyNoPay(fkey, tv.accservice, tv.passservice);
-            }
-            else if (macn == "ASTA_TEST")
-            {
-                result = portalastatest.downloadInvFkeyNoPay(fkey, tv.accservice, tv.passservice);
-            }
-            else if (macn == "SGP")
-            {
-                result = portalpypharmhcm.downloadInvFkeyNoPay(fkey, tv.accservice, tv.passservice);
-            }
-            else if (macn == "QT")
-            {
-                result = portalquangtri.downloadInvFkeyNoPay(fkey, tv.accservice, tv.passservice);
-            }
-            else if (macn == "PYP_TEST")
-            {
-                result = portalpypharmtest.downloadInvFkeyNoPay(fkey, tv.accservice, tv.passservice);
-            }
+            var str = $"{macn}_portal";
+            result = GetClass(str).downloadInvFkeyNoPay(fkey, tv.accservice, tv.passservice);
+
+
             try
             {
                 XmlSerializer serializer = new XmlSerializer(typeof(HDon));
@@ -1059,30 +856,10 @@ namespace DAIHOI.Controllers
         {
             var tv = data.TBL_DANHMUCTAIKHOAN.SingleOrDefault(n => n.macn == macn);
             string result = "";
-            if (macn == "PYP")
-            {
-                result = portalpypharm.downloadInvNoPay(converttokentostring(token), tv.accservice, tv.passservice);
-            }
-            else if (macn == "ASTA")
-            {
-                result = portalasta.downloadInvNoPay(converttokentostring(token), tv.accservice, tv.passservice);
-            }
-            else if (macn == "ASTA_TEST")
-            {
-                result = portalastatest.downloadInvNoPay(converttokentostring(token), tv.accservice, tv.passservice);
-            }
-            else if (macn == "SGP")
-            {
-                result = portalpypharmhcm.downloadInvNoPay(converttokentostring(token), tv.accservice, tv.passservice);
-            }
-            else if (macn == "QT")
-            {
-                result = portalquangtri.downloadInvNoPay(converttokentostring(token), tv.accservice, tv.passservice);
-            }
-            else if (macn == "PYP_TEST")
-            {
-                result = portalpypharmtest.downloadInvNoPay(converttokentostring(token), tv.accservice, tv.passservice);
-            }
+            var str = $"{macn}_portal";
+            result = GetClass(str).downloadInvNoPay(converttokentostring(token), tv.accservice, tv.passservice);
+
+
             XmlSerializer serializer = new XmlSerializer(typeof(HDon));
             using (StringReader reader = new StringReader(result))
             {
@@ -1127,30 +904,10 @@ namespace DAIHOI.Controllers
         {
             var tv = data.TBL_DANHMUCTAIKHOAN.SingleOrDefault(n => n.macn == macn);
             var result = "";
-            if (macn == "PYP")
-            {
-                result = portalpypharm.convertForStoreFkey(x.fkey, tv.accservice, tv.passservice);
-            }
-            else if (macn == "ASTA")
-            {
-                result = portalasta.convertForStoreFkey(x.fkey, tv.accservice, tv.passservice);
-            }
-            else if (macn == "ASTA_TEST")
-            {
-                result = portalastatest.convertForStoreFkey(x.fkey, tv.accservice, tv.passservice);
-            }
-            else if (macn == "SGP")
-            {
-                result = portalpypharmhcm.convertForStoreFkey(x.fkey, tv.accservice, tv.passservice);
-            }
-            else if (macn == "QT")
-            {
-                result = portalquangtri.convertForStoreFkey(x.fkey, tv.accservice, tv.passservice);
-            }
-            else if (macn == "PYP_TEST")
-            {
-                result = portalpypharmtest.convertForStoreFkey(x.fkey, tv.accservice, tv.passservice);
-            }
+            var str = $"{macn}_portal";
+            result = GetClass(str).convertForStoreFkey(x.fkey, tv.accservice, tv.passservice);
+
+
             if (result == "ERR:1")
             {
                 return new ResultAPI { Message = "Tài khoản đăng nhập sai", Status = 0 };
@@ -1177,30 +934,10 @@ namespace DAIHOI.Controllers
         {
             var tv = data.TBL_DANHMUCTAIKHOAN.SingleOrDefault(n => n.macn == macn);
             var result = "";
-            if (macn == "PYP")
-            {
-                result = portalpypharm.convertForStoreFkey(fkey, tv.accservice, tv.passservice);
-            }
-            else if (macn == "ASTA")
-            {
-                result = portalasta.convertForStoreFkey(fkey, tv.accservice, tv.passservice);
-            }
-            else if (macn == "ASTA_TEST")
-            {
-                result = portalastatest.convertForStoreFkey(fkey, tv.accservice, tv.passservice);
-            }
-            else if (macn == "SGP")
-            {
-                result = portalpypharmhcm.convertForStoreFkey(fkey, tv.accservice, tv.passservice);
-            }
-            else if (macn == "QT")
-            {
-                result = portalquangtri.convertForStoreFkey(fkey, tv.accservice, tv.passservice);
-            }
-            else if (macn == "PYP_TEST")
-            {
-                result = portalpypharmtest.convertForStoreFkey(fkey, tv.accservice, tv.passservice);
-            }
+            var str = $"{macn}_portal";
+            result = GetClass(str).convertForStoreFkey(fkey, tv.accservice, tv.passservice);
+
+
             if (result == "ERR:1")
             {
                 return new ResultAPI { Message = "Tài khoản đăng nhập sai", Status = 0 };
@@ -1220,30 +957,10 @@ namespace DAIHOI.Controllers
         {
             var tv = data.TBL_DANHMUCTAIKHOAN.SingleOrDefault(n => n.macn == macn);
             var result = "";
-            if (macn == "PYP")
-            {
-                result = portalpypharm.downloadInvFkeyNoPay(fkey, tv.accservice, tv.passservice);
-            }
-            else if (macn == "ASTA")
-            {
-                result = portalasta.downloadInvFkeyNoPay(fkey, tv.accservice, tv.passservice);
-            }
-            else if (macn == "ASTA_TEST")
-            {
-                result = portalastatest.downloadInvFkeyNoPay(fkey, tv.accservice, tv.passservice);
-            }
-            else if (macn == "SGP")
-            {
-                result = portalpypharmhcm.downloadInvFkeyNoPay(fkey, tv.accservice, tv.passservice);
-            }
-            else if (macn == "QT")
-            {
-                result = portalquangtri.downloadInvFkeyNoPay(fkey, tv.accservice, tv.passservice);
-            }
-            else if (macn == "PYP_TEST")
-            {
-                result = portalpypharmtest.downloadInvFkeyNoPay(fkey, tv.accservice, tv.passservice);
-            }
+            var str = $"{macn}_portal";
+            result = GetClass(str).downloadInvFkeyNoPay(fkey, tv.accservice, tv.passservice);
+
+
             if (result == "ERR:1")
             {
                 return new ResultAPI { Message = "Tài khoản đăng nhập sai", Status = 0 };
@@ -1262,30 +979,10 @@ namespace DAIHOI.Controllers
         {
             var tv = data.TBL_DANHMUCTAIKHOAN.SingleOrDefault(n => n.macn == macn);
             var result = "";
-            if (macn == "PYP")
-            {
-                result = publishpypharm.GetMCCQThueByInvTokens(tv.accadmin, tv.passadmin, tv.accservice, tv.passservice, converttokentostring(token));
-            }
-            else if (macn == "ASTA")
-            {
-                result = publishasta.GetMCCQThueByInvTokens(tv.accadmin, tv.passadmin, tv.accservice, tv.passservice, converttokentostring(token));
-            }
-            else if (macn == "ASTA_TEST")
-            {
-                result = publishastatest.GetMCCQThueByInvTokens(tv.accadmin, tv.passadmin, tv.accservice, tv.passservice, converttokentostring(token));
-            }
-            else if (macn == "SGP")
-            {
-                result = publishpypharmhcm.GetMCCQThueByInvTokens(tv.accadmin, tv.passadmin, tv.accservice, tv.passservice, converttokentostring(token));
-            }
-            else if (macn == "QT")
-            {
-                result = publishquangtri.GetMCCQThueByInvTokens(tv.accadmin, tv.passadmin, tv.accservice, tv.passservice, converttokentostring(token));
-            }
-            else if (macn == "PYP_TEST")
-            {
-                result = publishpypharmtest.GetMCCQThueByInvTokens(tv.accadmin, tv.passadmin, tv.accservice, tv.passservice, converttokentostring(token));
-            }
+            var str = $"{macn}_publish";
+            result = GetClass(str).GetMCCQThueByInvTokens(tv.accadmin, tv.passadmin, tv.accservice, tv.passservice, converttokentostring(token));
+
+
             if (result == "ERR:1")
             {
                 return new ResultAPI { Message = "Tài khoản đăng nhập sai", Status = 0 };
@@ -1332,30 +1029,10 @@ namespace DAIHOI.Controllers
         {
             var tv = data.TBL_DANHMUCTAIKHOAN.SingleOrDefault(n => n.macn == macn);
             var result = "";
-            if (macn == "PYP")
-            {
-                result = publishpypharm.GetMCCQThueByFkeys(tv.accadmin, tv.passadmin, tv.accservice, tv.passservice, fkeys.pattern, fkeys.fkey);
-            }
-            else if (macn == "ASTA")
-            {
-                result = publishasta.GetMCCQThueByFkeys(tv.accadmin, tv.passadmin, tv.accservice, tv.passservice, fkeys.pattern, fkeys.fkey);
-            }
-            else if (macn == "ASTA_TEST")
-            {
-                result = publishastatest.GetMCCQThueByFkeys(tv.accadmin, tv.passadmin, tv.accservice, tv.passservice, fkeys.pattern, fkeys.fkey);
-            }
-            else if (macn == "SGP")
-            {
-                result = publishpypharmhcm.GetMCCQThueByFkeys(tv.accadmin, tv.passadmin, tv.accservice, tv.passservice, fkeys.pattern, fkeys.fkey);
-            }
-            else if (macn == "QT")
-            {
-                result = publishquangtri.GetMCCQThueByFkeys(tv.accadmin, tv.passadmin, tv.accservice, tv.passservice, fkeys.pattern, fkeys.fkey);
-            }
-            else if (macn == "PYP_TEST")
-            {
-                result = publishpypharmtest.GetMCCQThueByFkeys(tv.accadmin, tv.passadmin, tv.accservice, tv.passservice, fkeys.pattern, fkeys.fkey);
-            }
+            var str = $"{macn}_publish";
+            result = GetClass(str).GetMCCQThueByFkeys(tv.accadmin, tv.passadmin, tv.accservice, tv.passservice, fkeys.pattern, fkeys.fkey);
+
+
             if (result == "ERR:1")
             {
                 return new ResultAPI { Message = "Tài khoản đăng nhập sai", Status = 0 };
@@ -1403,30 +1080,10 @@ namespace DAIHOI.Controllers
         {
             var tv = data.TBL_DANHMUCTAIKHOAN.SingleOrDefault(n => n.macn == macn);
             var result = "";
-            if (macn == "PYP")
-            {
-                result = portalpypharm.downloadInvFkeyNoPay(fkey, tv.accservice, tv.passservice);
-            }
-            else if (macn == "ASTA")
-            {
-                result = portalasta.downloadInvFkeyNoPay(fkey, tv.accservice, tv.passservice);
-            }
-            else if (macn == "ASTA_TEST")
-            {
-                result = portalastatest.downloadInvFkeyNoPay(fkey, tv.accservice, tv.passservice);
-            }
-            else if (macn == "SGP")
-            {
-                result = portalpypharmhcm.downloadInvFkeyNoPay(fkey, tv.accservice, tv.passservice);
-            }
-            else if (macn == "QT")
-            {
-                result = portalquangtri.downloadInvFkeyNoPay(fkey, tv.accservice, tv.passservice);
-            }
-            else if (macn == "PYP_TEST")
-            {
-                result = portalpypharmtest.downloadInvFkeyNoPay(fkey, tv.accservice, tv.passservice);
-            }
+            var str = $"{macn}_portal";
+            result = GetClass(str).downloadInvFkeyNoPay(fkey, tv.accservice, tv.passservice);
+
+
             try
             {
                 XmlSerializer serializer = new XmlSerializer(typeof(HDon));
@@ -1447,30 +1104,10 @@ namespace DAIHOI.Controllers
         {
             var tv = data.TBL_DANHMUCTAIKHOAN.SingleOrDefault(n => n.macn == macn);
             string result = null;
-            if (macn == "PYP")
-            {
-                result = portalpypharm.downloadInvNoPay(converttokentostring(token), tv.accservice, tv.passservice);
-            }
-            else if (macn == "ASTA")
-            {
-                result = portalasta.downloadInvNoPay(converttokentostring(token), tv.accservice, tv.passservice);
-            }
-            else if (macn == "ASTA_TEST")
-            {
-                result = portalastatest.downloadInvNoPay(converttokentostring(token), tv.accservice, tv.passservice);
-            }
-            else if (macn == "SGP")
-            {
-                result = portalpypharmhcm.downloadInvNoPay(converttokentostring(token), tv.accservice, tv.passservice);
-            }
-            else if (macn == "QT")
-            {
-                result = portalquangtri.downloadInvNoPay(converttokentostring(token), tv.accservice, tv.passservice);
-            }
-            else if (macn == "PYP_TEST")
-            {
-                result = portalpypharmtest.downloadInvNoPay(converttokentostring(token), tv.accservice, tv.passservice);
-            }
+            var str = $"{macn}_portal";
+            result = GetClass(str).downloadInvNoPay(converttokentostring(token), tv.accservice, tv.passservice);
+
+
             try
             {
                 XmlSerializer serializer = new XmlSerializer(typeof(HDon));
@@ -1491,30 +1128,10 @@ namespace DAIHOI.Controllers
         {
             var tv = data.TBL_DANHMUCTAIKHOAN.SingleOrDefault(n => n.macn == macn);
             var result = "";
-            if (macn == "PYP")
-            {
-                result = portalpypharm.getInvViewFkeyNoPay(x.fkey, tv.accservice, tv.passservice);
-            }
-            else if (macn == "ASTA")
-            {
-                result = portalasta.getInvViewFkeyNoPay(x.fkey, tv.accservice, tv.passservice);
-            }
-            else if (macn == "ASTA_TEST")
-            {
-                result = portalastatest.getInvViewFkeyNoPay(x.fkey, tv.accservice, tv.passservice);
-            }
-            else if (macn == "SGP")
-            {
-                result = portalpypharmhcm.getInvViewFkeyNoPay(x.fkey, tv.accservice, tv.passservice);
-            }
-            else if (macn == "QT")
-            {
-                result = portalquangtri.getInvViewFkeyNoPay(x.fkey, tv.accservice, tv.passservice);
-            }
-            else if (macn == "PYP_TEST")
-            {
-                result = portalpypharmtest.getInvViewFkeyNoPay(x.fkey, tv.accservice, tv.passservice);
-            }
+            var str = $"{macn}_portal";
+            result = GetClass(str).getInvViewFkeyNoPay(x.fkey, tv.accservice, tv.passservice);
+
+
             if (result == "ERR:1")
             {
                 return new ResultAPI { Message = "Tài khoản đăng nhập sai", Status = 0 };

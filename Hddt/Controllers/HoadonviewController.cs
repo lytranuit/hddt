@@ -33,6 +33,10 @@ namespace DAIHOI.Controllers
                 {
                     return View("/Views/Hoadonview/ASTA.cshtml", datamau);
                 }
+                else if (key == "NP")
+                {
+                    return View("/Views/Hoadonview/NP.cshtml", datamau);
+                }
                 return View("/Views/Hoadonview/PYP.cshtml", datamau);
 
             }
@@ -65,6 +69,10 @@ namespace DAIHOI.Controllers
                 else if (key == "ASTA" || key == "ASTA_TEST")
                 {
                     return View("/Views/Hoadonview/ASTA.cshtml", datamau);
+                }
+                else if (key == "NP")
+                {
+                    return View("/Views/Hoadonview/NP.cshtml", datamau);
                 }
                 return View("/Views/Hoadonview/PYP.cshtml", datamau);
 

@@ -262,5 +262,45 @@ namespace DAIHOI.Properties {
                 return ((string)(this["DAIHOI_astatest_business_BusinessService"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://4401111868-tt78cadmin.vnpt-invoice.com.vn/businessService.asmx")]
+        public string DAIHOI_nghinhphong_business_BusinessService {
+            get {
+                return ((string)(this["DAIHOI_nghinhphong_business_BusinessService"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://4401111868-tt78cadmin.vnpt-invoice.com.vn/ExtMienTrungService.asmx")]
+        public string DAIHOI_nghinhphong_extmientrung_ExtMienTrungService {
+            get {
+                return ((string)(this["DAIHOI_nghinhphong_extmientrung_ExtMienTrungService"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://4401111868-tt78cadmin.vnpt-invoice.com.vn/portalService.asmx")]
+        public string DAIHOI_nghinhphong_portal_PortalService {
+            get {
+                return ((string)(this["DAIHOI_nghinhphong_portal_PortalService"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://4401111868-tt78cadmin.vnpt-invoice.com.vn/publishService.asmx")]
+        public string DAIHOI_nghinhphong_publish_PublishService {
+            get {
+                return ((string)(this["DAIHOI_nghinhphong_publish_PublishService"]));
+            }
+        }
     }
 }
