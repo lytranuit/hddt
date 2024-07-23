@@ -218,6 +218,22 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="PrintNoticeInvErrorCQT">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mtdiep" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrintNoticeInvErrorCQTResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PrintNoticeInvErrorCQTResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="PublishInvFkey">
         <s:complexType>
           <s:sequence>
@@ -1918,6 +1934,12 @@
   <wsdl:message name="PrintNoticeInvErrorSoapOut">
     <wsdl:part name="parameters" element="tns:PrintNoticeInvErrorResponse" />
   </wsdl:message>
+  <wsdl:message name="PrintNoticeInvErrorCQTSoapIn">
+    <wsdl:part name="parameters" element="tns:PrintNoticeInvErrorCQT" />
+  </wsdl:message>
+  <wsdl:message name="PrintNoticeInvErrorCQTSoapOut">
+    <wsdl:part name="parameters" element="tns:PrintNoticeInvErrorCQTResponse" />
+  </wsdl:message>
   <wsdl:message name="PublishInvFkeySoapIn">
     <wsdl:part name="parameters" element="tns:PublishInvFkey" />
   </wsdl:message>
@@ -2479,6 +2501,10 @@
       <wsdl:input message="tns:PrintNoticeInvErrorSoapIn" />
       <wsdl:output message="tns:PrintNoticeInvErrorSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="PrintNoticeInvErrorCQT">
+      <wsdl:input message="tns:PrintNoticeInvErrorCQTSoapIn" />
+      <wsdl:output message="tns:PrintNoticeInvErrorCQTSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="PublishInvFkey">
       <wsdl:input message="tns:PublishInvFkeySoapIn" />
       <wsdl:output message="tns:PublishInvFkeySoapOut" />
@@ -2918,6 +2944,15 @@
     </wsdl:operation>
     <wsdl:operation name="PrintNoticeInvError">
       <soap:operation soapAction="http://tempuri.org/PrintNoticeInvError" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrintNoticeInvErrorCQT">
+      <soap:operation soapAction="http://tempuri.org/PrintNoticeInvErrorCQT" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -3794,6 +3829,15 @@
     </wsdl:operation>
     <wsdl:operation name="PrintNoticeInvError">
       <soap12:operation soapAction="http://tempuri.org/PrintNoticeInvError" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrintNoticeInvErrorCQT">
+      <soap12:operation soapAction="http://tempuri.org/PrintNoticeInvErrorCQT" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

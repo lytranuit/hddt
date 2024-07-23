@@ -229,6 +229,7 @@ namespace DAIHOI.nghinhphong.publish {
         
         /// <remarks/>
         public PublishService() {
+            this.Url = global::DAIHOI.Properties.Settings.Default.DAIHOI_nghinhphong_publish_PublishService;
             if ((this.IsLocalFileSystemWebService(this.Url) == true)) {
                 this.UseDefaultCredentials = true;
                 this.useDefaultCredentialsSetExplicitly = false;

@@ -107,6 +107,8 @@ namespace DAIHOI.pypharmtest.portal {
         
         private System.Threading.SendOrPostCallback getStaffOperationCompleted;
         
+        private System.Threading.SendOrPostCallback getCusWithBuyerOperationCompleted;
+        
         private System.Threading.SendOrPostCallback listInvFromNoToNoOperationCompleted;
         
         private System.Threading.SendOrPostCallback getInvViewFkeyNoPayPatternOperationCompleted;
@@ -139,7 +141,7 @@ namespace DAIHOI.pypharmtest.portal {
         
         /// <remarks/>
         public PortalService() {
-            this.Url = global::DAIHOI.Properties.Settings.Default.DAIHOI_pypharm_portal_PortalService;
+            this.Url = global::DAIHOI.Properties.Settings.Default.DAIHOI_pypharmtest_portal_PortalService;
             if ((this.IsLocalFileSystemWebService(this.Url) == true)) {
                 this.UseDefaultCredentials = true;
                 this.useDefaultCredentialsSetExplicitly = false;
@@ -289,6 +291,9 @@ namespace DAIHOI.pypharmtest.portal {
         
         /// <remarks/>
         public event getStaffCompletedEventHandler getStaffCompleted;
+        
+        /// <remarks/>
+        public event getCusWithBuyerCompletedEventHandler getCusWithBuyerCompleted;
         
         /// <remarks/>
         public event listInvFromNoToNoCompletedEventHandler listInvFromNoToNoCompleted;
@@ -1654,6 +1659,39 @@ namespace DAIHOI.pypharmtest.portal {
             if ((this.getStaffCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.getStaffCompleted(this, new getStaffCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/getCusWithBuyer", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string getCusWithBuyer(string cusCode, string userName, string userPass) {
+            object[] results = this.Invoke("getCusWithBuyer", new object[] {
+                        cusCode,
+                        userName,
+                        userPass});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getCusWithBuyerAsync(string cusCode, string userName, string userPass) {
+            this.getCusWithBuyerAsync(cusCode, userName, userPass, null);
+        }
+        
+        /// <remarks/>
+        public void getCusWithBuyerAsync(string cusCode, string userName, string userPass, object userState) {
+            if ((this.getCusWithBuyerOperationCompleted == null)) {
+                this.getCusWithBuyerOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetCusWithBuyerOperationCompleted);
+            }
+            this.InvokeAsync("getCusWithBuyer", new object[] {
+                        cusCode,
+                        userName,
+                        userPass}, this.getCusWithBuyerOperationCompleted, userState);
+        }
+        
+        private void OngetCusWithBuyerOperationCompleted(object arg) {
+            if ((this.getCusWithBuyerCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getCusWithBuyerCompleted(this, new getCusWithBuyerCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -3175,6 +3213,32 @@ namespace DAIHOI.pypharmtest.portal {
         private object[] results;
         
         internal getStaffCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    public delegate void getCusWithBuyerCompletedEventHandler(object sender, getCusWithBuyerCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getCusWithBuyerCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getCusWithBuyerCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }

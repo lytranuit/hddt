@@ -51,6 +51,8 @@ namespace DAIHOI.pypharmtest.publish {
         
         private System.Threading.SendOrPostCallback PrintNoticeInvErrorOperationCompleted;
         
+        private System.Threading.SendOrPostCallback PrintNoticeInvErrorCQTOperationCompleted;
+        
         private System.Threading.SendOrPostCallback PublishInvFkeyOperationCompleted;
         
         private System.Threading.SendOrPostCallback PublishInvByDateOperationCompleted;
@@ -227,7 +229,7 @@ namespace DAIHOI.pypharmtest.publish {
         
         /// <remarks/>
         public PublishService() {
-            this.Url = global::DAIHOI.Properties.Settings.Default.DAIHOI_pypharm_publish_PublishService;
+            this.Url = global::DAIHOI.Properties.Settings.Default.DAIHOI_pypharmtest_publish_PublishService;
             if ((this.IsLocalFileSystemWebService(this.Url) == true)) {
                 this.UseDefaultCredentials = true;
                 this.useDefaultCredentialsSetExplicitly = false;
@@ -293,6 +295,9 @@ namespace DAIHOI.pypharmtest.publish {
         
         /// <remarks/>
         public event PrintNoticeInvErrorCompletedEventHandler PrintNoticeInvErrorCompleted;
+        
+        /// <remarks/>
+        public event PrintNoticeInvErrorCQTCompletedEventHandler PrintNoticeInvErrorCQTCompleted;
         
         /// <remarks/>
         public event PublishInvFkeyCompletedEventHandler PublishInvFkeyCompleted;
@@ -982,6 +987,39 @@ namespace DAIHOI.pypharmtest.publish {
             if ((this.PrintNoticeInvErrorCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.PrintNoticeInvErrorCompleted(this, new PrintNoticeInvErrorCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/PrintNoticeInvErrorCQT", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string PrintNoticeInvErrorCQT(string mtdiep, string username, string password) {
+            object[] results = this.Invoke("PrintNoticeInvErrorCQT", new object[] {
+                        mtdiep,
+                        username,
+                        password});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void PrintNoticeInvErrorCQTAsync(string mtdiep, string username, string password) {
+            this.PrintNoticeInvErrorCQTAsync(mtdiep, username, password, null);
+        }
+        
+        /// <remarks/>
+        public void PrintNoticeInvErrorCQTAsync(string mtdiep, string username, string password, object userState) {
+            if ((this.PrintNoticeInvErrorCQTOperationCompleted == null)) {
+                this.PrintNoticeInvErrorCQTOperationCompleted = new System.Threading.SendOrPostCallback(this.OnPrintNoticeInvErrorCQTOperationCompleted);
+            }
+            this.InvokeAsync("PrintNoticeInvErrorCQT", new object[] {
+                        mtdiep,
+                        username,
+                        password}, this.PrintNoticeInvErrorCQTOperationCompleted, userState);
+        }
+        
+        private void OnPrintNoticeInvErrorCQTOperationCompleted(object arg) {
+            if ((this.PrintNoticeInvErrorCQTCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.PrintNoticeInvErrorCQTCompleted(this, new PrintNoticeInvErrorCQTCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -4617,6 +4655,32 @@ namespace DAIHOI.pypharmtest.publish {
         private object[] results;
         
         internal PrintNoticeInvErrorCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    public delegate void PrintNoticeInvErrorCQTCompletedEventHandler(object sender, PrintNoticeInvErrorCQTCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class PrintNoticeInvErrorCQTCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal PrintNoticeInvErrorCQTCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }

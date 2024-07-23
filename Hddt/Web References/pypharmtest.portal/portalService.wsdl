@@ -645,6 +645,22 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="getCusWithBuyer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cusCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userPass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCusWithBuyerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getCusWithBuyerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="listInvFromNoToNo">
         <s:complexType>
           <s:sequence>
@@ -1123,6 +1139,12 @@
   <wsdl:message name="getStaffSoapOut">
     <wsdl:part name="parameters" element="tns:getStaffResponse" />
   </wsdl:message>
+  <wsdl:message name="getCusWithBuyerSoapIn">
+    <wsdl:part name="parameters" element="tns:getCusWithBuyer" />
+  </wsdl:message>
+  <wsdl:message name="getCusWithBuyerSoapOut">
+    <wsdl:part name="parameters" element="tns:getCusWithBuyerResponse" />
+  </wsdl:message>
   <wsdl:message name="listInvFromNoToNoSoapIn">
     <wsdl:part name="parameters" element="tns:listInvFromNoToNo" />
   </wsdl:message>
@@ -1363,6 +1385,10 @@
     <wsdl:operation name="getStaff">
       <wsdl:input message="tns:getStaffSoapIn" />
       <wsdl:output message="tns:getStaffSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCusWithBuyer">
+      <wsdl:input message="tns:getCusWithBuyerSoapIn" />
+      <wsdl:output message="tns:getCusWithBuyerSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="listInvFromNoToNo">
       <wsdl:input message="tns:listInvFromNoToNoSoapIn" />
@@ -1767,6 +1793,15 @@
     </wsdl:operation>
     <wsdl:operation name="getStaff">
       <soap:operation soapAction="http://tempuri.org/getStaff" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCusWithBuyer">
+      <soap:operation soapAction="http://tempuri.org/getCusWithBuyer" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -2247,6 +2282,15 @@
     </wsdl:operation>
     <wsdl:operation name="getStaff">
       <soap12:operation soapAction="http://tempuri.org/getStaff" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCusWithBuyer">
+      <soap12:operation soapAction="http://tempuri.org/getCusWithBuyer" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

@@ -279,26 +279,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
-    <Compile Include="Web References\pypharmtest.business\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.map</DependentUpon>
-    </Compile>
-    <Compile Include="Web References\pypharmtest.extmientrung\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.map</DependentUpon>
-    </Compile>
-    <Compile Include="Web References\pypharmtest.portal\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.map</DependentUpon>
-    </Compile>
-    <Compile Include="Web References\pypharmtest.publish\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.map</DependentUpon>
-    </Compile>
     <Compile Include="Web References\pypharmhcm.business\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -315,6 +295,26 @@
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
     <Compile Include="Web References\pypharmhcm.publish\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\pypharmtest.business\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\pypharmtest.extmientrung\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\pypharmtest.portal\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\pypharmtest.publish\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
@@ -1623,26 +1623,6 @@
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </Content>
-    <None Include="Web References\pypharmtest.business\businessService.wsdl" />
-    <Content Include="Web References\pypharmtest.business\Reference.map">
-      <Generator>MSDiscoCodeGenerator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </Content>
-    <None Include="Web References\pypharmtest.extmientrung\ExtMienTrungService.wsdl" />
-    <Content Include="Web References\pypharmtest.extmientrung\Reference.map">
-      <Generator>MSDiscoCodeGenerator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </Content>
-    <None Include="Web References\pypharmtest.portal\portalService.wsdl" />
-    <Content Include="Web References\pypharmtest.portal\Reference.map">
-      <Generator>MSDiscoCodeGenerator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </Content>
-    <None Include="Web References\pypharmtest.publish\publishService.wsdl" />
-    <Content Include="Web References\pypharmtest.publish\Reference.map">
-      <Generator>MSDiscoCodeGenerator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </Content>
     <None Include="Web References\pypharmhcm.business\businessService.wsdl" />
     <Content Include="Web References\pypharmhcm.business\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
@@ -1671,15 +1651,35 @@
     <None Include="Web References\pypharm.extmientrung\ExtMienTrungService.disco" />
     <None Include="Web References\pypharm.portal\portalService.disco" />
     <None Include="Web References\pypharm.publish\publishService.disco" />
-    <None Include="Web References\pypharmtest.business\businessService.disco" />
-    <None Include="Web References\pypharmtest.extmientrung\ExtMienTrungService.disco" />
-    <None Include="Web References\pypharmtest.portal\portalService.disco" />
-    <None Include="Web References\pypharmtest.publish\publishService.disco" />
     <None Include="Web References\pypharmhcm.business\businessService.disco" />
     <None Include="Web References\pypharmhcm.extmientrung\ExtMienTrungService.disco" />
     <None Include="Web References\pypharmhcm.portal\portalService.disco" />
     <None Include="Web References\pypharmhcm.publish\publishService.disco" />
+    <None Include="Web References\pypharmtest.business\businessService.wsdl" />
+    <Content Include="Web References\pypharmtest.business\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <None Include="Web References\pypharmtest.extmientrung\ExtMienTrungService.wsdl" />
+    <Content Include="Web References\pypharmtest.extmientrung\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <None Include="Web References\pypharmtest.portal\portalService.wsdl" />
+    <Content Include="Web References\pypharmtest.portal\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <None Include="Web References\pypharmtest.portal\portalService.disco" />
+    <None Include="Web References\pypharmtest.publish\publishService.wsdl" />
+    <Content Include="Web References\pypharmtest.publish\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
     <None Include="Web References\quangtri.business\businessService.wsdl" />
+    <None Include="Web References\pypharmtest.business\businessService.disco" />
+    <None Include="Web References\pypharmtest.extmientrung\ExtMienTrungService.disco" />
+    <None Include="Web References\pypharmtest.publish\publishService.disco" />
     <Content Include="Web References\quangtri.business\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -1928,50 +1928,6 @@
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>DAIHOI_astatest_publish_PublishService</CachedSettingsPropName>
     </WebReferenceUrl>
-    <WebReferenceUrl Include="https://pypharrm-tt78admindemo.vnpt-invoice.com.vn/businessService.asmx">
-      <UrlBehavior>Dynamic</UrlBehavior>
-      <RelPath>Web References\pypharmtest.business\</RelPath>
-      <UpdateFromURL>https://pypharrm-tt78admindemo.vnpt-invoice.com.vn/businessService.asmx</UpdateFromURL>
-      <ServiceLocationURL>
-      </ServiceLocationURL>
-      <CachedDynamicPropName>
-      </CachedDynamicPropName>
-      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
-      <CachedSettingsPropName>DAIHOI_pypharmtest_business_BusinessService</CachedSettingsPropName>
-    </WebReferenceUrl>
-    <WebReferenceUrl Include="https://pypharrm-tt78admindemo.vnpt-invoice.com.vn/ExtMienTrungService.asmx">
-      <UrlBehavior>Dynamic</UrlBehavior>
-      <RelPath>Web References\pypharmtest.extmientrung\</RelPath>
-      <UpdateFromURL>https://pypharrm-tt78admindemo.vnpt-invoice.com.vn/ExtMienTrungService.asmx</UpdateFromURL>
-      <ServiceLocationURL>
-      </ServiceLocationURL>
-      <CachedDynamicPropName>
-      </CachedDynamicPropName>
-      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
-      <CachedSettingsPropName>DAIHOI_pypharmtest_extmientrung_ExtMienTrungService</CachedSettingsPropName>
-    </WebReferenceUrl>
-    <WebReferenceUrl Include="https://pypharrm-tt78admindemo.vnpt-invoice.com.vn/portalService.asmx">
-      <UrlBehavior>Dynamic</UrlBehavior>
-      <RelPath>Web References\pypharmtest.portal\</RelPath>
-      <UpdateFromURL>https://pypharrm-tt78admindemo.vnpt-invoice.com.vn/portalService.asmx</UpdateFromURL>
-      <ServiceLocationURL>
-      </ServiceLocationURL>
-      <CachedDynamicPropName>
-      </CachedDynamicPropName>
-      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
-      <CachedSettingsPropName>DAIHOI_pypharmtest_portal_PortalService</CachedSettingsPropName>
-    </WebReferenceUrl>
-    <WebReferenceUrl Include="https://pypharrm-tt78admindemo.vnpt-invoice.com.vn/publishService.asmx">
-      <UrlBehavior>Dynamic</UrlBehavior>
-      <RelPath>Web References\pypharmtest.publish\</RelPath>
-      <UpdateFromURL>https://pypharrm-tt78admindemo.vnpt-invoice.com.vn/publishService.asmx</UpdateFromURL>
-      <ServiceLocationURL>
-      </ServiceLocationURL>
-      <CachedDynamicPropName>
-      </CachedDynamicPropName>
-      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
-      <CachedSettingsPropName>DAIHOI_pypharmtest_publish_PublishService</CachedSettingsPropName>
-    </WebReferenceUrl>
     <WebReferenceUrl Include="https://pypharmhcm-tt78admin.vnpt-invoice.com.vn/businessService.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\pypharmhcm.business\</RelPath>
@@ -2059,6 +2015,50 @@
       </CachedDynamicPropName>
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>DAIHOI_quangtri_publish_PublishService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://pypharrm-tt78admindemo.vnpt-invoice.com.vn/businessService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\pypharmtest.business\</RelPath>
+      <UpdateFromURL>https://pypharrm-tt78admindemo.vnpt-invoice.com.vn/businessService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>DAIHOI_pypharmtest_business_BusinessService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://pypharrm-tt78admindemo.vnpt-invoice.com.vn/ExtMienTrungService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\pypharmtest.extmientrung\</RelPath>
+      <UpdateFromURL>https://pypharrm-tt78admindemo.vnpt-invoice.com.vn/ExtMienTrungService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>DAIHOI_pypharmtest_extmientrung_ExtMienTrungService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://pypharrm-tt78admindemo.vnpt-invoice.com.vn/portalService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\pypharmtest.portal\</RelPath>
+      <UpdateFromURL>https://pypharrm-tt78admindemo.vnpt-invoice.com.vn/portalService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>DAIHOI_pypharmtest_portal_PortalService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://pypharrm-tt78admindemo.vnpt-invoice.com.vn/publishService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\pypharmtest.publish\</RelPath>
+      <UpdateFromURL>https://pypharrm-tt78admindemo.vnpt-invoice.com.vn/publishService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>DAIHOI_pypharmtest_publish_PublishService</CachedSettingsPropName>
     </WebReferenceUrl>
   </ItemGroup>
   <PropertyGroup>

@@ -31,6 +31,10 @@ namespace DAIHOI.pypharmtest.extmientrung {
         
         private System.Threading.SendOrPostCallback AdjustInvoiceActionOperationCompleted;
         
+        private System.Threading.SendOrPostCallback UpdateDanhMucSanPhamOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback AdjustAssignedNoNewPatternKidoOperationCompleted;
+        
         private System.Threading.SendOrPostCallback getCurrentNoOperationCompleted;
         
         private System.Threading.SendOrPostCallback ImportAndPublishInvLotteOperationCompleted;
@@ -51,7 +55,7 @@ namespace DAIHOI.pypharmtest.extmientrung {
         
         /// <remarks/>
         public ExtMienTrungService() {
-            this.Url = global::DAIHOI.Properties.Settings.Default.DAIHOI_pypharm_extmientrung_ExtMienTrungService;
+            this.Url = global::DAIHOI.Properties.Settings.Default.DAIHOI_pypharmtest_extmientrung_ExtMienTrungService;
             if ((this.IsLocalFileSystemWebService(this.Url) == true)) {
                 this.UseDefaultCredentials = true;
                 this.useDefaultCredentialsSetExplicitly = false;
@@ -87,6 +91,12 @@ namespace DAIHOI.pypharmtest.extmientrung {
         
         /// <remarks/>
         public event AdjustInvoiceActionCompletedEventHandler AdjustInvoiceActionCompleted;
+        
+        /// <remarks/>
+        public event UpdateDanhMucSanPhamCompletedEventHandler UpdateDanhMucSanPhamCompleted;
+        
+        /// <remarks/>
+        public event AdjustAssignedNoNewPatternKidoCompletedEventHandler AdjustAssignedNoNewPatternKidoCompleted;
         
         /// <remarks/>
         public event getCurrentNoCompletedEventHandler getCurrentNoCompleted;
@@ -156,6 +166,88 @@ namespace DAIHOI.pypharmtest.extmientrung {
             if ((this.AdjustInvoiceActionCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.AdjustInvoiceActionCompleted(this, new AdjustInvoiceActionCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/UpdateDanhMucSanPham", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string UpdateDanhMucSanPham(string json, string username, string pass) {
+            object[] results = this.Invoke("UpdateDanhMucSanPham", new object[] {
+                        json,
+                        username,
+                        pass});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void UpdateDanhMucSanPhamAsync(string json, string username, string pass) {
+            this.UpdateDanhMucSanPhamAsync(json, username, pass, null);
+        }
+        
+        /// <remarks/>
+        public void UpdateDanhMucSanPhamAsync(string json, string username, string pass, object userState) {
+            if ((this.UpdateDanhMucSanPhamOperationCompleted == null)) {
+                this.UpdateDanhMucSanPhamOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUpdateDanhMucSanPhamOperationCompleted);
+            }
+            this.InvokeAsync("UpdateDanhMucSanPham", new object[] {
+                        json,
+                        username,
+                        pass}, this.UpdateDanhMucSanPhamOperationCompleted, userState);
+        }
+        
+        private void OnUpdateDanhMucSanPhamOperationCompleted(object arg) {
+            if ((this.UpdateDanhMucSanPhamCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.UpdateDanhMucSanPhamCompleted(this, new UpdateDanhMucSanPhamCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/AdjustAssignedNoNewPatternKido", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string AdjustAssignedNoNewPatternKido(string Account, string ACpass, string xmlInvData, double invno, string username, string pass, string fkey, string AttachFile, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] System.Nullable<int> convert, string pattern, string serial) {
+            object[] results = this.Invoke("AdjustAssignedNoNewPatternKido", new object[] {
+                        Account,
+                        ACpass,
+                        xmlInvData,
+                        invno,
+                        username,
+                        pass,
+                        fkey,
+                        AttachFile,
+                        convert,
+                        pattern,
+                        serial});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void AdjustAssignedNoNewPatternKidoAsync(string Account, string ACpass, string xmlInvData, double invno, string username, string pass, string fkey, string AttachFile, System.Nullable<int> convert, string pattern, string serial) {
+            this.AdjustAssignedNoNewPatternKidoAsync(Account, ACpass, xmlInvData, invno, username, pass, fkey, AttachFile, convert, pattern, serial, null);
+        }
+        
+        /// <remarks/>
+        public void AdjustAssignedNoNewPatternKidoAsync(string Account, string ACpass, string xmlInvData, double invno, string username, string pass, string fkey, string AttachFile, System.Nullable<int> convert, string pattern, string serial, object userState) {
+            if ((this.AdjustAssignedNoNewPatternKidoOperationCompleted == null)) {
+                this.AdjustAssignedNoNewPatternKidoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnAdjustAssignedNoNewPatternKidoOperationCompleted);
+            }
+            this.InvokeAsync("AdjustAssignedNoNewPatternKido", new object[] {
+                        Account,
+                        ACpass,
+                        xmlInvData,
+                        invno,
+                        username,
+                        pass,
+                        fkey,
+                        AttachFile,
+                        convert,
+                        pattern,
+                        serial}, this.AdjustAssignedNoNewPatternKidoOperationCompleted, userState);
+        }
+        
+        private void OnAdjustAssignedNoNewPatternKidoOperationCompleted(object arg) {
+            if ((this.AdjustAssignedNoNewPatternKidoCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.AdjustAssignedNoNewPatternKidoCompleted(this, new AdjustAssignedNoNewPatternKidoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -503,6 +595,58 @@ namespace DAIHOI.pypharmtest.extmientrung {
         private object[] results;
         
         internal AdjustInvoiceActionCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    public delegate void UpdateDanhMucSanPhamCompletedEventHandler(object sender, UpdateDanhMucSanPhamCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class UpdateDanhMucSanPhamCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal UpdateDanhMucSanPhamCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    public delegate void AdjustAssignedNoNewPatternKidoCompletedEventHandler(object sender, AdjustAssignedNoNewPatternKidoCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9037.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class AdjustAssignedNoNewPatternKidoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal AdjustAssignedNoNewPatternKidoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }

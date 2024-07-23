@@ -106,46 +106,6 @@ namespace DAIHOI.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://pypharrm-tt78admindemo.vnpt-invoice.com.vn/businessService.asmx")]
-        public string DAIHOI_pypharmtest_business_BusinessService {
-            get {
-                return ((string)(this["DAIHOI_pypharmtest_business_BusinessService"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://pypharrm-tt78admindemo.vnpt-invoice.com.vn/ExtMienTrungService.asmx")]
-        public string DAIHOI_pypharmtest_extmientrung_ExtMienTrungService {
-            get {
-                return ((string)(this["DAIHOI_pypharmtest_extmientrung_ExtMienTrungService"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://pypharrm-tt78admindemo.vnpt-invoice.com.vn/portalService.asmx")]
-        public string DAIHOI_pypharmtest_portal_PortalService {
-            get {
-                return ((string)(this["DAIHOI_pypharmtest_portal_PortalService"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://pypharrm-tt78admindemo.vnpt-invoice.com.vn/publishService.asmx")]
-        public string DAIHOI_pypharmtest_publish_PublishService {
-            get {
-                return ((string)(this["DAIHOI_pypharmtest_publish_PublishService"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
         [global::System.Configuration.DefaultSettingValueAttribute("https://3200042637-tt78admin.vnpt-invoice.com.vn/businessService.asmx")]
         public string DAIHOI_quangtri_business_BusinessService {
             get {
@@ -290,6 +250,46 @@ namespace DAIHOI.Properties {
         public string DAIHOI_nghinhphong_portal_PortalService {
             get {
                 return ((string)(this["DAIHOI_nghinhphong_portal_PortalService"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://pypharrm-tt78admindemo.vnpt-invoice.com.vn/businessService.asmx")]
+        public string DAIHOI_pypharmtest_business_BusinessService {
+            get {
+                return ((string)(this["DAIHOI_pypharmtest_business_BusinessService"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://pypharrm-tt78admindemo.vnpt-invoice.com.vn/ExtMienTrungService.asmx")]
+        public string DAIHOI_pypharmtest_extmientrung_ExtMienTrungService {
+            get {
+                return ((string)(this["DAIHOI_pypharmtest_extmientrung_ExtMienTrungService"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://pypharrm-tt78admindemo.vnpt-invoice.com.vn/portalService.asmx")]
+        public string DAIHOI_pypharmtest_portal_PortalService {
+            get {
+                return ((string)(this["DAIHOI_pypharmtest_portal_PortalService"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://pypharrm-tt78admindemo.vnpt-invoice.com.vn/publishService.asmx")]
+        public string DAIHOI_pypharmtest_publish_PublishService {
+            get {
+                return ((string)(this["DAIHOI_pypharmtest_publish_PublishService"]));
             }
         }
         
