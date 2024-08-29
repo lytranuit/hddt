@@ -4622,10 +4622,10 @@
   </wsdl:binding>
   <wsdl:service name="PublishService">
     <wsdl:port name="PublishServiceSoap" binding="tns:PublishServiceSoap">
-      <soap:address location="https://pypharrm-tt78admindemo.vnpt-invoice.com.vn/publishService.asmx" />
+      <soap:address location="https://ctypypharm4401084734-999-tt78admindemo.vnpt-invoice.com.vn/publishService.asmx" />
     </wsdl:port>
     <wsdl:port name="PublishServiceSoap12" binding="tns:PublishServiceSoap12">
-      <soap12:address location="https://pypharrm-tt78admindemo.vnpt-invoice.com.vn/publishService.asmx" />
+      <soap12:address location="https://ctypypharm4401084734-999-tt78admindemo.vnpt-invoice.com.vn/publishService.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

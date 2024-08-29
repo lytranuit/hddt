@@ -2427,10 +2427,10 @@
   </wsdl:binding>
   <wsdl:service name="PortalService">
     <wsdl:port name="PortalServiceSoap" binding="tns:PortalServiceSoap">
-      <soap:address location="https://pypharrm-tt78admindemo.vnpt-invoice.com.vn/portalService.asmx" />
+      <soap:address location="https://ctypypharm4401084734-999-tt78admindemo.vnpt-invoice.com.vn/portalService.asmx" />
     </wsdl:port>
     <wsdl:port name="PortalServiceSoap12" binding="tns:PortalServiceSoap12">
-      <soap12:address location="https://pypharrm-tt78admindemo.vnpt-invoice.com.vn/portalService.asmx" />
+      <soap12:address location="https://ctypypharm4401084734-999-tt78admindemo.vnpt-invoice.com.vn/portalService.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

@@ -4501,10 +4501,10 @@
   </wsdl:binding>
   <wsdl:service name="BusinessService">
     <wsdl:port name="BusinessServiceSoap" binding="tns:BusinessServiceSoap">
-      <soap:address location="https://pypharrm-tt78admindemo.vnpt-invoice.com.vn/businessService.asmx" />
+      <soap:address location="https://ctypypharm4401084734-999-tt78admindemo.vnpt-invoice.com.vn/businessService.asmx" />
     </wsdl:port>
     <wsdl:port name="BusinessServiceSoap12" binding="tns:BusinessServiceSoap12">
-      <soap12:address location="https://pypharrm-tt78admindemo.vnpt-invoice.com.vn/businessService.asmx" />
+      <soap12:address location="https://ctypypharm4401084734-999-tt78admindemo.vnpt-invoice.com.vn/businessService.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

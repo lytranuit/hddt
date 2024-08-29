@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <DiscoveryClientResultsFile xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Results>
-    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="https://pypharrm-tt78admindemo.vnpt-invoice.com.vn/portalService.asmx?wsdl" filename="portalService.wsdl" />
-    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.DiscoveryDocumentReference" url="https://pypharrm-tt78admindemo.vnpt-invoice.com.vn/portalService.asmx?disco" filename="portalService.disco" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="https://ctypypharm4401084734-999-tt78admindemo.vnpt-invoice.com.vn/portalService.asmx?wsdl" filename="portalService.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.DiscoveryDocumentReference" url="https://ctypypharm4401084734-999-tt78admindemo.vnpt-invoice.com.vn/portalService.asmx?disco" filename="portalService.disco" />
   </Results>
 </DiscoveryClientResultsFile>

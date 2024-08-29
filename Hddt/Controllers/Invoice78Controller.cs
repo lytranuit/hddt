@@ -240,6 +240,8 @@ namespace DAIHOI.Controllers
                     i.ProdUnit = i.ProdUnit.Replace(System.Environment.NewLine, "").Trim();
                 }
                 var xml = ToXml(DSHDon); // Your xml
+                //File.WriteAllText("test.xml", xml);+
+                //File.WriteAllText(@"E:\myXml.xml", xml);
                 var tv = data.TBL_DANHMUCTAIKHOAN.SingleOrDefault(n => n.macn == macn);
                 string result = null;
                 var str = $"{macn}_publish";

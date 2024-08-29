@@ -71,20 +71,20 @@
     <Setting Name="DAIHOI_nghinhphong_portal_PortalService" Type="(Web Service URL)" Scope="Application">
       <Value Profile="(Default)">https://4401111868-tt78cadmin.vnpt-invoice.com.vn/portalService.asmx</Value>
     </Setting>
-    <Setting Name="DAIHOI_pypharmtest_business_BusinessService" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">https://pypharrm-tt78admindemo.vnpt-invoice.com.vn/businessService.asmx</Value>
-    </Setting>
-    <Setting Name="DAIHOI_pypharmtest_extmientrung_ExtMienTrungService" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">https://pypharrm-tt78admindemo.vnpt-invoice.com.vn/ExtMienTrungService.asmx</Value>
-    </Setting>
-    <Setting Name="DAIHOI_pypharmtest_portal_PortalService" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">https://pypharrm-tt78admindemo.vnpt-invoice.com.vn/portalService.asmx</Value>
-    </Setting>
-    <Setting Name="DAIHOI_pypharmtest_publish_PublishService" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">https://pypharrm-tt78admindemo.vnpt-invoice.com.vn/publishService.asmx</Value>
-    </Setting>
     <Setting Name="DAIHOI_nghinhphong_publish_PublishService" Type="(Web Service URL)" Scope="Application">
       <Value Profile="(Default)">https://4401111868-tt78cadmin.vnpt-invoice.com.vn/publishService.asmx</Value>
+    </Setting>
+    <Setting Name="DAIHOI_pypharmtest_publish_PublishService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://ctypypharm4401084734-999-tt78admindemo.vnpt-invoice.com.vn/publishService.asmx</Value>
+    </Setting>
+    <Setting Name="DAIHOI_pypharmtest_portal_PortalService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://ctypypharm4401084734-999-tt78admindemo.vnpt-invoice.com.vn/portalService.asmx</Value>
+    </Setting>
+    <Setting Name="DAIHOI_pypharmtest_extmientrung_ExtMienTrungService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://ctypypharm4401084734-999-tt78admindemo.vnpt-invoice.com.vn/ExtMienTrungService.asmx</Value>
+    </Setting>
+    <Setting Name="DAIHOI_pypharmtest_business_BusinessService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://ctypypharm4401084734-999-tt78admindemo.vnpt-invoice.com.vn/businessService.asmx</Value>
     </Setting>
   </Settings>
 </SettingsFile>
