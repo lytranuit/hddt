@@ -1,0 +1,639 @@
+﻿@model DAIHOI.Models.HOADONMAU
+@{
+    ViewBag.Title = "Hóa đơn";
+    Layout = null;
+}
+<style type="text/css" rel="stylesheet">
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Time new roman';
+        font-size: 15px;
+        background-color: rgba(255, 255, 255, 0);
+    }
+
+    #main {
+        margin: 0 auto;
+    }
+
+    tfoot p.input-txt {
+    }
+
+    .VATTEMP {
+        background-color: rgba(255, 255, 255, 0);
+        color: rgb(7, 74, 142);
+        font: 78%/1.4em 'Time new roman',Helvetica,sans-serif !important;
+        margin: 0px auto;
+        width: 820px;
+        margin: auto;
+        /* border: rgb(7, 74, 142) solid; */
+        /* border: double rgb(7, 74, 142) 8px; */
+        font-size: 15px;
+    }
+
+        .VATTEMP .header-main,
+        .content {
+            width: 100%;
+        }
+
+    .comname .col-txt p {
+        color: rgb(7, 74, 142) !important;
+    }
+
+    .VATTEMP .header {
+        float: left;
+        width: 100%;
+    }
+
+    .VATTEMP .header-content {
+        float: left;
+        text-align: center;
+        width: 400px;
+    }
+
+
+    .VATTEMP .header h2 {
+        font-size: 1em;
+    }
+
+    .VATTEMP .header h2,
+    .header p {
+        margin: 0;
+    }
+
+    .VATTEMP .header p.name-upcase {
+        font-size: 15px;
+        text-transform: uppercase;
+    }
+
+    .VATTEMP .header-note {
+        float: right;
+        font-size: 15px;
+        margin-top: 10px;
+        padding-right: 7px;
+    }
+
+    .VATTEMP .header .number {
+        color: rgb(7, 74, 142);
+        font-family: 'Time new roman';
+        font-size: 15px;
+        margin-left: 3px;
+    }
+
+    .header-note p {
+        line-height: 25px;
+    }
+
+    .clearfix:after {
+        clear: both;
+        content: ".";
+        display: block;
+        height: 1px;
+        overflow: hidden;
+        visibility: hidden;
+    }
+
+    .comname .clsCol.col-title p {
+    }
+
+    tfoot td.back-bold {
+    }
+
+    .clearfix {
+        clear: both;
+    }
+
+    .VATTEMP .cusname {
+        width: 100%;
+    }
+
+        .VATTEMP .cusname td {
+            padding: 0px;
+        }
+
+    .VATTEMP .input-code {
+        border: 1px solid rgb(7, 74, 142);
+        color: rgb(7, 74, 142);
+        float: left;
+        font-weight: normal;
+        text-align: center;
+        width: 18px;
+        height: 15px;
+    }
+
+    .VATTEMP .dongcuoi tr:last-child {
+    }
+
+    .VATTEMP div label.fl-l,
+    div label {
+        margin-right: 5px;
+        margin-top: 0px;
+    }
+
+    .VATTEMP .input-name,
+    .input-date {
+        border: 0;
+        border-bottom: 1px dotted rgb(7, 74, 142);
+        margin-left: 5px;
+    }
+
+    .VATTEMP .statistics {
+        clear: both;
+        margin-right: 0;
+    }
+
+    .comnamehe .clsCol p {
+        padding-top: 3px;
+        font-size: 17px;
+        line-height: 19px;
+        margin-bottom: 0;
+    }
+
+    .nenhd {
+        position: relative;
+    }
+
+    .nenhd_bg {
+        background: url('/Content/LayoutPro/img/FYA.jpg');
+        top: 0px;
+        left: 0;
+        /* right: 0; */
+        background-size: 38%;
+        width: 100%;
+        background-repeat: no-repeat;
+        height: 340px;
+        margin: 0 auto;
+        background-position: center center;
+        position: absolute;
+        z-index: -1;
+        opacity: 0.15;
+    }
+
+    .VATTEMP #logo {
+        float: left;
+        width: 251px;
+        height: 100px;
+        background: url('/Content/LayoutPro/img/FYA.jpg');
+        margin: 5px;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: center center;
+    }
+
+    .VATTEMP .statistics table {
+        background-position: bottom;
+        border: 0 none;
+        font-size: 15px;
+        margin: 0;
+        z-index: 2;
+    }
+
+    table {
+        border-collapse: collapse;
+        font-family: 'Time new roman';
+        font-size: 15px;
+    }
+
+    .VATTEMP .statistics table th.h1 {
+        font-size: 15px;
+        text-transform: none;
+        color: rgb(7, 74, 142) !important;
+        color: rgb(7, 74, 142);
+        padding: 2px;
+        font-weight: bold;
+        border-right: 1px solid rgb(7, 74, 142);
+        border-left: 1px solid rgb(7, 74, 142);
+        border-top: 1px solid rgb(7, 74, 142);
+        background-color: rgba(255, 255, 255, 0);
+    }
+
+    .VATTEMP .statistics table th.h2 {
+        font-size: 15px;
+        text-transform: none;
+        color: rgb(7, 74, 142);
+        font-weight: normal;
+        border-bottom: rgb(7, 74, 142) solid thin;
+        border-right: 1px solid rgb(7, 74, 142);
+        border-left: 1px solid rgb(7, 74, 142);
+        border-top: 1px solid rgb(7, 74, 142);
+        background-color: rgba(255, 255, 255, 0);
+    }
+
+    .VATTEMP .statistics table td.stt {
+        text-align: center;
+    }
+
+    .VATTEMP .statistics table td.stt2 {
+        text-align: center;
+        color: rgb(7, 74, 142);
+    }
+
+    .VATTEMP .statistics table .back td {
+        color: rgb(7, 74, 142);
+        font-family: 'Time new roman';
+        font-size: 17px;
+    }
+
+    .VATTEMP .statistics table .noline td {
+        border-bottom: none;
+        border-right: 1px solid rgb(7, 74, 142);
+        border-left: 1px solid rgb(7, 74, 142);
+        border-top: none;
+    }
+
+        .VATTEMP .statistics table .noline td:first-child {
+        }
+
+    .VATTEMP .statistics table td {
+        border-bottom: none;
+        border-right: none;
+        border-left: none;
+        padding: 2px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    .VATTEMP .statistics tr td.back-bold {
+        font-size: 15px;
+        border-bottom: none;
+        color: black;
+    }
+
+    .VATTEMP .statistics table .back-bold {
+        padding-right: 5px;
+        text-align: right;
+    }
+
+    .VATTEMP .statistics tr td.back-bold2 {
+        font-size: 15px;
+        border-bottom: none;
+        color: black;
+    }
+
+    p.input-txt {
+        color: black;
+        line-height: 16px;
+        text-align: left;
+        font-family: 'Time new roman';
+    }
+
+    .clsCol p {
+        padding-top: 3px;
+        font-size: 15px;
+        line-height: 19px;
+        margin-bottom: 3px;
+    }
+
+    .col-title {
+        width: 1%;
+        white-space: nowrap;
+    }
+
+        .col-title p {
+            color: rgb(7, 74, 142) !important;
+        }
+
+    .clsCol {
+        display: table-cell;
+    }
+
+    .clsTable {
+        width: 100%;
+    }
+
+    .clsTable {
+        clear: both;
+    }
+
+    .clsCol {
+        display: table-cell;
+    }
+
+    p {
+        margin: 0px 0 0px 0;
+    }
+
+    .VATTEMP .statistics table .back-bold2 {
+        padding-left: 5px;
+        text-align: left;
+    }
+
+    .VATTEMP .statistics tr.bg-pink td {
+        font-size: 15px;
+        text-align: right;
+        color: rgb(7, 74, 142);
+        background: none repeat scroll 0 0 #fedccc;
+    }
+
+    .VATTEMP .payment,
+    .date {
+        margin: 0px 0;
+        text-align: center;
+        width: 35%;
+    }
+
+    .VATTEMP .payment {
+        float: left;
+    }
+
+        .VATTEMP .payment p,
+        .date p {
+            margin: 0;
+        }
+
+    .VATTEMP .date {
+        float: right;
+        height: 120px;
+    }
+
+    .VATTEMP .input-date {
+        width: 40px;
+    }
+
+    .VATTEMP .input-name,
+    .back-bold,
+    .input-date {
+        color: rgb(7, 74, 142);
+        font-family: 'Time new roman';
+        font-size: 15px;
+    }
+
+    .footer_invoice .clsCol p {
+        font-size: 15px;
+    }
+
+    .fl-l {
+        float: center;
+        font-family: 'Time new roman';
+        font-size: 15px;
+    }
+
+    .bgimg {
+        border: 1px solid rgb(7, 74, 142);
+        cursor: pointer;
+        width: 321px;
+    }
+
+        .bgimg p {
+            color: #EB363A;
+            padding-left: 10px;
+            text-align: left;
+        }
+
+    p {
+        font-family: 'Time new roman';
+        font-size: 15px;
+    }
+
+    .VATTEMP .header .number {
+        color: #333;
+        font-family: "Times New Roman",Times,serif;
+        font-size: 150%;
+    }
+
+    .item {
+        color: rgb(7, 74, 142);
+    }
+
+    p.txtSmall {
+        font-size: 11px;
+        line-height: 11px;
+    }
+</style>
+
+<body>
+    <div id="printView" style="background-color: rgba(255, 255, 255, 0);;  margin-top: -3px;    width: 790px;&#xD;&#xA;    margin: auto;">
+        <div class="VATTEMP" style="background-color: rgba(255, 255, 255, 0);">
+            <div id="SolutionVNPT" style="margin-bottom:5px;margin-top:0px;font-family: 'Time New Roman';font-size:9px;border-bottom:1px dashed rgb(7, 74, 142); text-align: center;background-color: rgba(255, 255, 255, 0);;">
+                <label style="font-family: 'Time New Roman';font-size:13px;color: rgb(7, 74, 142);">
+                    Đơn vị cung cấp giải pháp hóa đơn điện tử: Tổng công ty dịch vụ viễn thông - VNPT Vinaphone, MST:0106869738, Điện thoại:18001260
+                </label>
+            </div><div id="quantitypages" style="padding-left:0px;">
+                <div class="pagecurrent" id="1" style="border:rgb(7, 74, 142) solid thin;background-repeat :no-repeat;background-size: 100% 100%;">
+                    <table cellpadding="0" cellspacing="0" border="0" style="float: left;width: 100%;/* border-bottom: 1px solid rgb(7, 74, 142); */   ">
+                        <tbody>
+                            <tr>
+                                <td style="width:30%;"><table width="100%" style="margin-left:7px;"><tr><td style="width:100%;text-align: center"><div id="logo"> </div></td></tr></table></td>
+                                <td style="width:45%;">
+                                    <p class="name-upcase" align="center" style="font-weight: bold;color:rgb(7, 74, 142);line-height: 26px;margin-top: 10px;margin-bottom: 0px;font-size: 20px;text-transform: uppercase;    width: 285px;">
+                                        HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+                                        <br /><span style="font-weight:normal;"><i>(VAT INVOICE)</i></span>
+                                    </p><p style="font-size:13px;margin-top 5px; color:rgb(7, 74, 142) !important;text-align:center; width:310px;">
+                                        Ngày <i>(day)</i><label><b style="margin-left:5px;"></b></label>
+                                        tháng <i>(month)</i><label><b style="margin-left:5px;"></b></label>
+                                        năm <i>(year)</i><label><b style="margin-left:5px;"></b></label>
+                                    </p>
+                                </td>
+                                <td style="padding-top: 20px; width: 150px">
+                                    <p style="font-size: 15px;line-height: 25px; color:rgb(7, 74, 142)">
+                                        Ký hiệu:
+                                        <span style="font-size: 17px;font-weight: bold;">1K22TPP</span>
+                                    </p><p style="font-size: 17px; color:rgb(7, 74, 142)">
+                                        Số:
+                                        <span class="number" style="color:#fb0303;font-size:17px;font-weight: bold;">XXXXXXXX</span>
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table style="margin-left:9px; width:98%;" class="comname">
+                        <tr>
+                            <td>
+                                <div class="clsTable">
+                                    <div class="clsCol col-title"><p style="font-family: 'Time new roman'; width:220px;">Đơn vị bán hàng <i>(Company name)</i></p></div><div class="clsCol col-txt">
+                                        <p class="input-txt" style=" color rgb(7, 74, 142) !important;border-bottom none;text-transform uppercase;">
+                                            :
+                                            <b>
+
+                                                @Model.thongtin.tencn
+                                            </b>
+                                        </p>
+                                    </div>
+                                </div><div class="clsTable">
+                                    <div class="clsCol col-title"><p style="font-family: 'Time new roman'; width:220px;">Mã số thuế <i>(Tax code)</i></p></div><div class="clsCol col-txt">
+                                        <p class="input-txt" style=" color rgb(7, 74, 142) !important;border-bottom none; font-weight:bold;">
+                                            <span style="font-weight:normal;">:</span>
+
+                                            @Model.thongtin.mst
+                                        </p>
+                                    </div>
+                                </div><div class="clsTable">
+                                    <div class="clsCol col-title"><p style="font-family: 'Time new roman'; width:220px;">Địa chỉ <i>(Address)</i></p></div><div class="clsCol col-txt">
+                                        <p class="input-txt" style=" color rgb(7, 74, 142) !important;border-bottom none;">
+                                            :
+
+
+                                            @Model.thongtin.diachi
+                                        </p>
+                                    </div>
+                                </div><div class="clsTable">
+                                    <div class="clsCol col-title"><p style="font-family: 'Time new roman'; width:220px;">Điện thoại <i>(Tel)</i></p></div><div class="clsCol col-txt">
+                                        <p class="input-txt" style=" color rgb(7, 74, 142) !important;border-bottom none;">
+                                            :
+
+
+                                            @Model.thongtin.dienthoai
+                                        </p>
+                                    </div>
+                                </div><div class="clsTable">
+                                    <div class="clsCol col-title"><p style="font-family: 'Time new roman'; width:220px;">Số tài khoản <i>(Bank Account)</i></p></div><div class="clsCol col-txt">
+                                        <p class="input-txt" style=" color rgb(7, 74, 142) !important;border-bottom none;">
+                                            :
+                                            <span style="margin-left: 7px;" /> @Model.thongtin.taikhoannh
+                                        </p>
+                                    </div>
+                                </div><div class="clsTable">
+                                    <div class="clsCol col-title"><p style="font-family: 'Time new roman'; width:220px;">Ngân hàng<i>(Bank)</i></p></div><div class="clsCol col-txt">
+                                        <p class="input-txt" style=" color rgb(7, 74, 142) !important;border-bottom none;">
+                                            :
+                                            <span style="margin-left: 7px;" /> @Model.thongtin.tennh
+                                        </p>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    @if (@Model.Invoice.Products != null)
+                    {
+                        <table style="margin-top: 5px;   " class="cusname"><tr><td><div class="clsTable"><div class="clsCol col-title"><p style="font-family: 'Time new roman';">Họ tên người mua hàng <i>(Customer's name)</i>:</p></div><div class="clsCol col-txt"><p class="input-txt" style="">@Model.Invoice.Buyer</p></div></div><div class="clsTable"><div class="clsCol col-title"><p style="font-family: 'Time new roman';">Tên đơn vị <i>(Company name)</i>: </p></div><div class="clsCol col-txt"><p class="input-txt" style="">@Model.Invoice.CusName</p></div></div><div class="clsTable"><div class="clsCol col-title"><p style="font-family: 'Time new roman';">Mã số thuế <i>(Tax code)</i>:</p></div><div class="clsCol col-txt"><p class="input-txt" style="">@Model.Invoice.CusTaxCode</p></div></div><div class="clsTable"><div class="clsCol col-title"><p style="font-family: 'Time new roman';">Địa chỉ <i>(Address)</i>: </p></div><div class="clsCol col-txt"><p class="input-txt" style="">@Model.Invoice.CusAddress</p></div></div><div class="clsTable"><div class="clsCol col-title"><p style="font-family: 'Time new roman';">Hình thức thanh toán <i>(Payment method)</i>:</p></div><div class="clsCol col-txt"><p class="input-txt" style="">@Model.Invoice.PaymentMethod</p></div></div><div class="clsTable"><div class="clsCol col-title"><p style="font-family: 'Time new roman';">Số tài khoản <i>(Bank Account)</i>: </p></div><div class="clsCol col-txt"><p class="input-txt" style="">@Model.Invoice.CusBankNo</p></div></div><div class="clsTable"><div class="clsCol col-title"><p style="font-family: 'Time new roman';">Ngân hàng <i>(Bank)</i>: </p></div><div class="clsCol col-txt"><p class="input-txt" style="">@Model.Invoice.CusBankName</p></div></div></td></tr></table>
+                        <div class="statistics">
+                            <div class="nenhd">
+                                <table width="100%" class="dongcuoi" cellpadding="0" cellspacing="0" border="1" style="border-bottom: 0px solid">
+                                    <tr style="border-bottom: rgb(7, 74, 142) 1px solid" height="32px">
+                                        <th width="30px" class="h1" style="text-align: center;">
+                                            STT
+                                            <br /><i>(No.)</i>
+                                        </th>
+                                        <th width="254px" class="h1" style="text-align: center;">
+                                            Tên hàng hóa, dịch vụ
+                                            <br /><i>(Product, services)</i>
+                                        </th>
+                                        <th width="75px" class="h1 bold" style="text-align:center;">
+                                            Mã hàng
+                                            <br /><i>(Code)</i>
+                                        </th>
+                                        <th width="62px" class="h1" style="text-align: center;">
+                                            Đơn vị tính
+                                            <br /><i>(Unit)</i>
+                                        </th>
+                                        <th width="70px" class="h1" style="text-align: center;">
+                                            Số lượng
+                                            <br /><i>(Quantity)</i>
+                                        </th>
+                                        <th width="94px" class="h1" style="text-align: center;">
+                                            Đơn giá
+                                            <br /><i>(Unit price)</i>
+                                        </th>
+                                        <th width="151px" class="h1" style="text-align: center;">
+                                            Thành tiền
+                                            <br /><i>(Amount)</i>
+                                        </th>
+                                        <th width="23px" class="h1 bold" style="text-align:center;">
+                                            CK
+                                            <br /><i>(%)</i>
+                                        </th>
+                                    </tr>
+                                    <tr style="border-bottom: #36426F 1px solid"><th class="h1">0</th><th class="h1">1</th><th class="h1">2</th><th class="h1">3</th><th class="h1">4</th><th class="h1">5</th><th class="h1">6 = 4 x 5</th><th class="h1">7</th></tr>
+                                    @{ int count = 1;
+                                        foreach (var i in Model.Invoice.Products.Product)
+                                        {
+                                            <tr class="noline back" style="border-bottom:#36426F dotted 1px ">
+                                                <td class="stt" height="23px" style="text-align:center;">@count</td>
+                                                <td class="back-bold2" height="23px" style="white-space: pre-wrap;">@Html.Raw(i.ProdName)</td>
+                                                <td class="back-bold2" height="23px" style="text-align: center;">@Html.Raw(i.Code)</td>
+                                                <td class="back-bold2" height="23px" style="text-align: center; white-space: pre-wrap;">@Html.Raw(i.ProdUnit)</td>
+                                                <td class="back-bold" height="23px" style="text-align: right;">@i.ProdQuantity.ToString("#,##0.####", ViewBag.CurrentNumberFormat)</td>
+                                                <td class="back-bold" height="23px">@i.ProdPrice.ToString("#,##0.####", ViewBag.CurrentNumberFormat)</td>
+                                                <td class="back-bold" height="23px">@i.Total.ToString("N0", ViewBag.CurrentNumberFormat)</td>
+                                                <td class="back-bold" height="23px">@i.DiscountAmount.ToString("0.##", ViewBag.CurrentNumberFormat)</td>
+                                            </tr>
+                                            count = count + 1;
+                                        }
+                                        if (Model.Invoice.Products.Product.Last().Extra2 != "" && Model.Invoice.Products.Product.Last().Extra2 != null)
+                                        {
+                                            <tr class="noline back" style="border-top:#000 solid 1px "><td style="border-bottom:none" height="23px" width="24px"></td><td colspan="6">@Model.Invoice.Products.Product.Last().Extra2</td><td style="border-bottom:none" height="23px"></td></tr>
+                                        }
+                                    }
+                                    @for (int i = 9; i > (9 - Model.Invoice.Products.Product.Count); i--)
+                                    {
+                                        <tr class="noline back" style="border-top:#000 solid 1px "><td style="border-bottom:none" height="23px" width="24px"></td><td style="border-bottom:none" height="23px" width="120px"></td><td style="border-bottom:none" height="23px" width="41px"></td><td style="border-bottom:none" height="23px" width="45px"></td><td style="border-bottom:none" height="23px" width="79px"></td><td style="border-bottom:none" height="23px" width="125px"></td><td style="border-bottom:none" height="23px" width="79px"></td><td style="border-bottom:none" height="23px"></td></tr>
+                                    }
+                                    <tfoot style="border: 1px solid rgb(7, 74, 142);">
+                                        <tr class="noline back" style="border-bottom: 1px solid rgb(7, 74, 142);"><td class="back-bold" colspan="6" style="border-right: none;"><div class="clsCol col-title" style=""><p style="font-family: 'Time new roman';  text-align:left; ">Cộng tiền hàng <i>(Total amount)</i>:</p></div></td><td class="back-bold" colspan="1" height="23px" style="border-left:none;text-align:right; color:  black !important;"><div class="clsTable"><p class="" style="text-align:right;font-size: 15px;">@Model.Invoice.Total.ToString("N0", ViewBag.CurrentNumberFormat)</p></div></td><td></td></tr>
+                                        <tr class="noline back" style="border-bottom: 1px solid rgb(7, 74, 142);">
+                                            <td class="back-bold" colspan="6" style="border-right: none;"><div class="clsCol col-title" style=""><p style="font-family: 'Time new roman'; text-align:left;  ">Chiết khấu <i>(Discount)</i>:</p></div></td>
+                                            <td class="back-bold" colspan="1" height="23px" style="border-left:none;text-align:right; color:  black !important;">
+                                                <div class="clsTable">
+                                                    <p class="" style="text-align:right;font-size: 15px;">
+                                                        @Model.Invoice.DiscountAmount.ToString("N0", ViewBag.CurrentNumberFormat)
+                                                    </p>
+                                                </div>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        <tr class="noline back" style="border-bottom: rgb(7, 74, 142) solid 1px; "><td class="back-bold" colspan="3" height="23px" style="text-align:right;border-right: none;"><div class="clsTable"><div class="clsCol col-title"><p style="font-family: 'Time new roman'; text-align:left;">Thuế suất GTGT <i>(VAT rate)</i>:</p></div><div class="clsCol col-txt" style=" width 262px;"><p class="" style="text-align:right;    margin-right: 110px;">@Model.Invoice.VATRate %</p></div></div></td><td class="back-bold" colspan="3" height="23px" width="136px" style="text-align:right;border-right: none;border-left: none;"><div class="clsTable"><div class="clsCol col-title"><p style="font-family: 'Time new roman';">Tiền thuế GTGT <i>(VAT amount)</i>:</p></div></div></td><td class="back-bold" colspan="1" height="23px" width="136px" style="text-align:right;border-left: none;"><div class="clsTable"><div class="clsCol col-txt"><p class="" style=" text-align:right;width: 150px;font-size 15px;">@Model.Invoice.VATAmount.ToString("N0", ViewBag.CurrentNumberFormat)</p></div></div></td><td></td></tr>
+                                        <tr class="noline back" style="border-bottom: 1px solid rgb(7, 74, 142);"><td class="back-bold" colspan="6" style="border-right: none"><div class="clsCol col-title" style=""><p style="font-family: 'Time new roman'; text-align:left; ">Tổng cộng tiền thanh toán <i>(Total payment amount)</i>:</p></div></td><td class="back-bold" colspan="1" height="23px" style="border-left:none;text-align:right; color:  black !important;"><div class="clsTable"><p class="" style="text-align:right;font-size: 15px;">@Model.Invoice.Amount.ToString("N0", ViewBag.CurrentNumberFormat)</p></div></td><td></td></tr>
+                                        <tr class="noline back" style="border-top: rgb(7, 74, 142) solid 0px; border-bottom: 0px; ">
+                                            <td colspan="7" style="border-left:none; border-right:none">
+                                                <div class="clsTable">
+                                                    <div class="clsCol col-title">
+                                                        <p style="font-family: 'Time new roman'; text-align:left;">
+                                                            Số tiền viết bằng chữ
+                                                            <i> (Amount in words):</i>
+                                                        </p>
+                                                    </div><div class="clsCol col-txt"><p class="" style="text-align:left;color:black;">  @Model.Invoice.AmountInWords</p></div>
+                                                </div>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+
+                                <div class="nenhd_bg" style="margin-top: -252px; margin-left: 25px"></div>
+                            </div>
+                        </div>
+                        <div class="statistics">
+                            <table width="790px" cellspacing="0" cellpadding="0" border="0">
+                                <tr>
+                                    <td style="padding-bottom: 0;">
+                                        <table>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <table width="100%;" cellpadding="0" cellspacing="0" border="0">
+                                                            <tr style="vertical-align:top;">
+                                                                <td width="25%" align="center">
+                                                                    <p style="color:rgb(7, 74, 142);" class="bold">Người mua hàng <i>(Buyer)</i></p><i style="color:rgb(7, 74, 142);">(Ký, ghi rõ họ tên)</i><br /><i style="color :rgb(7, 74, 142); margin-bottom:5px;">
+                                                                        (Sign &amp; full name)
+                                                                    </i>
+                                                                    @if (Model.Invoice.KindOfService == 1)
+                                                                    {
+                                                                        <div style="margin:auto;border: 1px solid #000000; width:200px; margin-top:10px;">
+                                                                            <p style="color:red!important; text-align:center; padding-top:20px;padding-bottom:20px;">
+                                                                                BÁN HÀNG QUA ĐIỆN THOẠI
+                                                                            </p>
+                                                                        </div>
+                                                                    }
+                                                                </td>
+                                                                <td width="35%" align="center"><div class="payment fl-l convert" style="margin-top:0px;width: 100% !important;float: left;" /></td>
+                                                                <td width="40%" align="center" style="vertical-align: top; padding-top:0px;">
+                                                                    <p style="color:rgb(7, 74, 142);" class="bold">Người bán hàng <i>(Seller)</i></p><i style="color:rgb(7, 74, 142);">(Ký, đóng dấu và ghi rõ họ tên)</i><br /><i style="color:rgb(7, 74, 142);">
+                                                                        (Sign, stamp,&amp; full name)
+                                                                    </i>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

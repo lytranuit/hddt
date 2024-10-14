@@ -33,6 +33,14 @@ namespace DAIHOI.Controllers
                 {
                     return View("/Views/Hoadonview/ASTA.cshtml", datamau);
                 }
+                else if (key == "FP")
+                {
+                    return View("/Views/Hoadonview/FP.cshtml", datamau);
+                }
+                else if (key == "FYA")
+                {
+                    return View("/Views/Hoadonview/FYA.cshtml", datamau);
+                }
                 else if (key == "NP")
                 {
                     return View("/Views/Hoadonview/NP.cshtml", datamau);
@@ -70,11 +78,23 @@ namespace DAIHOI.Controllers
                 {
                     return View("/Views/Hoadonview/ASTA.cshtml", datamau);
                 }
+                else if (key == "FP")
+                {
+                    return View("/Views/Hoadonview/FP.cshtml", datamau);
+                }
+                else if (key == "FYA")
+                {
+                    return View("/Views/Hoadonview/FYA.cshtml", datamau);
+                }
                 else if (key == "NP")
                 {
                     return View("/Views/Hoadonview/NP.cshtml", datamau);
                 }
-                return View("/Views/Hoadonview/PYP.cshtml", datamau);
+                else
+                {
+
+                    return View("/Views/Hoadonview/PYP.cshtml", datamau);
+                }
 
             }
             catch (Exception ex)

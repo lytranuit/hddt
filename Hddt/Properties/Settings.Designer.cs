@@ -306,5 +306,85 @@ namespace DAIHOI.Properties {
                 return ((string)(this["DAIHOI_pypharmtest_business_BusinessService"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://0318104145-tt78cadmin.vnpt-invoice.com.vn/publishService.asmx")]
+        public string DAIHOI_fya_publish_PublishService {
+            get {
+                return ((string)(this["DAIHOI_fya_publish_PublishService"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://0318104145-tt78cadmin.vnpt-invoice.com.vn/portalService.asmx")]
+        public string DAIHOI_fya_portal_PortalService {
+            get {
+                return ((string)(this["DAIHOI_fya_portal_PortalService"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://0318104145-tt78cadmin.vnpt-invoice.com.vn/ExtMienTrungService.asmx")]
+        public string DAIHOI_fya_extmientrung_ExtMienTrungService {
+            get {
+                return ((string)(this["DAIHOI_fya_extmientrung_ExtMienTrungService"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://0318104145-tt78cadmin.vnpt-invoice.com.vn/businessService.asmx")]
+        public string DAIHOI_fya_business_BusinessService {
+            get {
+                return ((string)(this["DAIHOI_fya_business_BusinessService"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://4401112861-tt78cadmin.vnpt-invoice.com.vn/businessService.asmx")]
+        public string DAIHOI_fp_business_BusinessService {
+            get {
+                return ((string)(this["DAIHOI_fp_business_BusinessService"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://4401112861-tt78cadmin.vnpt-invoice.com.vn/ExtMienTrungService.asmx")]
+        public string DAIHOI_fp_extmientrung_ExtMienTrungService {
+            get {
+                return ((string)(this["DAIHOI_fp_extmientrung_ExtMienTrungService"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://4401112861-tt78cadmin.vnpt-invoice.com.vn/portalService.asmx")]
+        public string DAIHOI_fp_portal_PortalService {
+            get {
+                return ((string)(this["DAIHOI_fp_portal_PortalService"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://4401112861-tt78cadmin.vnpt-invoice.com.vn/publishService.asmx")]
+        public string DAIHOI_fp_publish_PublishService {
+            get {
+                return ((string)(this["DAIHOI_fp_publish_PublishService"]));
+            }
+        }
     }
 }

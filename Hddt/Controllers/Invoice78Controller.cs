@@ -63,6 +63,16 @@ namespace DAIHOI.Controllers
         nghinhphong.portal.PortalService portalnghinhphong = new nghinhphong.portal.PortalService();
         nghinhphong.business.BusinessService businessnghinhphong = new nghinhphong.business.BusinessService();
         nghinhphong.extmientrung.ExtMienTrungService extnghinhphong = new nghinhphong.extmientrung.ExtMienTrungService();
+        //FYA
+        fya.publish.PublishService publishfya = new fya.publish.PublishService();
+        fya.portal.PortalService portalfya = new fya.portal.PortalService();
+        fya.business.BusinessService businessfya = new fya.business.BusinessService();
+        fya.extmientrung.ExtMienTrungService extfya = new fya.extmientrung.ExtMienTrungService();
+        //FP
+        fp.publish.PublishService publishfp = new fp.publish.PublishService();
+        fp.portal.PortalService portalfp = new fp.portal.PortalService();
+        fp.business.BusinessService businessfp = new fp.business.BusinessService();
+        fp.extmientrung.ExtMienTrungService extfp = new fp.extmientrung.ExtMienTrungService();
 
         public Invoice78Controller()
         {
@@ -96,6 +106,32 @@ namespace DAIHOI.Controllers
                     break;
                 case "ASTA_TEST_extmientrung":
                     return extastatest;
+                    break;
+
+                case "FYA_publish":
+                    return publishfya;
+                    break;
+                case "FYA_portal":
+                    return portalfya;
+                    break;
+                case "FYA_business":
+                    return businessfya;
+                    break;
+                case "FYA_extmientrung":
+                    return extfya;
+                    break;
+
+                case "FP_publish":
+                    return publishfp;
+                    break;
+                case "FP_portal":
+                    return portalfp;
+                    break;
+                case "FP_business":
+                    return businessfp;
+                    break;
+                case "FP_extmientrung":
+                    return extfp;
                     break;
 
                 case "PYP_publish":

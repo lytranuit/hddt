@@ -408,7 +408,6 @@
         }
     </style>
 </head>
-<div class="clearfix" id="bt" />
 <body>
     <div id="printView" style="position: relative;">
         <div style="font-size:12px;; width:100%; text-align: center; color: ;margin-bottom: 2px;"> Đơn vị cung cấp giải pháp hóa đơn điện tử: Tổng Công ty Dịch vụ Viễn thông - VNPT Vinaphone, MST:0106869738, Điện thoại:18001260 </div>
@@ -529,19 +528,19 @@
                                                 <p style="font-size:13px;margin-top 5px; color:rgb(7, 74, 142) !important;text-align:center; width:100%;">
                                                     Ngày  <i>(day)</i>
                                                     <label>
-                                                        <b style="margin-left:5px;">28</b>
+                                                        <b style="margin-left:5px;">@DateTime.Now.ToString("dd")</b>
                                                     </label> tháng  <i>(month)</i>
                                                     <label>
-                                                        <b style="margin-left:5px;">03</b>
+                                                        <b style="margin-left:5px;">@DateTime.Now.ToString("MM")</b>
                                                     </label> năm  <i>(year)</i>
                                                     <label>
-                                                        <b style="margin-left:5px;">2024</b>
+                                                        <b style="margin-left:5px;">@DateTime.Now.ToString("yyyy")</b>
                                                     </label>
                                                 </p>
                                             </td>
                                             <td style="width: 20%;">
                                                 <p style="font-size: 15px;line-height: 25px; color:rgb(7, 74, 142)">
-                                                    Ký hiệu: <span style="font-size: 17px;font-weight: bold;">1C24TAA</span>
+                                                    Ký hiệu: <span style="font-size: 17px;font-weight: bold;">@Model.Invoice.InvoiceNo</span>
                                                 </p>
                                                 <p style="font-size: 17px; color:rgb(7, 74, 142)">
                                                     Số: <span class="number" style="color:#fb0303;font-size:17px;font-weight: bold;">XXXXXXXX</span>
@@ -626,7 +625,8 @@
                                 </div>
                             </td>
                         </tr>
-                    </table> @if (@Model.Invoice.Products != null)
+                    </table> 
+                    @if (@Model.Invoice.Products != null)
                     {
                         <div class="statistics">
                             <div class="nenhd">
@@ -848,16 +848,16 @@
                         </div>
                         <div class="clearfix" />
                         @*<div style="    text-align: center;&#xA;">
-                            <center style="font-style: italic;">
-                                <p>
-                                    <b>Mã của cơ quan thuế <i> (Tax authority code)</i>: </b>
-                                    <b>96050c39e5d04c26ab5b2643cfad1549</b>
-                                </p>
-                                <label style="margin-top:0px;">
-                                    <b style="padding-left:5px;  color: rgb(7, 74, 142) !important; )">Tra cứu hóa đơn tại website:  https://4401062392-tt78.vnpt-invoice.com.vn với mã: ASTA-036146</b>
-                                </label>
-                            </center>
-                        </div>*@
+                                <center style="font-style: italic;">
+                                    <p>
+                                        <b>Mã của cơ quan thuế <i> (Tax authority code)</i>: </b>
+                                        <b>96050c39e5d04c26ab5b2643cfad1549</b>
+                                    </p>
+                                    <label style="margin-top:0px;">
+                                        <b style="padding-left:5px;  color: rgb(7, 74, 142) !important; )">Tra cứu hóa đơn tại website:  https://4401062392-tt78.vnpt-invoice.com.vn với mã: ASTA-036146</b>
+                                    </label>
+                                </center>
+                            </div>*@
                     </div>
                     <div class="statistics" />
                 </div>

@@ -239,6 +239,46 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
+    <Compile Include="Web References\fp.business\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\fp.extmientrung\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\fp.portal\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\fp.publish\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\fya.business\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\fya.extmientrung\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\fya.portal\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\fya.publish\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
     <Compile Include="Web References\nghinhphong.business\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -352,6 +392,8 @@
     <Content Include="Content\LayoutPro\css\mdb.css" />
     <Content Include="Content\LayoutPro\css\style.css" />
     <Content Include="Content\LayoutPro\img\architecture.jpg" />
+    <Content Include="Content\LayoutPro\img\FP.png" />
+    <Content Include="Content\LayoutPro\img\FYA.jpg" />
     <Content Include="Content\LayoutPro\img\svg\arrow_left.svg" />
     <Content Include="Content\LayoutPro\img\svg\arrow_right.svg" />
     <Content Include="Content\LayoutPro\img\nghinhphong.jpg" />
@@ -1535,6 +1577,8 @@
     <Content Include="Views\Hoadonview\PHIEUXUAT.cshtml" />
     <Content Include="Views\Hoadonview\ASTA.cshtml" />
     <Content Include="Views\Hoadonview\NP.cshtml" />
+    <Content Include="Views\Hoadonview\FP.cshtml" />
+    <Content Include="Views\Hoadonview\FYA.cshtml" />
     <None Include="Web References\asta.business\businessService.wsdl" />
     <None Include="Web References\asta.business\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
@@ -1578,7 +1622,55 @@
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </Content>
+    <None Include="Web References\fp.business\businessService.wsdl" />
+    <Content Include="Web References\fp.business\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <None Include="Web References\fp.extmientrung\ExtMienTrungService.wsdl" />
+    <Content Include="Web References\fp.extmientrung\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <None Include="Web References\fp.portal\portalService.wsdl" />
+    <Content Include="Web References\fp.portal\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <None Include="Web References\fp.publish\publishService.wsdl" />
+    <Content Include="Web References\fp.publish\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <None Include="Web References\fya.business\businessService.wsdl" />
+    <None Include="Web References\fp.business\businessService.disco" />
+    <None Include="Web References\fp.extmientrung\ExtMienTrungService.disco" />
+    <None Include="Web References\fp.portal\portalService.disco" />
+    <None Include="Web References\fp.publish\publishService.disco" />
+    <Content Include="Web References\fya.business\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <None Include="Web References\fya.extmientrung\ExtMienTrungService.wsdl" />
+    <None Include="Web References\fya.business\businessService.disco" />
+    <Content Include="Web References\fya.extmientrung\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <None Include="Web References\fya.portal\portalService.wsdl" />
+    <None Include="Web References\fya.extmientrung\ExtMienTrungService.disco" />
+    <Content Include="Web References\fya.portal\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <None Include="Web References\fya.publish\publishService.wsdl" />
+    <None Include="Web References\fya.portal\portalService.disco" />
+    <Content Include="Web References\fya.publish\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
     <None Include="Web References\nghinhphong.business\businessService.wsdl" />
+    <None Include="Web References\fya.publish\publishService.disco" />
     <Content Include="Web References\nghinhphong.business\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -1752,6 +1844,50 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
+    <WebReferenceUrl Include="https://0318104145-tt78cadmin.vnpt-invoice.com.vn/businessService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\fya.business\</RelPath>
+      <UpdateFromURL>https://0318104145-tt78cadmin.vnpt-invoice.com.vn/businessService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>DAIHOI_fya_business_BusinessService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://0318104145-tt78cadmin.vnpt-invoice.com.vn/ExtMienTrungService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\fya.extmientrung\</RelPath>
+      <UpdateFromURL>https://0318104145-tt78cadmin.vnpt-invoice.com.vn/ExtMienTrungService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>DAIHOI_fya_extmientrung_ExtMienTrungService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://0318104145-tt78cadmin.vnpt-invoice.com.vn/portalService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\fya.portal\</RelPath>
+      <UpdateFromURL>https://0318104145-tt78cadmin.vnpt-invoice.com.vn/portalService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>DAIHOI_fya_portal_PortalService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://0318104145-tt78cadmin.vnpt-invoice.com.vn/publishService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\fya.publish\</RelPath>
+      <UpdateFromURL>https://0318104145-tt78cadmin.vnpt-invoice.com.vn/publishService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>DAIHOI_fya_publish_PublishService</CachedSettingsPropName>
+    </WebReferenceUrl>
     <WebReferenceUrl Include="https://4401062392-tt78admin.vnpt-invoice.com.vn/businessService.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\asta.business\</RelPath>
@@ -1883,6 +2019,50 @@
       </CachedDynamicPropName>
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>DAIHOI_nghinhphong_publish_PublishService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://4401112861-tt78cadmin.vnpt-invoice.com.vn/businessService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\fp.business\</RelPath>
+      <UpdateFromURL>https://4401112861-tt78cadmin.vnpt-invoice.com.vn/businessService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>DAIHOI_fp_business_BusinessService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://4401112861-tt78cadmin.vnpt-invoice.com.vn/ExtMienTrungService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\fp.extmientrung\</RelPath>
+      <UpdateFromURL>https://4401112861-tt78cadmin.vnpt-invoice.com.vn/ExtMienTrungService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>DAIHOI_fp_extmientrung_ExtMienTrungService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://4401112861-tt78cadmin.vnpt-invoice.com.vn/portalService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\fp.portal\</RelPath>
+      <UpdateFromURL>https://4401112861-tt78cadmin.vnpt-invoice.com.vn/portalService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>DAIHOI_fp_portal_PortalService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://4401112861-tt78cadmin.vnpt-invoice.com.vn/publishService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\fp.publish\</RelPath>
+      <UpdateFromURL>https://4401112861-tt78cadmin.vnpt-invoice.com.vn/publishService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>DAIHOI_fp_publish_PublishService</CachedSettingsPropName>
     </WebReferenceUrl>
     <WebReferenceUrl Include="https://bqlc-tt78admindemo.vnpt-invoice.com.vn/businessService.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
