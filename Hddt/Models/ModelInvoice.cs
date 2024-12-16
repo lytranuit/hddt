@@ -553,7 +553,61 @@ namespace DAIHOI.Models
 
 		[XmlElement(ElementName = "ConvertedAmount")]
 		public string ConvertedAmount { get; set; }
-	}
+		/// <summary>
+		/// ĐIỀU CHUYỂN NỘI BỘ
+		/// </summary>
+        [XmlElement(ElementName = "LDDNBo")]
+        public string LDDNBo { get; set; }
+        [XmlElement(ElementName = "HDSo")]
+        public string HDSo { get; set; }
+        [XmlElement(ElementName = "HVTNXHang")]
+        public string HVTNXHang { get; set; }
+
+        [XmlElement(ElementName = "TNVChuyen")]
+        public string TNVChuyen { get; set; }
+
+        [XmlElement(ElementName = "PTVChuyen")]
+        public string PTVChuyen { get; set; }
+
+
+        [XmlElement(ElementName = "HDKTSo")]
+        public string HDKTSo { get; set; }
+
+
+        [XmlElement(ElementName = "HDKTNgay")]
+        public string HDKTNgay { get; set; }
+
+
+        [XmlElement(ElementName = "Extra1")]
+        public string Extra1 { get; set; }
+
+        [XmlElement(ElementName = "Extra2")]
+        public string Extra2 { get; set; }
+
+        [XmlElement(ElementName = "Extra3")]
+        public string Extra3 { get; set; }
+
+        [XmlElement(ElementName = "Extra4")]
+        public string Extra4 { get; set; }
+
+        //		<ComPhone>Điện thoại công ty</ComPhone>
+        //<ComBankName>Tên ngân hàng</ComBankName>
+        //<ComBankNo>Số tài khoản ngân hàng</ComBankNo>
+
+        //<SMSDeliver>SMSDeliver</SMSDeliver>
+        //<LDDNBo>Lệnh điều động nội bộ(Bắt buộc đối với phiếu xuất kho vận chuyển nội bộ)</LDDNBo>
+        //<HDSo>Hợp đồng số(Hợp đồng vận chuyển) (phiếu xuất kho vận chuyển nội bộ)</HDSo>
+        //<HVTNXHang>Họ và tên người xuất hàng(phiếu xuất kho vận chuyển nội bộ)</HVTNXHang>
+        //<TNVChuyen>Tên người vận chuyển(phiếu xuất kho)</TNVChuyen>
+        //<PTVChuyen>Phương tiện vận chuyển(Bắt buộc đối với phiếu xuất kho)</PTVChuyen>
+        //<HDKTSo>Hợp đồng kinh tế số(Bắt buộc đối với phiếu xuất kho gửi bán đại lý)</HDKTSo>
+        //<HDKTNgay>Hợp đồng kinh tế ngày(Bắt buộc đối với phiếu xuất kho gửi bán đại lý)</HDKTNgay>
+        //<Extra1>Xuất tại kho</Extra1>
+        //<Extra2>Lý do xuất kho</Extra2>
+        //<Extra3>Người nhận hàng</Extra3>
+        //<Extra4>Nhập tại kho</Extra4>
+
+    }
 	//public partial class Product
 	//{
 	//    [AllowHtml]
