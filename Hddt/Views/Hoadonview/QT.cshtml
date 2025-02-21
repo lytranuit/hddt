@@ -527,92 +527,101 @@
                                 </td>
                             </tr>
                         </tbody>
-                    </table><table style="margin-top: 5px;   " class="cusname"><tr><td><div class="clsTable"><div class="clsCol col-title"><p style="font-family: 'Time new roman';">Họ tên người mua hàng <i>(Customer's name)</i>:</p></div><div class="clsCol col-txt"><p class="input-txt" style="">@Model.Invoice.Buyer</p></div></div><div class="clsTable"><div class="clsCol col-title"><p style="font-family: 'Time new roman';">Tên đơn vị <i>(Company name)</i>: </p></div><div class="clsCol col-txt"><p class="input-txt" style="">@Model.Invoice.CusName</p></div></div><div class="clsTable"><div class="clsCol col-title"><p style="font-family: 'Time new roman';">Mã số thuế <i>(Tax code)</i>:</p></div><div class="clsCol col-txt"><p class="input-txt" style="">@Model.Invoice.CusTaxCode</p></div></div><div class="clsTable"><div class="clsCol col-title"><p style="font-family: 'Time new roman';">Địa chỉ <i>(Address)</i>: </p></div><div class="clsCol col-txt"><p class="input-txt" style="">@Model.Invoice.CusAddress</p></div></div><div class="clsTable"><div class="clsCol col-title"><p style="font-family: 'Time new roman';">Hình thức thanh toán <i>(Payment method)</i>:</p></div><div class="clsCol col-txt"><p class="input-txt" style="">@Model.Invoice.PaymentMethod</p></div></div><div class="clsTable"><div class="clsCol col-title"><p style="font-family: 'Time new roman';">Số tài khoản <i>(Bank Account)</i>: </p></div><div class="clsCol col-txt"><p class="input-txt" style="">@Model.Invoice.CusBankNo</p></div></div><div class="clsTable"><div class="clsCol col-title"><p style="font-family: 'Time new roman';">Ngân hàng <i>(Bank)</i>: </p></div><div class="clsCol col-txt"><p class="input-txt" style="">@Model.Invoice.CusBankName</p></div></div></td></tr></table><div class="statistics">
-                        <div class="nenhd">
-                            <table width="100%" class="dongcuoi" cellpadding="0" cellspacing="0" border="1" style="border-bottom: 0px solid">
-                                <tr style="border-bottom: #36426F 1px solid" height="23px">
-                                    <th width="30px" class="h1 bold;" style="text-align:center;">
-                                        STT
-                                        <br /><i>(No.)</i>
-                                    </th>
-                                    <th width="210px" class="h1 bold;" style="text-align:center;">
-                                        Tên hàng hóa, dịch vụ
-                                        <br /><i>(Product, services )</i>
-                                    </th>
-                                    <th width="50px" class="h1 bold; " style="text-align:center;">
-                                        Mã hàng <br /><i>(Code)</i>
-                                    </th>
-                                    <th width="55px" class="h1 bold;" style="text-align:center;">
-                                        Đơn vị tính <br /><i>(Unit)</i>
-                                    </th>
-                                    <th width="65px" class="h1 bold; " style="text-align:center;">
-                                        Số lượng<br /><i>(Quantity)</i>
-                                    </th>
-                                    <th width="80px" class="h1 bold; " style="text-align:center;">
-                                        Đơn giá<br /><i>(Unit price)</i>
-                                    </th>
-                                    <th width="105px" class="h1 bold; " style="text-align:center;">
-                                        Thành tiền<br /><i>(Amount)</i>
-                                    </th>
-                                    <th width="30px" class="h1 bold; " style="text-align:center;">
-                                        CK <br /><i>(%)</i>
-                                    </th>
-                                </tr>
-                                <tr style="border-bottom: #36426F 1px solid"><th class="h1">0</th><th class="h1">1</th><th class="h1">2</th><th class="h1">3</th><th class="h1">4</th><th class="h1">5</th><th class="h1">6 = 4 x 5</th><th class="h1">7</th></tr>
-                                @{   int count = 1;
-                                    foreach (var i in Model.Invoice.Products.Product)
-                                    {
-                                        <tr class="noline back" style="border-bottom:#36426F dotted 1px ">
-                                            <td class="stt" height="23px" style="text-align:center;">@count</td>
-                                            <td class="back-bold2" height="23px" style="white-space: pre-wrap;">@Html.Raw(i.ProdName)</td>
-                                            <td class="back-bold2" height="23px" style="text-align: center;">@Html.Raw(i.Code)</td>
-                                            <td class="back-bold2" height="23px" style="text-align: center; white-space: pre-wrap;">@Html.Raw(i.ProdUnit)</td>
-                                            <td class="back-bold" height="23px" style="text-align: right;">@i.ProdQuantity.ToString("N0", ViewBag.CurrentNumberFormat)</td>
-                                            <td class="back-bold" height="23px">@i.ProdPrice.ToString("#,##0.####", ViewBag.CurrentNumberFormat)</td>
-                                            <td class="back-bold" height="23px">@i.Total.ToString("N0", ViewBag.CurrentNumberFormat)</td>
-                                            <td class="back-bold" height="23px">@i.DiscountAmount.ToString("0.##", ViewBag.CurrentNumberFormat)</td>
-                                        </tr>
-                                        count = count + 1;
-                                    }
-                                    if (Model.Invoice.Products.Product.Last().Extra2 != "" && Model.Invoice.Products.Product.Last().Extra2 != null)
-                                    {
-                                        <tr class="noline back" style="border-top:#000 solid 1px "><td style="border-bottom:none" height="23px" width="24px"></td><td colspan="6">@Model.Invoice.Products.Product.Last().Extra2</td><td style="border-bottom:none" height="23px" width="125px"></td></tr>
-                                    }
-                                }
-                                @for (int i = 9; i > (9 - Model.Invoice.Products.Product.Count); i--)
-                                {
-                                    <tr class="noline back" style="border-top:#000 solid 1px "><td style="border-bottom:none" height="23px" width="24px"></td><td style="border-bottom:none" height="23px" width="120px"></td><td style="border-bottom:none" height="23px" width="41px"></td><td style="border-bottom:none" height="23px" width="45px"></td><td style="border-bottom:none" height="23px" width="79px"></td><td style="border-bottom:none" height="23px" width="125px"></td><td style="border-bottom:none" height="23px" width="79px"></td><td style="border-bottom:none" height="23px" width="125px"></td></tr>
-                                }
-                                <tfoot>
-                                    <tr class="noline back" style="border-top: 1px solid #36426F; border-bottom: 0px;"><td class="back-bold" colspan="7" height="20px" width="136px" style="padding-right: 3px;border-right:none;text-align:left;   color: rgb(7, 74, 142) !important;"><div class="clsTable"><div class="clsCol col-title"><p style="font-family: 'Time new roman';"> Cộng tiền hàng <i>(Total amount)</i>:</p></div><div class="clsCol col-txt"><p class="dulieu">@Model.Invoice.Total.ToString("N0", ViewBag.CurrentNumberFormat)</p></div></div></td><td /></tr>
-                                    <tr class="noline back" style="border-top: 1px solid #36426F; border-bottom: 0px;"><td class="back-bold" colspan="7" height="20px" width="136px" style="padding-right: 3px;border-right:none;text-align:left;   color: rgb(7, 74, 142) !important;"><div class="clsTable"><div class="clsCol col-title"><p style="font-family: 'Time new roman';"> Chiết khấu <i>(Discount)</i>:</p></div><div class="clsCol col-txt"><p class="dulieu">@Model.Invoice.DiscountAmount.ToString("N0", ViewBag.CurrentNumberFormat)</p></div></div></td><td /></tr>
-                                    <tr class="noline back" style="border-top: #36426F solid thin; border-bottom:0px">
-                                        <td class="back-bold" colspan="7" height="20px" width="136px" style="border-right:none;text-align:left;">
-                                            <div class="clsTable">
-                                                <div class="clsCol col-title">
-                                                    <p style="font-family: 'Time new roman';">
-                                                        Thuế suất GTGT <i>(VAT rate)</i> :
-                                                    </p>
-                                                </div><div class="clsCol col-txt" style="width:10%">
-                                                    <p class="input-txt dulieu" style="text-align:right; border-bottom: 0px;">
-                                                        @Model.Invoice.VATRate
-                                                        %
-                                                    </p>
-                                                </div><div class="clsCol col-title">
-                                                    <p style="font-family: 'Time new roman'; padding-left: 121px;">
-                                                        Tiền thuế GTGT <i>(VAT amount)</i>:
-                                                    </p>
-                                                </div><div class="clsCol col-txt"><p class="dulieu">@Model.Invoice.VATAmount.ToString("N0", ViewBag.CurrentNumberFormat)</p></div>
-                                            </div>
-                                        </td>
-                                        <td />
+                    </table>
+                    <table style="margin-top: 5px;   " class="cusname">
+                        <tr><td><div class="clsTable"><div class="clsCol col-title"><p style="font-family: 'Time new roman';">Họ tên người mua hàng <i>(Customer's name)</i>:</p></div><div class="clsCol col-txt"><p class="input-txt" style="">@Model.Invoice.Buyer</p></div></div><div class="clsTable"><div class="clsCol col-title"><p style="font-family: 'Time new roman';">Tên đơn vị <i>(Company name)</i>: </p></div><div class="clsCol col-txt"><p class="input-txt" style="">@Model.Invoice.CusName</p></div></div><div class="clsTable"><div class="clsCol col-title"><p style="font-family: 'Time new roman';">Mã số thuế <i>(Tax code)</i>:</p></div><div class="clsCol col-txt"><p class="input-txt" style="">@Model.Invoice.CusTaxCode</p></div></div><div class="clsTable"><div class="clsCol col-title"><p style="font-family: 'Time new roman';">Địa chỉ <i>(Address)</i>: </p></div><div class="clsCol col-txt"><p class="input-txt" style="">@Model.Invoice.CusAddress</p></div></div><div class="clsTable"><div class="clsCol col-title"><p style="font-family: 'Time new roman';">Hình thức thanh toán <i>(Payment method)</i>:</p></div><div class="clsCol col-txt"><p class="input-txt" style="">@Model.Invoice.PaymentMethod</p></div></div><div class="clsTable"><div class="clsCol col-title"><p style="font-family: 'Time new roman';">Số tài khoản <i>(Bank Account)</i>: </p></div><div class="clsCol col-txt"><p class="input-txt" style="">@Model.Invoice.CusBankNo</p></div></div><div class="clsTable"><div class="clsCol col-title"><p style="font-family: 'Time new roman';">Ngân hàng <i>(Bank)</i>: </p></div><div class="clsCol col-txt"><p class="input-txt" style="">@Model.Invoice.CusBankName</p></div></div></td></tr>
+                    </table>
+                    @if (@Model.Invoice.Products != null)
+                    {
+                        <div class="statistics">
+                            <div class="nenhd">
+                                <table width="100%" class="dongcuoi" cellpadding="0" cellspacing="0" border="1" style="border-bottom: 0px solid">
+                                    <tr style="border-bottom: #36426F 1px solid" height="23px">
+                                        <th width="30px" class="h1 bold;" style="text-align:center;">
+                                            STT
+                                            <br /><i>(No.)</i>
+                                        </th>
+                                        <th width="210px" class="h1 bold;" style="text-align:center;">
+                                            Tên hàng hóa, dịch vụ
+                                            <br /><i>(Product, services )</i>
+                                        </th>
+                                        <th width="50px" class="h1 bold; " style="text-align:center;">
+                                            Mã hàng <br /><i>(Code)</i>
+                                        </th>
+                                        <th width="55px" class="h1 bold;" style="text-align:center;">
+                                            Đơn vị tính <br /><i>(Unit)</i>
+                                        </th>
+                                        <th width="65px" class="h1 bold; " style="text-align:center;">
+                                            Số lượng<br /><i>(Quantity)</i>
+                                        </th>
+                                        <th width="80px" class="h1 bold; " style="text-align:center;">
+                                            Đơn giá<br /><i>(Unit price)</i>
+                                        </th>
+                                        <th width="105px" class="h1 bold; " style="text-align:center;">
+                                            Thành tiền<br /><i>(Amount)</i>
+                                        </th>
+                                        <th width="30px" class="h1 bold; " style="text-align:center;">
+                                            CK <br /><i>(%)</i>
+                                        </th>
                                     </tr>
-                                    <tr class="noline back" style="border-top: #36426F solid thin; border-bottom: 0px; "><td class="back-bold" colspan="7" height="20px" style="padding-right: 3px;  text-align:right; color: rgb(7, 74, 142) !important;"><div class="clsTable"><div class="clsCol col-title"><p style="font-family: 'Time new roman';"> Tổng cộng tiền thanh toán <i>(Total Payment amount)</i>:</p></div><div class="clsCol col-txt"><p class="dulieu">@Model.Invoice.Amount.ToString("N0", ViewBag.CurrentNumberFormat)</p></div></div></td><td /></tr>
-                                    <tr class="noline back" style="border-top: #36426F solid thin; border-bottom: #36426F solid thin; "><td class="back-bold" colspan="8" height="20px" style="padding-right: 3px;  text-align:right; color: rgb(7, 74, 142) !important;"><div class="clsTable"><div class="clsCol col-title"><p style="font-family: 'Time new roman';">Số tiền viết bằng chữ <i>(Amount in words)</i>:</p></div><div class="clsCol col-txt"><p class="input-txt" style="border-bottom: 0px; ">@Model.Invoice.AmountInWords</p></div></div></td></tr>
-                                </tfoot>
-                            </table><div class="nenhd_bg" style="margin-top: -252px; margin-left: 25px"></div>
+                                    <tr style="border-bottom: #36426F 1px solid"><th class="h1">0</th><th class="h1">1</th><th class="h1">2</th><th class="h1">3</th><th class="h1">4</th><th class="h1">5</th><th class="h1">6 = 4 x 5</th><th class="h1">7</th></tr>
+                                    @{ int count = 1;
+                                        foreach (var i in Model.Invoice.Products.Product)
+                                        {
+                                            <tr class="noline back" style="border-bottom:#36426F dotted 1px ">
+                                                <td class="stt" height="23px" style="text-align:center;">@count</td>
+                                                <td class="back-bold2" height="23px" style="white-space: pre-wrap;">@Html.Raw(i.ProdName)</td>
+                                                <td class="back-bold2" height="23px" style="text-align: center;">@Html.Raw(i.Code)</td>
+                                                <td class="back-bold2" height="23px" style="text-align: center; white-space: pre-wrap;">@Html.Raw(i.ProdUnit)</td>
+                                                <td class="back-bold" height="23px" style="text-align: right;">@i.ProdQuantity.ToString("N0", ViewBag.CurrentNumberFormat)</td>
+                                                <td class="back-bold" height="23px">@i.ProdPrice.ToString("#,##0.####", ViewBag.CurrentNumberFormat)</td>
+                                                <td class="back-bold" height="23px">@i.Total.ToString("N0", ViewBag.CurrentNumberFormat)</td>
+                                                <td class="back-bold" height="23px">@i.DiscountAmount.ToString("0.##", ViewBag.CurrentNumberFormat)</td>
+                                            </tr>
+                                            count = count + 1;
+                                        }
+                                        if (Model.Invoice.Products.Product.Last().Extra2 != "" && Model.Invoice.Products.Product.Last().Extra2 != null)
+                                        {
+                                            <tr class="noline back" style="border-top:#000 solid 1px "><td style="border-bottom:none" height="23px" width="24px"></td><td colspan="6">@Model.Invoice.Products.Product.Last().Extra2</td><td style="border-bottom:none" height="23px" width="125px"></td></tr>
+                                        }
+                                    }
+                                    @for (int i = 9; i > (9 - Model.Invoice.Products.Product.Count); i--)
+                                    {
+                                        <tr class="noline back" style="border-top:#000 solid 1px "><td style="border-bottom:none" height="23px" width="24px"></td><td style="border-bottom:none" height="23px" width="120px"></td><td style="border-bottom:none" height="23px" width="41px"></td><td style="border-bottom:none" height="23px" width="45px"></td><td style="border-bottom:none" height="23px" width="79px"></td><td style="border-bottom:none" height="23px" width="125px"></td><td style="border-bottom:none" height="23px" width="79px"></td><td style="border-bottom:none" height="23px" width="125px"></td></tr>
+                                    }
+                                    <tfoot>
+                                        <tr class="noline back" style="border-top: 1px solid #36426F; border-bottom: 0px;"><td class="back-bold" colspan="7" height="20px" width="136px" style="padding-right: 3px;border-right:none;text-align:left;   color: rgb(7, 74, 142) !important;"><div class="clsTable"><div class="clsCol col-title"><p style="font-family: 'Time new roman';"> Cộng tiền hàng <i>(Total amount)</i>:</p></div><div class="clsCol col-txt"><p class="dulieu">@Model.Invoice.Total.ToString("N0", ViewBag.CurrentNumberFormat)</p></div></div></td><td /></tr>
+                                        <tr class="noline back" style="border-top: 1px solid #36426F; border-bottom: 0px;"><td class="back-bold" colspan="7" height="20px" width="136px" style="padding-right: 3px;border-right:none;text-align:left;   color: rgb(7, 74, 142) !important;"><div class="clsTable"><div class="clsCol col-title"><p style="font-family: 'Time new roman';"> Chiết khấu <i>(Discount)</i>:</p></div><div class="clsCol col-txt"><p class="dulieu">@Model.Invoice.DiscountAmount.ToString("N0", ViewBag.CurrentNumberFormat)</p></div></div></td><td /></tr>
+                                        <tr class="noline back" style="border-top: #36426F solid thin; border-bottom:0px">
+                                            <td class="back-bold" colspan="7" height="20px" width="136px" style="border-right:none;text-align:left;">
+                                                <div class="clsTable">
+                                                    <div class="clsCol col-title">
+                                                        <p style="font-family: 'Time new roman';">
+                                                            Thuế suất GTGT <i>(VAT rate)</i> :
+                                                        </p>
+                                                    </div><div class="clsCol col-txt" style="width:10%">
+                                                        <p class="input-txt dulieu" style="text-align:right; border-bottom: 0px;">
+                                                            @Model.Invoice.VATRate
+                                                            %
+                                                        </p>
+                                                    </div><div class="clsCol col-title">
+                                                        <p style="font-family: 'Time new roman'; padding-left: 121px;">
+                                                            Tiền thuế GTGT <i>(VAT amount)</i>:
+                                                        </p>
+                                                    </div><div class="clsCol col-txt"><p class="dulieu">@Model.Invoice.VATAmount.ToString("N0", ViewBag.CurrentNumberFormat)</p></div>
+                                                </div>
+                                            </td>
+                                            <td />
+                                        </tr>
+                                        <tr class="noline back" style="border-top: #36426F solid thin; border-bottom: 0px; "><td class="back-bold" colspan="7" height="20px" style="padding-right: 3px;  text-align:right; color: rgb(7, 74, 142) !important;"><div class="clsTable"><div class="clsCol col-title"><p style="font-family: 'Time new roman';"> Tổng cộng tiền thanh toán <i>(Total Payment amount)</i>:</p></div><div class="clsCol col-txt"><p class="dulieu">@Model.Invoice.Amount.ToString("N0", ViewBag.CurrentNumberFormat)</p></div></div></td><td /></tr>
+                                        <tr class="noline back" style="border-top: #36426F solid thin; border-bottom: #36426F solid thin; "><td class="back-bold" colspan="8" height="20px" style="padding-right: 3px;  text-align:right; color: rgb(7, 74, 142) !important;"><div class="clsTable"><div class="clsCol col-title"><p style="font-family: 'Time new roman';">Số tiền viết bằng chữ <i>(Amount in words)</i>:</p></div><div class="clsCol col-txt"><p class="input-txt" style="border-bottom: 0px; ">@Model.Invoice.AmountInWords</p></div></div></td></tr>
+                                    </tfoot>
+                                </table><div class="nenhd_bg" style="margin-top: -252px; margin-left: 25px"></div>
+                            </div>
                         </div>
-                    </div><div class="statistics">
+
+                    }
+                    <div class="statistics">
                         <table width="790px" cellspacing="0" cellpadding="0" border="0">
                             <tr>
                                 <td style="padding-bottom: 0;">
